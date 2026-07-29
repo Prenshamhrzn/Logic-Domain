@@ -21,15 +21,7 @@ if (form) {
     }
   });
 }
-window.addEventListener("scroll", function () {
-  const header = document.querySelector(".site-header");
 
-  if (window.scrollY > 50) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-});
 const platformImage = document.getElementById("platformImage");
 const platformIcon = document.getElementById("platformIcon");
 
@@ -49,4 +41,10 @@ document.querySelectorAll('[data-bs-toggle="tab"]').forEach((tab) => {
       platformImage.style.opacity = "1";
     }, 200);
   });
+});
+
+const header = document.querySelector(".site-header");
+
+window.addEventListener("scroll", () => {
+  header.classList.toggle("scrolled", window.scrollY > 40);
 });
