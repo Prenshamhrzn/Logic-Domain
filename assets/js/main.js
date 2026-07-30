@@ -48,3 +48,28 @@ const header = document.querySelector(".site-header");
 window.addEventListener("scroll", () => {
   header.classList.toggle("scrolled", window.scrollY > 40);
 });
+
+//core capabilities scroll
+
+const section = document.querySelector(".capabilities-section");
+const windowBox = document.querySelector(".capabilities-window");
+const track = document.querySelector(".capabilities-track");
+
+function capabilityScroll() {
+  if (!section || !windowBox || !track) return;
+
+  const sectionTop = section.offsetTop;
+  const scrollDistance = section.offsetHeight - window.innerHeight;
+  const currentScroll = window.scrollY - sectionTop;
+
+  const progress = Math.min(Math.max(currentScroll / scrollDistance, 0), 1);
+
+  const maxMove = Math.max(track.scrollHeight - windowBox.clientHeight, 0);
+
+  track.style.transform = `translateY(-${progress * maxMove}px)`;
+}
+
+window.addEventListener("scroll", capabilityScroll);
+window.addEventListener("resize", capabilityScroll);
+
+capabilityScroll();
