@@ -41,13 +41,13 @@
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="#difference">Implementation</a>
+                  <a class="dropdown-item" href="implementation.html">Implementation</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#difference">System Integrations</a>
+                  <a class="dropdown-item" href="system-integration.html">System Integrations</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#difference">Training & Support</a>
+                  <a class="dropdown-item" href="training.html">Training & Support</a>
                 </li>
               </ul>
             </li>
@@ -61,6 +61,7 @@
     </header>
 
     <main>
+
       <section id="home" class="hero-section-innerpage">
         <img src="assets/images/Frame.png" alt="Background" class="innerpage-banner-bg" />
         <div class="innerpage-hero-content">
@@ -69,6 +70,7 @@
         </div>
       </section>
 
+    <div class="contact-page-background">
       <section class="contact-intro section-space">
         <div class="container">
           <div class="text-center intro-copy">
@@ -131,7 +133,7 @@
               <div class="row gx-4 gy-3">
                 <div class="col-md-6">
                   <label for="contactName" class="form-label"> Contact Name <span>*</span> </label>
-                  <div class="input-group">
+                  <div class="input-group inputfield-space">
                     <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
                     <input type="text" class="form-control" id="contactName" placeholder="Enter your full name" required />
                     <div class="invalid-feedback">Please enter your name.</div>
@@ -140,7 +142,7 @@
 
                 <div class="col-md-6">
                   <label for="email" class="form-label"> Email <span>*</span> </label>
-                  <div class="input-group">
+                  <div class="input-group inputfield-space">
                     <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
                     <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
                     <div class="invalid-feedback">Please enter a valid email.</div>
@@ -149,7 +151,7 @@
 
                 <div class="col-md-6">
                   <label for="phone" class="form-label"> Phone Number <span>*</span> </label>
-                  <div class="input-group">
+                  <div class="input-group inputfield-space">
                     <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
                     <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" required />
                     <div class="invalid-feedback">Please enter your phone number.</div>
@@ -158,16 +160,17 @@
 
                 <div class="col-md-6">
                   <label for="company" class="form-label"> Company Name <span>*</span> </label>
-                  <div class="input-group">
+                  <div class="input-group inputfield-space">
                     <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
                     <input type="text" class="form-control" id="company" placeholder="Enter your company name" required />
                     <div class="invalid-feedback">Please enter your company name.</div>
                   </div>
                 </div>
 
+
                 <div class="col-md-6">
                   <label for="jobCategory" class="form-label">State/Region</label>
-                  <div class="input-group">
+                  <div class="input-group inputfield-space">
                     <span class="input-group-text"><i class="fa-solid fa-city"></i></span>
                     <input type="text" class="form-control" id="jobCategory" placeholder="Enter your job title or category" />
                   </div>
@@ -204,17 +207,17 @@
 
                 <div class="col-md-6">
                   <label for="bestReachTime" class="form-label">Best Date and Time to Reach You</label>
-                  <div class="input-group">
+                  <div class="input-group date-time-group">
                     <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
-                    <input type="datetime-local" class="form-control" id="bestReachTime" />
+                    <input type="datetime-local" class="form-control date-time-input" id="bestReachTime" />
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <label for="bestCallTime" class="form-label">Best Date and Time for Demo</label>
-                  <div class="input-group">
+                  <div class="input-group date-time-group">
                     <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
-                    <input type="datetime-local" class="form-control" id="bestCallTime" />
+                    <input type="datetime-local" class="form-control date-time-input" id="bestCallTime" />
                   </div>
                 </div>
 
@@ -252,7 +255,7 @@
                 </div>
             </div>
         </section>
-
+</div>
     </main>
 
        <footer id="footer" class="footer-section text-white">

@@ -50,7 +50,6 @@ window.addEventListener("scroll", () => {
 });
 
 //core capabilities scroll
-
 const section = document.querySelector(".capabilities-section");
 const windowBox = document.querySelector(".capabilities-window");
 const track = document.querySelector(".capabilities-track");
@@ -73,3 +72,15 @@ window.addEventListener("scroll", capabilityScroll);
 window.addEventListener("resize", capabilityScroll);
 
 capabilityScroll();
+
+//Contact us page
+document.querySelectorAll(".date-time-group").forEach((group) => {
+  const input = group.querySelector(".date-time-input");
+
+  group.addEventListener("click", () => {
+    input.focus();
+    if (typeof input.showPicker === "function") {
+      input.showPicker();
+    }
+  });
+});
