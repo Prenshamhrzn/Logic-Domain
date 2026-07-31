@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Product Demo Request</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,Helvetica,sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:30px 0;">
+    <tr>
+        <td align="center">
+
+            <table width="650" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e5e5e5;">
+
+                <tr>
+                    <td style="background:#0056b3;color:#ffffff;padding:25px;">
+                        <h2 style="margin:0;">New Product Demo Request</h2>
+                        <p style="margin:8px 0 0;font-size:14px;">
+                            A visitor has requested a product demonstration through the website.
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="padding:30px;">
+
+                        <h3 style="margin-top:0;color:#333;">
+                            Contact Information
+                        </h3>
+
+                        <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse:collapse;">
+
+                            <tr>
+                                <td width="35%" style="font-weight:bold;background:#f8f8f8;">Name</td>
+                                <td>{{name}}</td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-weight:bold;background:#f8f8f8;">Company</td>
+                                <td>{{company}}</td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-weight:bold;background:#f8f8f8;">Phone Number</td>
+                                <td>{{phone}}</td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-weight:bold;background:#f8f8f8;">State / Region</td>
+                                <td>{{state}}</td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-weight:bold;background:#f8f8f8;">Department</td>
+                                <td>{{department}}</td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-weight:bold;background:#f8f8f8;">Email Address</td>
+                                <td>{{email}}</td>
+                            </tr>
+
+                        </table>
+
+                        <br>
+
+                        <h3 style="color:#333;">
+                            Product Interest
+                        </h3>
+
+                        <p style="margin-top:5px;">
+                            The visitor is interested in the following product(s):
+                        </p>
+
+                        <div style="background:#f8f9fa;border-left:4px solid #0056b3;padding:15px;">
+                            {{products}}
+                        </div>
+
+                        <br>
+
+                        <h3 style="color:#333;">
+                            Scheduling Preferences
+                        </h3>
+
+                        <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse:collapse;">
+
+                            <tr>
+                                <td width="35%" style="font-weight:bold;background:#f8f8f8;">
+                                    Best Time to Contact
+                                </td>
+
+                                <td>{{best_contact_time}}</td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-weight:bold;background:#f8f8f8;">
+                                    Preferred Demo Date & Time
+                                </td>
+
+                                <td>{{demo_time}}</td>
+                            </tr>
+
+                        </table>
+
+                        <br>
+
+                        <h3 style="color:#333;">
+                            Additional Comments
+                        </h3>
+
+                        <div style="padding:15px;background:#fafafa;border:1px solid #e5e5e5;border-radius:5px;">
+                            {{comments}}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
