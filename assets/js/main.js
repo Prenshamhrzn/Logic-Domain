@@ -84,3 +84,18 @@ document.querySelectorAll(".date-time-group").forEach((group) => {
     }
   });
 });
+
+/*Active of navbar*/
+document.addEventListener("DOMContentLoaded", () => {
+  const page = location.pathname.split("/").pop() || "index.html";
+
+  document.querySelectorAll(".navbar-nav a[href]").forEach((link) => {
+    if (link.getAttribute("href")?.split("/").pop() !== page) return;
+
+    link.classList.add("active");
+    link
+      .closest(".dropdown")
+      ?.querySelector(":scope > .nav-link")
+      ?.classList.add("active");
+  });
+});
