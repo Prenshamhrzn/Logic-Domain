@@ -22,6 +22,16 @@ if (form) {
   });
 }
 
+/* go to top*/
+const topButton = document.querySelector(".top-button-link");
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 200) {
+    topButton.classList.add("active");
+  } else {
+    topButton.classList.remove("active");
+  }
+});
+
 const platformImage = document.getElementById("platformImage");
 const platformIcon = document.getElementById("platformIcon");
 

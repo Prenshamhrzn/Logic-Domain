@@ -101,7 +101,7 @@
               <a class="nav-link" href="contact.html">Contact us</a>
             </li>
           </ul>
-          <a href="#" class="demo-btn">Request Demo </a>
+          <a href="contact.html" class="demo-btn">Request Demo </a>
         </div>
       </nav>
     </header>
@@ -109,7 +109,7 @@
     <main>
       <section id="home" class="hero-section-innerpage">
         <img
-          src="assets/images/Frame.png"
+          src="assets/images/banner-section.png"
           alt="Background"
           class="innerpage-banner-bg"
         />
@@ -126,11 +126,11 @@
       <section
         class="section-space company-section"
         style="
-          background-image: url(&quot;https://www.figma.com/api/mcp/asset/deffb051-5e6b-4218-9c48-587af3e1c8f5&quot;);
+          background-image: url(&quot;assets/images/about-company-section.png&quot;);
         "
       >
         <div class="container">
-          <div class="row align-items-center g-5">
+          <div class="row align-items-center">
             <div class="col-lg-5">
               <span class="section-tag">About Company</span>
               <h2 class="section-title mt-3">
@@ -155,7 +155,10 @@
                       alt=""
                     />
                   </div>
-                  <h3>Cloud-based<br />Platform</h3>
+                  <h3>
+                    Cloud-based<br class="break-sentence" />
+                    Platform
+                  </h3>
                 </article>
 
                 <article>
@@ -165,7 +168,10 @@
                       alt=""
                     />
                   </div>
-                  <h3>End-to-end<br />Visibility</h3>
+                  <h3>
+                    End-to-end<br class="break-sentence" />
+                    Visibility
+                  </h3>
                 </article>
 
                 <article>
@@ -175,7 +181,10 @@
                       alt=""
                     />
                   </div>
-                  <h3>Enterprise grade<br />Security</h3>
+                  <h3>
+                    Enterprise grade<br class="break-sentence" />
+                    Security
+                  </h3>
                 </article>
               </div>
             </div>
@@ -184,7 +193,7 @@
               <div class="company-media-grid">
                 <div class="video-card">
                   <img
-                    src="https://www.figma.com/api/mcp/asset/2eb31f7f-5a81-49d4-a695-fcf54a1424ce"
+                    src="assets/images/about-img.png"
                     alt="Project team collaborating"
                   />
                   <span class="video-overlay"></span>
@@ -247,7 +256,7 @@
               </h2>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 our-purpose-about">
               <p class="section-copy">
                 A comprehensive cloud-based capital project management platform
                 designed to simplify every stage of project delivery. By
@@ -259,7 +268,7 @@
           </div>
 
           <div class="row g-4">
-            <div class="col-lg-6">
+            <div class="col-lg-6 our-mission">
               <article
                 class="purpose-card"
                 style="
@@ -349,7 +358,7 @@
               <div class="col-lg-4">
                 <div class="lifecycle-image">
                   <img
-                    src="assets/images/quote-navigator.jpg"
+                    src="assets/images/about-quote-section.png"
                     alt="quote-image"
                   />
                 </div>
@@ -359,10 +368,14 @@
         </div>
       </section>
 
-      <section id="platform" class="section-space platform-section mb-5">
+      <section
+        id="platform"
+        class="section-space platform-section"
+        style="margin-bottom: 60px"
+      >
         <div class="container-xl">
           <div class="row align-items-center g-5">
-            <div class="col-lg-6">
+            <div class="col-lg-6 mt-lg-0">
               <span class="section-tag">One Platform</span>
               <h2 class="section-title mt-3" style="color: #0c44b3">
                 Two Powerful Solutions for Every Stage of Capital Projects
@@ -415,7 +428,7 @@
               <div class="tab-content platform-card">
                 <div class="tab-pane fade show active" id="compass">
                   <div
-                    class="d-flex justify-content-between align-items-start gap-3"
+                    class="d-flex justify-content-between align-items-start gap-3 desc-compass-nav"
                   >
                     <h3>
                       Complete Control<br /><span
@@ -443,7 +456,9 @@
                       Management</span
                     >
                   </div>
-                  <a href="#" class="btn btn-primary btn-explore rounded-3 px-4"
+                  <a
+                    href="compass1.html"
+                    class="btn btn-primary btn-explore rounded-3 px-4"
                     >Explore Compass <i class="fas fa-arrow-right"></i
                   ></a>
                 </div>
@@ -485,7 +500,9 @@
                       Tracking</span
                     >
                   </div>
-                  <a href="#" class="btn btn-primary btn-explore rounded-3 px-4"
+                  <a
+                    href="navigator.html"
+                    class="btn btn-primary btn-explore rounded-3 px-4"
                     >Explore Navigator <i class="fas fa-arrow-right"></i
                   ></a>
                 </div>
@@ -495,6 +512,12 @@
         </div>
       </section>
     </main>
+
+    <div class="top-button d-flex justify-content-end align-items-center">
+      <a href="#" class="top-button-link">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
 
     <footer id="footer" class="footer-section text-white">
       <div class="container-xl">
@@ -523,15 +546,19 @@
             <h3>Services</h3>
             <ul>
               <li>
-                <a href="#"> <span class="triangle"></span>Implementation</a>
+                <a href="implementation.html">
+                  <span class="triangle"></span>Implementation</a
+                >
               </li>
               <li>
-                <a href="#">
+                <a href="system-integration.html">
                   <span class="triangle"></span>System Integrations</a
                 >
               </li>
               <li>
-                <a href="#"><span class="triangle"></span>Training & Support</a>
+                <a href="training.html"
+                  ><span class="triangle"></span>Training & Support</a
+                >
               </li>
             </ul>
           </div>

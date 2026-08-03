@@ -10,6 +10,7 @@
   width: 100%;
   object-fit: cover;
   position: absolute;
+  height: 100%;
 }
 .innerpage-hero-content {
   max-width: 750px;
@@ -71,7 +72,7 @@
   position: relative;
   min-height: 610px;
   padding: 0 0 100px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 .bottom-blue-shape {
   position: absolute;
@@ -312,7 +313,7 @@
 
 @media (max-width: 767.98px) {
   .innerpage-hero-content {
-    padding-top: 50px;
+    padding-top: 80px;
   }
   .innerpage-hero-content p {
     padding: 0 18px;
@@ -321,9 +322,9 @@
   .contact-intro {
     padding-top: 38px;
   }
-  .contact-card {
+  /* .contact-card {
     height: 112px;
-  }
+  } */
   .contact-form-card {
     padding: 25px 20px 28px;
   }
@@ -342,14 +343,18 @@
   .section-space {
     padding: 30px 0;
   }
+  .break-sentence {
+    display: none;
+  }
   .hero-section-innerpage {
     min-height: 270px;
   }
   .innerpage-hero-content h1 {
-    font-size: 18px;
+    font-size: 19px;
+    margin-bottom: 10px;
   }
   .innerpage-hero-content p {
-    font-size: 12px;
+    font-size: 13px;
   }
   .contact-card-row {
     margin-top: 18px;
@@ -359,11 +364,11 @@
     padding-right: 6px;
   }
   .contact-card h3 {
-    font-size: 10px;
+    font-size: 14px;
   }
   .contact-card p,
   .contact-card a {
-    font-size: 8px;
+    font-size: 12px;
   }
   .product-options {
     gap: 14px;
@@ -372,6 +377,9 @@
   .contact-form-card {
     border-radius: 6px;
   }
+  .form-heading h2 {
+    font-size: 22px;
+  }
 }
 
 /* Navigator Section Start */
@@ -379,7 +387,7 @@
   display: grid;
   grid-template-columns: 1fr 1.18fr;
   align-items: center;
-  margin: 55px 0 0;
+  margin: 50px 0 0;
 }
 .facility-intel-row.reverse {
   grid-template-columns: 1.18fr 1fr;
@@ -627,7 +635,7 @@
 
 .purpose-card {
   min-height: 280px;
-  padding: 140px 24px 23px;
+  padding: 140px 24px 24px;
   background-position: center;
   background-size: cover;
   border-radius: 10px;
@@ -721,16 +729,18 @@
 /* Implementation Section Start  */
 
 .strategy-copy {
-  font-size: 15px;
-  margin: 28px 0 38px;
+  font-size: 16px;
+  /* margin: 28px 0 38px; */
+  margin: 28px 0 39px;
 }
 .strategy-image {
   overflow: hidden;
-  border-radius: 0 90px 0 0;
+  /* border-radius: 0 90px 0 0; */
 }
 .strategy-image img {
   width: 100%;
-  height: 295px;
+  /* height: 295px; */
+  height: 313px;
   object-fit: cover;
 }
 .strategy-approach-grid {
@@ -754,7 +764,7 @@
 .strategy-approach-grid h3 {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .strategy-approach-grid p {
   font-size: 13px;
@@ -769,8 +779,40 @@
   }
 }
 @media (max-width: 575.98px) {
-  .strategy-image {
-    border-radius: 0 55px 0 0;
+  .strategy-image img {
+    height: 200px;
+  }
+  .strategy-copy {
+    font-size: 15px;
+    margin: 0 0 30px;
+  }
+  .strategy-approach-grid p {
+    font-size: 14px;
+  }
+  .purpose-content h3 {
+    font-size: 18px;
+  }
+  .sys-integration-card h3 {
+    font-size: 14px;
+  }
+  .sys-integration-card p {
+    font-size: 13px !important;
+  }
+  .integration-section {
+    padding: 30px 0 !important;
+  }
+  .integration-benefits {
+    margin-top: 5px;
+  }
+  .facility-intel-card h3,
+  .training-card h3 {
+    font-size: 18px !important;
+  }
+  .training-card p {
+    font-size: 15px !important;
+  }
+  .training-card li {
+    font-size: 14px !important;
   }
 }
 
@@ -803,6 +845,7 @@
 .training-card li {
   margin: 13px 0;
   font-size: 16px;
+  color: #64748b;
 }
 .training-card li i {
   color: var(--warning);
@@ -819,7 +862,7 @@
     grid-template-columns: 1fr;
   }
   .training-photo img {
-    height: 360px;
+    height: 200px;
     min-height: 0;
   }
 }

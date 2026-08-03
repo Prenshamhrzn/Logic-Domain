@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/style-contact.css" />
   </head>
@@ -28,13 +28,13 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About us</a>
+              <a class="nav-link" href="about.html">About us</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="compass1.html">Compass</a></li>
-                <li><a class="dropdown-item" href="navigator.html">Navigator</a></li>
+                <li><a class="dropdown-item" href="compass1.html">Compass :: Capital Project Management System</a></li>
+                <li><a class="dropdown-item" href="navigator.html">Navigator :: Assets and Space Management</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -55,7 +55,7 @@
               <a class="nav-link active" href="contact.html">Contact us</a>
             </li>
           </ul>
-          <a href="#" class="demo-btn">Request Demo </a>
+          <a href="contact.html" class="demo-btn">Request Demo </a>
         </div>
       </nav>
     </header>
@@ -63,7 +63,7 @@
     <main>
 
       <section id="home" class="hero-section-innerpage">
-        <img src="assets/images/Frame.png" alt="Background" class="innerpage-banner-bg" />
+        <img src="assets/images/banner-section.png" alt="Background" class="innerpage-banner-bg" />
         <div class="innerpage-hero-content">
           <h1>Contact Us</h1>
           <p>Whether you are exploring Logic Domain, planning a product demo, or need help with an existing implementation, the right team is ready to respond.</p>
@@ -77,7 +77,7 @@
             <span class="section-tag
             ">Get in Touch</span>
             <h2 class="section-title mt-3 text-uppercase ">Start a conversation with our team.</h2>
-            <p>Reach out to our team for product inquiries, live demonstrations, implementation guidance, <br> technical support, or partnership opportunities. We are here to help you every step of the way.</p>
+            <p class="section-title-subdesc">Reach out to our team for product inquiries, live demonstrations, implementation guidance, <br> technical support, or partnership opportunities. We are here to help you every step of the way.</p>
           </div>
 
           <div class="row g-3 g-lg-4 contact-card-row">
@@ -209,7 +209,7 @@
                   <label for="bestReachTime" class="form-label">Best Date and Time to Reach You</label>
                   <div class="input-group date-time-group">
                     <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
-                    <input type="datetime-local" name="best_contact_time" class="form-control date-time-input" id="bestReachTime" />
+                    <input type="text" name="best_contact_time" class="form-control date-time-input" id="bestReachTime" />
                   </div>
                 </div>
 
@@ -217,7 +217,7 @@
                   <label for="bestCallTime" class="form-label">Best Date and Time for Demo</label>
                   <div class="input-group date-time-group">
                     <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
-                    <input type="datetime-local" name="demo_time" class="form-control date-time-input" id="bestCallTime" />
+                    <input type="text" name="demo_time" class="form-control date-time-input" id="bestCallTime" />
                   </div>
                 </div>
 
@@ -258,6 +258,12 @@
 </div>
     </main>
 
+        <div class="top-button d-flex justify-content-end align-items-center">
+      <a href="#" class="top-button-link">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+
        <footer id="footer" class="footer-section text-white">
       <div class="container-xl">
         <div class="row g-5 py-5">
@@ -285,15 +291,15 @@
             <h3>Services</h3>
             <ul>
               <li>
-                <a href="#"> <span class="triangle"></span>Implementation</a>
+                <a href="implementation.html"> <span class="triangle"></span>Implementation</a>
               </li>
               <li>
-                <a href="#">
+                <a href="system-integration.html">
                   <span class="triangle"></span>System Integrations</a
                 >
               </li>
               <li>
-                <a href="#"><span class="triangle"></span>Training & Support</a>
+                <a href="training.html"><span class="triangle"></span>Training & Support</a>
               </li>
             </ul>
           </div>
@@ -301,10 +307,10 @@
             <h3>Solutions</h3>
             <ul>
               <li>
-                <a href="#"><span class="triangle"></span>Navigator</a>
+                <a href="navigator.html"><span class="triangle"></span>Navigator</a>
               </li>
               <li>
-                <a href="#"><span class="triangle"></span>Compass</a>
+                <a href="compass1.html"><span class="triangle"></span>Compass</a>
               </li>
             </ul>
           </div>
@@ -355,6 +361,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <script>
       document.getElementById("contactForm").addEventListener("submit", async (e) => {
@@ -414,6 +421,12 @@
             console.error(error);
         }
       });
+      flatpickr(".date-time-input", {
+        enableTime: true,
+        dateFormat: "m/d/Y h:i K",
+        time_24hr: false,
+        minuteIncrement: 5
+        });
     </script>
   </body>
 </html>

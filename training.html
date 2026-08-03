@@ -103,7 +103,7 @@
               <a class="nav-link" href="contact.html">Contact us</a>
             </li>
           </ul>
-          <a href="#" class="demo-btn">Request Demo </a>
+          <a href="contact.html" class="demo-btn">Request Demo </a>
         </div>
       </nav>
     </header>
@@ -111,7 +111,7 @@
     <main>
       <section id="home" class="hero-section-innerpage">
         <img
-          src="assets/images/Frame.png"
+          src="assets/images/banner-section.png"
           alt="Background"
           class="innerpage-banner-bg"
         />
@@ -128,19 +128,27 @@
         </div>
       </section>
 
-      <section class="section-space training-intro">
+      <section
+        class="section-space training-intro"
+        style="
+          background-image: url(&quot;assets/images/support-training-bg.png&quot;);
+        "
+      >
         <div class="container">
-          <div class="text-center">
+          <div class="text-center intro-copy">
             <span class="section-tag">Training &amp; Support</span>
             <h2 class="section-title mt-3">
               Expert Support. Practical Training<br /><span
                 class="primary-color"
-                >Your Success, Our Priority</span
+              >
+                Your Success, Our Priority</span
               >
             </h2>
-            <p>
+            <p class="section-description">
               Our responsive support team and experienced trainers help your
-              organization solve challenges quickly,<br />
+              organization solve challenges quickly,<br
+                class="break-sentence"
+              />
               build user confidence, and achieve lasting value from the
               platform.
             </p>
@@ -298,8 +306,8 @@
             </div>
 
             <div class="tab-pane fade" id="training">
-              <div class="row align-items-center g-5">
-                <div class="col-lg-5 tabcontent-compass">
+              <div class="row align-items-center">
+                <div class="col-lg-6 tabcontent-compass">
                   <span class="micro-label">TRAINING</span>
                   <h2 class="navy-color">
                     Empowering Teams for a <br />Confident Start
@@ -329,7 +337,7 @@
                   </ul>
                 </div>
 
-                <div class="col-lg-7">
+                <div class="col-lg-6">
                   <img
                     class="tab-visual"
                     src="assets/images/training-tab2.png"
@@ -339,8 +347,8 @@
             </div>
 
             <div class="tab-pane fade" id="education">
-              <div class="row align-items-center g-5">
-                <div class="col-lg-5 tabcontent-compass">
+              <div class="row align-items-center">
+                <div class="col-lg-6 tabcontent-compass">
                   <span class="micro-label">CONTINUING EDUCATION</span>
                   <h2 class="navy-color">
                     Ongoing Learning for<br />
@@ -371,7 +379,7 @@
                   </ul>
                 </div>
 
-                <div class="col-lg-7">
+                <div class="col-lg-6">
                   <img
                     class="tab-visual"
                     src="assets/images/training-tab3.png"
@@ -384,6 +392,11 @@
       </section>
     </main>
 
+    <div class="top-button d-flex justify-content-end align-items-center">
+      <a href="#" class="top-button-link">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
     <footer id="footer" class="footer-section text-white">
       <div class="container-xl">
         <div class="row g-5 py-5">
@@ -411,15 +424,19 @@
             <h3>Services</h3>
             <ul>
               <li>
-                <a href="#"> <span class="triangle"></span>Implementation</a>
+                <a href="implementation.html">
+                  <span class="triangle"></span>Implementation</a
+                >
               </li>
               <li>
-                <a href="#">
+                <a href="system-integration.html">
                   <span class="triangle"></span>System Integrations</a
                 >
               </li>
               <li>
-                <a href="#"><span class="triangle"></span>Training & Support</a>
+                <a href="training.html"
+                  ><span class="triangle"></span>Training & Support</a
+                >
               </li>
             </ul>
           </div>
@@ -427,10 +444,14 @@
             <h3>Solutions</h3>
             <ul>
               <li>
-                <a href="#"><span class="triangle"></span>Navigator</a>
+                <a href="navigator.html"
+                  ><span class="triangle"></span>Navigator</a
+                >
               </li>
               <li>
-                <a href="#"><span class="triangle"></span>Compass</a>
+                <a href="compass1.html"
+                  ><span class="triangle"></span>Compass</a
+                >
               </li>
             </ul>
           </div>
