@@ -86,16 +86,34 @@ document.querySelectorAll(".date-time-group").forEach((group) => {
 });
 
 /*Active of navbar*/
+// document.addEventListener("DOMContentLoaded", () => {
+//   const page = location.pathname.split("/").pop() || "index.html";
+
+//   document.querySelectorAll(".navbar-nav a[href]").forEach((link) => {
+//     if (link.getAttribute("href")?.split("/").pop() !== page) return;
+
+//     link.classList.add("active");
+//     link
+//       .closest(".dropdown")
+//       ?.querySelector(":scope > .nav-link")
+//       ?.classList.add("active");
+//   });
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
-  const page = location.pathname.split("/").pop() || "index.html";
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
   document.querySelectorAll(".navbar-nav a[href]").forEach((link) => {
-    if (link.getAttribute("href")?.split("/").pop() !== page) return;
+    const linkPage = link.getAttribute("href").split("/").pop();
 
-    link.classList.add("active");
-    link
-      .closest(".dropdown")
-      ?.querySelector(":scope > .nav-link")
-      ?.classList.add("active");
+    if (linkPage === currentPage) {
+      // Active current page
+      link.classList.add("active");
+
+      const dropdown = link.closest(".dropdown");
+      if (dropdown) {
+        dropdown.querySelector(".dropdown-toggle").classList.add("active");
+      }
+    }
   });
 });

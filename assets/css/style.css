@@ -189,7 +189,7 @@ img.about-bg {
   /* padding: 15px !important; */
   /* padding-left: 110px !important;
   padding-right: 110px !important; */
-  padding: 16px 110px;
+  padding: 10px 110px;
   max-width: 100%;
   border-radius: 0 !important;
 }
@@ -3901,6 +3901,7 @@ img.implementation-bg {
 .site-header .navbar-nav > .nav-item > .nav-link::before {
   position: absolute;
   bottom: -12px;
+  /* bottom: -10px; */
   left: 0;
   width: 0;
   height: 3px;
@@ -3942,7 +3943,8 @@ img.implementation-bg {
   .site-header .navbar-nav .dropdown-menu {
     position: absolute;
     top: calc(100% + 20px);
-    left: -20px;
+    /* left: -20px; */
+    left: 0;
     z-index: 1200;
     display: block;
     min-width: 220px;
