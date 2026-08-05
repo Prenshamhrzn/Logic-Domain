@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="capital program management software, cloud-based project management software">
+    <meta name="keywords" content="capital program management software, cloud-based project management software" />
     <meta name="description" content="Project Management" />
     <title>Logic Domain &#8211; Capital Program Management</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,9 +11,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@700;800&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+      integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
+
   <body>
+    <div id="page-loader">
+      <svg height="128px" width="128px" viewBox="0 0 128 128" class="pl1">
+        <defs>
+          <linearGradient y2="1" x2="1" y1="0" x1="0" id="pl-grad">
+            <stop stop-color="#000" offset="0%"></stop>
+            <stop stop-color="#fff" offset="100%"></stop>
+          </linearGradient>
+          <mask id="pl-mask">
+            <rect fill="url(#pl-grad)" height="128" width="128" y="0" x="0"></rect>
+          </mask>
+        </defs>
+        <g fill="#1247ec">
+          <g class="pl1__g">
+            <g transform="translate(20,20) rotate(0,44,44)">
+              <g class="pl1__rect-g">
+                <rect height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+                <rect transform="translate(0,48)" height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+              </g>
+              <g transform="rotate(180,44,44)" class="pl1__rect-g">
+                <rect height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+                <rect transform="translate(0,48)" height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g mask="url(#pl-mask)" fill="#002ea2">
+          <g class="pl1__g">
+            <g transform="translate(20,20) rotate(0,44,44)">
+              <g class="pl1__rect-g">
+                <rect height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+                <rect transform="translate(0,48)" height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+              </g>
+              <g transform="rotate(180,44,44)" class="pl1__rect-g">
+                <rect height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+                <rect transform="translate(0,48)" height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
     <header class="site-header">
       <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3 container-xl">
         <img src="assets/images/logic domain logo.png" class="logo" />
@@ -64,10 +114,10 @@
 
     <main>
       <section id="home" class="hero-section">
-        <img src="assets/images/Frame.png" alt="Background" class="banner-bg" />
+        <img src="assets/images/logicdomain-homebanner.png" alt="Background" class="banner-bg" />
         <div class="container-xl position-relative">
           <div class="row align-items-center min-vh-75 py-5">
-            <div class="col-lg-7 text-white banner-left">
+            <div class="col-lg-6 text-white banner-left" data-aos="fade-right">
               <div class="banner-first-tag text-uppercase mb-3"><i class="fas fa-cloud-upload-alt"></i>Cloud-based <span>•</span> Secure <span>•</span> Scalable</div>
               <h1 class="display-5 fw-bold lh-sm mb-1">
                 End-to-End<br />
@@ -75,23 +125,25 @@
               </h1>
               <p class="subdesc mb-3">100% SaaS & Cloud-based Program/Project Management Software</p>
               <p class="lead hero-copy mb-4">A secure cloud-based platform that automates business channels and workflows for owners across the full facilities lifecycle.</p>
-              <a href="contact.html" class="btn btn-light text-primary rounded-3 px-4 py-2 fw-semibold">Request Demo <i class="fas fa-arrow-right"></i></a>
+              <div class="req-demo-social-icons">
+                <a href="contact.html" class="btn btn-light text-primary rounded-3 px-4 py-2 fw-semibold">Request Demo <i class="fas fa-arrow-right"></i></a>
 
-              <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-google"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-google"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
               </div>
             </div>
-            <div class="banner-right-image">
+            <div class="col-lg-6 banner-right-image" data-aos="fade-left">
               <img src="assets/images/laptop-image-new.png" class="monitor" />
             </div>
           </div>
         </div>
       </section>
 
-      <section class="feature-strip">
+      <section class="feature-strip" data-aos="fade-up">
         <div class="container-xl">
           <div class="row g-0 py-3 px-3 px-lg-4">
             <div class="col-md-4 feature-item">
@@ -155,25 +207,26 @@
             </div>
             <div class="col-lg-7 about-content">
               <span class="section-tag">About Us</span>
-              <h2 class="section-title mt-3">BUILD WITH PURPOSE.<br /><span class="primary-color">DESIGNED FOR PROGRESS</span></h2>
+              <h2 class="section-title mt-3">BUILD WITH PURPOSE.<br /><span class="primary-color">DESIGNED FOR PROGRESS.</span></h2>
               <p class="section-title-subdesc">
-                We create practical, scalable software that connects people, projects, assets, and facility information in one place. Our solutions help teams simplify complex workflows, collaborate efficiently, and make better decisions.
+                We create practical, scalable software that connects people, projects, assets, and facility information in one place. Our solutions help teams simplify complex workflows, collaborate
+                efficiently, and make better decisions.
               </p>
-              <div class="info-card">
+              <div class="info-card" data-aos="zoom-in" data-aos-duration="500">
                 <div class="info-icon"><i class="far fa-handshake"></i></div>
                 <div>
                   <h3>People First</h3>
                   <p>We design practical solutions around the real needs of the people who use them.</p>
                 </div>
               </div>
-              <div class="info-card">
+              <div class="info-card" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="info-icon">✦</div>
                 <div>
                   <h3>Practical Innovation</h3>
                   <p>We turn complex facility and project workflows into simple, useful experiences.</p>
                 </div>
               </div>
-              <div class="info-card">
+              <div class="info-card" data-aos="zoom-in" data-aos-duration="1500">
                 <div class="info-icon"><i class="fas fa-link"></i></div>
                 <div>
                   <h3>Connected Solutions</h3>
@@ -185,7 +238,7 @@
         </div>
       </section>
 
-      <section class="lifecycle-section">
+      <section class="lifecycle-section" data-aos="fade-right" data-aos-duration="1000">
         <div class="container-xl enterprise">
           <div class="lifecycle-shell">
             <div class="row align-items-center g-4">
@@ -200,13 +253,13 @@
                 </h2>
                 <p class="mb-4">An integrated platform to plan, build, operate, and maintain facilities efficiently across their entire lifecycle.</p>
                 <div class="d-flex flex-wrap gap-4 lifecycle-points">
-                  <span><i class="far fa-check-circle"></i> Plan & Design</span><span><i class="far fa-check-circle"></i> Manage Efficiency</span><span><i class="far fa-check-circle"></i> Optimize Performance</span
-                  ><span><i class="far fa-check-circle"></i> Ensure Compliance</span>
+                  <span><i class="far fa-check-circle"></i> Plan & Design</span><span><i class="far fa-check-circle"></i> Manage Efficiency</span
+                  ><span><i class="far fa-check-circle"></i> Optimize Performance</span><span><i class="far fa-check-circle"></i> Ensure Compliance</span>
                 </div>
               </div>
               <div class="col-lg-4">
                 <div class="lifecycle-image">
-                  <img src="assets/images/qouteHomeimg.jpg" alt="quote-image" />
+                  <img src="assets/images/quoteHomeimg.jpg" alt="quote-image" />
                 </div>
               </div>
             </div>
@@ -220,7 +273,9 @@
             <div class="col-lg-6 mt-lg-0">
               <span class="section-tag">One Platform</span>
               <h2 class="section-title mt-3" style="color: #0c44b3">Two Powerful Solutions for Every Stage of Capital Projects</h2>
-              <p class="section-title-subdesc">Bring planning, operations, data, and teams together in one connected platform designed to simplify complex workflows, improved visibility and support smarter decisions.</p>
+              <p class="section-title-subdesc">
+                Bring planning, operations, data, and teams together in one connected platform designed to simplify complex workflows, improve visibility, and support smarter decisions.
+              </p>
               <div class="platform-visual">
                 <img id="platformImage" src="assets/images/compass pic.jpg" alt="Platform Image" />
                 <div class="platform-icon">
@@ -249,7 +304,10 @@
                     <h3>Complete Control<br /><span>From Planning to Delivery</span></h3>
                     <span class="badge rounded-pill text-bg-primary">Project Management</span>
                   </div>
-                  <p>Plan, coordinate, and deliver capital projects with complete visibility. From scheduling and budgeting to documents, workflows, and reporting, Compass keeps every stakeholder aligned throughout the project lifecycle.</p>
+                  <p>
+                    Plan, coordinate, and deliver capital projects with complete visibility. From scheduling and budgeting to documents, workflows, and reporting, Compass keeps every stakeholder
+                    aligned throughout the project lifecycle.
+                  </p>
                   <div class="d-flex flex-wrap gap-3 mb-4">
                     <span class="pill"><i class="fas fa-check-circle"></i> Project Planning</span><span class="pill"><i class="fas fa-check-circle"></i> Budget Control</span
                     ><span class="pill"><i class="fas fa-check-circle"></i> Schedule Management</span>
@@ -257,12 +315,15 @@
                   <a href="compass.html" class="btn btn-primary btn-explore rounded-3 px-4">Explore Compass <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="tab-pane fade" id="navigator">
-                  <div class="d-flex justify-content-between align-items-start gap-3">
+                  <div class="d-flex justify-content-between align-items-start gap-3 desc-compass-nav">
                     <h3>Transform Facility & Space<br /><span>Management with Confidence</span></h3>
                     <span class="badge rounded-pill text-bg-primary">Asset & Space Managementt</span>
                   </div>
 
-                  <p>Centralize facility information, asset records, and space utilization into one intelligent platform. Monitor occupancy, manage equipment, and generate detailed reports that support better operational and strategic decisions.</p>
+                  <p>
+                    Centralize facility information, asset records, and space utilization into one intelligent platform. Monitor occupancy, manage equipment, and generate detailed reports that support
+                    better operational and strategic decisions.
+                  </p>
                   <div class="d-flex flex-wrap gap-3 mb-4">
                     <span class="pill"><i class="fas fa-check-circle"></i> Space Analytics</span><span class="pill"><i class="fas fa-check-circle"></i> Asset Registry</span
                     ><span class="pill"><i class="fas fa-check-circle"></i> Lifecycle Tracking</span>
@@ -288,11 +349,11 @@
               <span class="section-tag">Why Choose Us</span>
               <h2 class="section-title mt-3">A Smart Way to Manage <span>Capital Projects</span></h2>
               <p class="section-title-subdesc">
-                Manage the complete facilities life cycle through one secure, cloud-based platform. Our solution connects teams, processes, and project information so you can improve visibility, reduce delays, and make better decisions at every
-                stage.
+                Manage the complete facilities life cycle through one secure, cloud-based platform. Our solution connects teams, processes, and project information so you can improve visibility,
+                reduce delays, and make better decisions at every stage.
               </p>
               <div class="why-list">
-                <div class="why-item">
+                <div class="why-item" data-aos="zoom-in" data-aos-duration="500">
                   <div class="why-icon">
                     <i class="fas fa-sitemap"></i>
                   </div>
@@ -302,7 +363,7 @@
                     <p>Manage the complete facility life cycle within one connected platform.</p>
                   </div>
                 </div>
-                <div class="why-item">
+                <div class="why-item" data-aos="zoom-in" data-aos-duration="1000">
                   <div class="why-icon">
                     <i class="far fa-copy"></i>
                   </div>
@@ -312,7 +373,7 @@
                     <p>Keep documents, communication, and project data in one place.</p>
                   </div>
                 </div>
-                <div class="why-item">
+                <div class="why-item" data-aos="zoom-in" data-aos-duration="1500">
                   <div class="why-icon">
                     <i class="fas fa-project-diagram"></i>
                   </div>
@@ -322,14 +383,14 @@
                     <p>Adapt processes to match your organization's requirements.</p>
                   </div>
                 </div>
-                <div class="why-item">
+                <div class="why-item" data-aos="zoom-in" data-aos-duration="2000">
                   <div class="why-icon">
                     <i class="far fa-eye"></i>
                   </div>
 
                   <div class="why-content">
                     <h3>AI-Powered Automation</h3>
-                    <p>Integrate intelligent tools to automate tasks, nad support smarter decisions.</p>
+                    <p>Integrate intelligent tools to automate tasks, and support smarter decisions.</p>
                   </div>
                 </div>
               </div>
@@ -358,11 +419,11 @@
         <div class="container-xl">
           <div class="row g-4">
             <!-- Left content -->
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
               <span class="section-tag">The Logic Domain Difference</span>
 
               <h2 class="section-title mt-3">
-                Built Differently.<br />
+                Built Differently.<br class="break-sentence" />
                 <span>Designed to Deliver.</span>
               </h2>
 
@@ -372,8 +433,8 @@
             </div>
 
             <!-- Card 01 -->
-            <div class="col-md-6 col-lg-3">
-              <div class="difference-card" style="--hover-image: url(&quot;../images/customer-centeric.jpg&quot;)">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="0">
+              <div class="difference-card" style="--hover-image: url(&quot;../images/customer-centric.png&quot;)">
                 <span class="card-number">01</span>
 
                 <div class="difference-icon">
@@ -388,7 +449,7 @@
             </div>
 
             <!-- Card 02 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
               <div class="difference-card" style="--hover-image: url(&quot;../images/dedicated.png&quot;)">
                 <span class="card-number">02</span>
 
@@ -404,12 +465,12 @@
             </div>
 
             <!-- Card 03 -->
-            <div class="col-md-6 col-lg-3">
-              <div class="difference-card" style="--hover-image: url(&quot;assets/images/custom-implementation.jpg&quot;)">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+              <div class="difference-card" style="--hover-image: url(&quot;../images/custom-implementation.png&quot;)">
                 <span class="card-number">03</span>
 
                 <div class="difference-icon">
-                  <i class="fas fa-cog"></i>
+                  <i class="bi bi-gear"></i>
                 </div>
 
                 <div class="difference-content">
@@ -420,12 +481,12 @@
             </div>
 
             <!-- Card 04 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
               <div class="difference-card" style="--hover-image: url(&quot;../images/innovative-dev.jpg&quot;)">
                 <span class="card-number">04</span>
 
                 <div class="difference-icon">
-                  <i class="fas fa-rocket"></i>
+                  <i class="bi bi-rocket-takeoff"></i>
                 </div>
 
                 <div class="difference-content">
@@ -436,12 +497,12 @@
             </div>
 
             <!-- Card 05 -->
-            <div class="col-md-6 col-lg-3">
-              <div class="difference-card" style="--hover-image: url(&quot;assets/images/integration.jpg&quot;)">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+              <div class="difference-card" style="--hover-image: url(&quot;../images/seamless-integration.jpg&quot;)">
                 <span class="card-number">05</span>
 
                 <div class="difference-icon">
-                  <i class="fas fa-project-diagram"></i>
+                  <i class="bi bi-diagram-3"></i>
                 </div>
 
                 <div class="difference-content">
@@ -452,12 +513,12 @@
             </div>
 
             <!-- Card 06 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
               <div class="difference-card" style="--hover-image: url(&quot;../images/industry.jpg&quot;)">
                 <span class="card-number">06</span>
 
                 <div class="difference-icon">
-                  <i class="fas fa-industry"></i>
+                  <i class="bi bi-buildings"></i>
                 </div>
 
                 <div class="difference-content">
@@ -481,7 +542,9 @@
               <h2><span>Program Management</span> Software</h2>
             </div>
             <div class="col-lg-6 cta-desc">
-              <p style="margin-bottom: 30px">Power your projects from planning to closeout. Our program software helps teams manage workflows, collaborate in real time, and keep projects on time and on budget.</p>
+              <p style="margin-bottom: 30px">
+                Power your projects from planning to closeout. Our program software helps teams manage workflows, collaborate in real time, and keep projects on time and on budget.
+              </p>
               <a href="contact.html" class="btn btn-primary btn-explore rounded-3 px-4">Request Demo <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
@@ -497,63 +560,158 @@
 
     <footer id="footer" class="footer-section text-white">
       <div class="container-xl">
-        <div class="row g-5 py-5">
-          <div class="col-lg-4">
+        <div class="row g-4 py-5">
+          <!-- Company information -->
+          <div class="col-md-12 col-lg-3">
             <div class="footer-brand mb-3">
-              <img src="assets/images/logic domain logo1.png" class="logo" />
+              <img src="assets/images/logic domain logo1.png" class="logo" alt="Logic Domain" />
             </div>
-            <p>Logic Domain provides secure, cloud-based program and project management solutions designed for municipalities, universities, colleges, K-12 institutions, and administrative offices.</p>
+
+            <p>
+              Logic Domain provides secure, cloud-based program and project management solutions designed for municipalities, universities, colleges, K–12 institutions, and administrative offices.
+            </p>
+
             <div class="footer-social-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-google"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+
+              <a href="#" aria-label="Google">
+                <i class="fab fa-google"></i>
+              </a>
+
+              <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+
+              <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
             </div>
           </div>
-          <div class="footer-links col-6 col-lg-2">
+
+          <!-- Quick Links -->
+          <div class="footer-links col-6 col-md-4 col-lg-2">
+            <h3>Quick Links</h3>
+
+            <ul>
+              <li>
+                <a href="index.html">
+                  <span class="triangle"></span>
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a href="about.html">
+                  <span class="triangle"></span>
+                  About Us
+                </a>
+              </li>
+
+              <li>
+                <a href="contact.html">
+                  <span class="triangle"></span>
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-links col-6 col-md-4 col-lg-2">
             <h3>Services</h3>
+
             <ul>
               <li>
-                <a href="/implementation.html"> <span class="triangle"></span>Implementation</a>
+                <a href="implementation.html">
+                  <span class="triangle"></span>
+                  Implementation
+                </a>
               </li>
+
               <li>
-                <a href="/system-integration.html"> <span class="triangle"></span>System Integrations</a>
+                <a href="system-integration.html">
+                  <span class="triangle"></span>
+                  System Integrations
+                </a>
               </li>
+
               <li>
-                <a href="/training.html"><span class="triangle"></span>Training & Support</a>
+                <a href="training.html">
+                  <span class="triangle"></span>
+                  Training &amp; Support
+                </a>
               </li>
             </ul>
           </div>
-          <div class="footer-links col-6 col-lg-2">
+
+          <!-- Solutions -->
+          <div class="footer-links col-6 col-md-4 col-lg-2">
             <h3>Solutions</h3>
+
             <ul>
               <li>
-                <a href="/navigator.html"><span class="triangle"></span>Navigator</a>
+                <a href="navigator.html">
+                  <span class="triangle"></span>
+                  Navigator
+                </a>
               </li>
+
               <li>
-                <a href="/compass.html"><span class="triangle"></span>Compass</a>
+                <a href="compass.html">
+                  <span class="triangle"></span>
+                  Compass
+                </a>
               </li>
             </ul>
           </div>
-          <div class="col-lg-4">
+
+          <!-- Newsletter -->
+          <div class="col-md-12 col-lg-3">
             <h3>Stay in Touch</h3>
+
             <p>Stay connected for product updates, industry insights, and the latest news from Logic Domain.</p>
-            <form class="newsletter d-flex flex-column">
-              <i class="fas fa-envelope"></i>
-              <input type="email" class="form-control" placeholder="Enter your email address" />
+
+            <form class="newsletter">
+              <i class="fas fa-envelope mail"></i>
+
+              <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email address" required />
+
+              <button class="btn btn-light" type="submit" aria-label="Subscribe">
+                <i class="fas fa-arrow-right arrow"></i>
+              </button>
             </form>
           </div>
         </div>
       </div>
-      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-3 py-3">
-        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
-          <span style="font-size: 15px">2018 Logic Domain. All rights reserved</span>
-          <div><a href="#">Privacy Policy</a><span class="mx-2">|</span><a href="#">Terms of Service</a></div>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom py-3">
+        <div class="container-xl d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+          <span class="footer-copyright"> © 2018 Logic Domain. All rights reserved. </span>
+
+          <div>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span class="mx-2">|</span>
+            <a href="terms-of-service.html">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- AOS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 900,
+        offset: 100,
+        once: false,
+        mirror: true,
+      });
+    </script>
   </body>
 </html>

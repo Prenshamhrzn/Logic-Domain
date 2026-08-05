@@ -127,3 +127,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+//loader
+
+window.addEventListener("load", function () {
+  const pageLoader = document.getElementById("page-loader");
+
+  pageLoader.classList.add("loader-hidden");
+
+  setTimeout(function () {
+    pageLoader.remove();
+  }, 500);
+});

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="program/project management software support, skilled project management and IT trainers, software optimization services">
+    <meta name="keywords" content="program/project management software support, skilled project management and IT trainers, software optimization services" />
     <meta name="description" content="Project Management" />
     <title>Training &#038; Support &#8211; Logic Domain</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,11 +16,53 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
       integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/style-contact.css" />
   </head>
   <body>
+    <div id="page-loader">
+      <svg height="128px" width="128px" viewBox="0 0 128 128" class="pl1">
+        <defs>
+          <linearGradient y2="1" x2="1" y1="0" x1="0" id="pl-grad">
+            <stop stop-color="#000" offset="0%"></stop>
+            <stop stop-color="#fff" offset="100%"></stop>
+          </linearGradient>
+          <mask id="pl-mask">
+            <rect fill="url(#pl-grad)" height="128" width="128" y="0" x="0"></rect>
+          </mask>
+        </defs>
+        <g fill="#1247ec">
+          <g class="pl1__g">
+            <g transform="translate(20,20) rotate(0,44,44)">
+              <g class="pl1__rect-g">
+                <rect height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+                <rect transform="translate(0,48)" height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+              </g>
+              <g transform="rotate(180,44,44)" class="pl1__rect-g">
+                <rect height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+                <rect transform="translate(0,48)" height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g mask="url(#pl-mask)" fill="#002ea2">
+          <g class="pl1__g">
+            <g transform="translate(20,20) rotate(0,44,44)">
+              <g class="pl1__rect-g">
+                <rect height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+                <rect transform="translate(0,48)" height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+              </g>
+              <g transform="rotate(180,44,44)" class="pl1__rect-g">
+                <rect height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+                <rect transform="translate(0,48)" height="40" width="40" ry="8" rx="8" class="pl1__rect"></rect>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
     <header class="site-header">
       <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3 container-xl">
         <img src="assets/images/logic domain logo.png" class="logo" />
@@ -72,7 +114,7 @@
     <main>
       <section id="home" class="hero-section-innerpage">
         <img src="assets/images/banner-section.png" alt="Background" class="innerpage-banner-bg" />
-        <div class="innerpage-hero-content">
+        <div class="innerpage-hero-content" data-aos="zoom-in" data-aos-duration="1200">
           <h1>
             Empowering Teams Through <br />
             Training & Support
@@ -83,7 +125,7 @@
 
       <section class="section-space training-intro" style="background-image: url(&quot;assets/images/support-training-bg.png&quot;)">
         <div class="container">
-          <div class="text-center intro-copy">
+          <div class="text-center intro-copy" data-aos="fade-up" data-aos-duration="800">
             <span class="section-tag">Training &amp; Support</span>
             <h2 class="section-title mt-3">Expert Support. Practical Training<br /><span class="primary-color"> Your Success, Our Priority</span></h2>
             <p class="section-description">
@@ -93,8 +135,11 @@
           </div>
 
           <div class="training-feature-grid">
-            <article class="training-card">
-              <h3>Highly Responsive,<br />Boutique-Style Support</h3>
+            <article class="training-card" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+              <h3>
+                Highly Responsive,<br class="break-sentence" />
+                Boutique-Style Support
+              </h3>
               <i class="accent-line"></i>
               <p>Receive personalized assistance from a dedicated support team that understands your business. Every request is handled promptly to keep your projects running without interruption.</p>
               <ul>
@@ -105,12 +150,15 @@
               </ul>
             </article>
 
-            <div class="training-photo">
+            <div class="training-photo" data-aos="zoom-in" data-aos-duration="900">
               <img src="assets/images/training-img.jpg" alt="Professional software training" />
             </div>
 
-            <article class="training-card">
-              <h3>Expert Training &amp;<br />Knowledge Transfer</h3>
+            <article class="training-card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+              <h3>
+                Expert Training &amp;<br class="break-sentence" />
+                Knowledge Transfer
+              </h3>
               <i class="accent-line"></i>
               <p>Comprehensive training sessions equip your team with the knowledge and confidence to use the platform effectively, ensuring faster adoption and improved productivity.</p>
               <ul>
@@ -128,7 +176,10 @@
         <div class="container text-center">
           <span class="section-tag">Customer Success</span>
           <h2 class="section-title mt-3">Everything You Need to Manage Assets and Spaces Efficiently</h2>
-          <p class="section-description mx-auto">Gain complete building visibility with integrated tools to optimize assets, space, and occupancy.</p>
+          <p class="section-description mx-auto">
+            From responsive customer support to hands-on training and ongoing education, we help your team <br class="break-sentence" />adopt the platform confidently and get greater value at every
+            stage.
+          </p>
 
           <ul class="nav nav-pills training-tabs justify-content-center" role="tablist">
             <li class="nav-item">
@@ -148,7 +199,7 @@
                 <div class="col-lg-5 tabcontent-compass">
                   <span class="micro-label">CUSTOMER SUPPORT</span>
                   <h2 class="navy-color">
-                    Unmatched Customer<br />
+                    Unmatched Customer<br class="break-sentence" />
                     Support
                   </h2>
                   <p class="section-title-subdesc">We provide responsive, hands-on support to resolve issues quickly and ensure customer success.</p>
@@ -171,7 +222,10 @@
               <div class="row align-items-center">
                 <div class="col-lg-6 tabcontent-compass">
                   <span class="micro-label">TRAINING</span>
-                  <h2 class="navy-color">Empowering Teams for a <br />Confident Start</h2>
+                  <h2 class="navy-color">
+                    Empowering Teams for a
+                    <br class="break-sentence" s />Confident Start
+                  </h2>
                   <p class="section-title-subdesc">Our training ensures your team is fully prepared, whether through on-site sessions or virtual webinars.</p>
 
                   <ul class="check-list">
@@ -193,10 +247,10 @@
                 <div class="col-lg-6 tabcontent-compass">
                   <span class="micro-label">CONTINUING EDUCATION</span>
                   <h2 class="navy-color">
-                    Ongoing Learning for<br />
+                    Ongoing Learning for<br class="break-sentence" />
                     Lasting Success
                   </h2>
-                  <p class="section-title-subdesc">Navigator transforms complex energy information into clear helping Owners make faster decisions.</p>
+                  <p class="section-title-subdesc">Navigator transforms complex energy information into clear, actionable insights, helping owners make faster, more informed decisions.</p>
 
                   <ul class="check-list">
                     <li><i class="bi bi-check-circle-fill"></i>Continuous post-launch assistance</li>
@@ -221,79 +275,160 @@
         <i class="fa-solid fa-arrow-up"></i>
       </a>
     </div>
+
     <footer id="footer" class="footer-section text-white">
       <div class="container-xl">
-        <div class="row g-5 py-5">
-          <div class="col-lg-4">
+        <div class="row g-4 py-5">
+          <!-- Company information -->
+          <div class="col-md-12 col-lg-3">
             <div class="footer-brand mb-3">
-              <img src="assets/images/logic domain logo1.png" class="logo" />
+              <img src="assets/images/logic domain logo1.png" class="logo" alt="Logic Domain" />
             </div>
-            <p>Logic Domain provides secure, cloud-based program and project management solutions designed for municipalities, universities, colleges, K-12 institutions, and administrative offices.</p>
-            <!-- <div class="socials">
-              <a href="#">f</a><a href="#">G</a><a href="#">t</a
-              ><a href="#">in</a>
-            </div> -->
+
+            <p>
+              Logic Domain provides secure, cloud-based program and project management solutions designed for municipalities, universities, colleges, K–12 institutions, and administrative offices.
+            </p>
+
             <div class="footer-social-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-google"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+
+              <a href="#" aria-label="Google">
+                <i class="fab fa-google"></i>
+              </a>
+
+              <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+
+              <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
             </div>
           </div>
-          <div class="footer-links col-6 col-lg-2">
+
+          <!-- Quick Links -->
+          <div class="footer-links col-6 col-md-4 col-lg-2">
+            <h3>Quick Links</h3>
+
+            <ul>
+              <li>
+                <a href="index.html">
+                  <span class="triangle"></span>
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a href="about.html">
+                  <span class="triangle"></span>
+                  About Us
+                </a>
+              </li>
+
+              <li>
+                <a href="contact.html">
+                  <span class="triangle"></span>
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-links col-6 col-md-4 col-lg-2">
             <h3>Services</h3>
+
             <ul>
               <li>
-                <a href="implementation.html"> <span class="triangle"></span>Implementation</a>
+                <a href="implementation.html">
+                  <span class="triangle"></span>
+                  Implementation
+                </a>
               </li>
+
               <li>
-                <a href="system-integration.html"> <span class="triangle"></span>System Integrations</a>
+                <a href="system-integration.html">
+                  <span class="triangle"></span>
+                  System Integrations
+                </a>
               </li>
+
               <li>
-                <a href="training.html"><span class="triangle"></span>Training & Support</a>
+                <a href="training.html">
+                  <span class="triangle"></span>
+                  Training &amp; Support
+                </a>
               </li>
             </ul>
           </div>
-          <div class="footer-links col-6 col-lg-2">
+
+          <!-- Solutions -->
+          <div class="footer-links col-6 col-md-4 col-lg-2">
             <h3>Solutions</h3>
+
             <ul>
               <li>
-                <a href="navigator.html"><span class="triangle"></span>Navigator</a>
+                <a href="navigator.html">
+                  <span class="triangle"></span>
+                  Navigator
+                </a>
               </li>
+
               <li>
-                <a href="compass.html"><span class="triangle"></span>Compass</a>
+                <a href="compass.html">
+                  <span class="triangle"></span>
+                  Compass
+                </a>
               </li>
             </ul>
           </div>
-          <div class="col-lg-4">
+
+          <!-- Newsletter -->
+          <div class="col-md-12 col-lg-3">
             <h3>Stay in Touch</h3>
+
             <p>Stay connected for product updates, industry insights, and the latest news from Logic Domain.</p>
-            <form class="newsletter d-flex flex-column">
-              <i class="fas fa-envelope"></i>
-              <input type="email" class="form-control" placeholder="Enter your email address" />
-              <!-- <button class="btn btn-light" type="submit">→</button> -->
+
+            <form class="newsletter">
+              <i class="fas fa-envelope mail"></i>
+
+              <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email address" required />
+
+              <button class="btn btn-light" type="submit" aria-label="Subscribe">
+                <i class="fas fa-arrow-right arrow"></i>
+              </button>
             </form>
           </div>
         </div>
-        <!-- <div
-          class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-3 py-3"
-        >
-          <span>2018 Logic Domain. All rights reserved</span>
-          <div>
-            <a href="#">Privacy Policy</a><span class="mx-2">|</span
-            ><a href="#">Terms of Service</a>
-          </div>
-        </div> -->
       </div>
-      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-3 py-3">
-        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
-          <span style="font-size: 15px">2018 Logic Domain. All rights reserved</span>
-          <div><a href="#">Privacy Policy</a><span class="mx-2">|</span><a href="#">Terms of Service</a></div>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom py-3">
+        <div class="container-xl d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+          <span class="footer-copyright"> © 2018 Logic Domain. All rights reserved. </span>
+
+          <div>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span class="mx-2">|</span>
+            <a href="terms-of-service.html">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- AOS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 900,
+        offset: 100,
+        once: false,
+        mirror: true,
+      });
+    </script>
   </body>
 </html>
