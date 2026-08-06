@@ -987,6 +987,7 @@ img.about-bg {
   color: transparent;
   -webkit-text-stroke: 2px rgba(17, 103, 255, 0.35);
   transition: all 0.35s ease;
+  font-family: 'Roboto', sans-serif;
 }
 
 .difference-icon {
@@ -2764,7 +2765,7 @@ img.implementation-bg {
   }
 
   .site-header .navbar {
-    max-width: 1480px;
+    max-width: 1700px;
   }
 
   .hero-section {

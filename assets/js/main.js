@@ -41,7 +41,7 @@ document.querySelectorAll('[data-bs-toggle="tab"]').forEach((tab) => {
 
     setTimeout(() => {
       if (e.target.dataset.bsTarget === "#compass") {
-        platformImage.src = "assets/images/compass pic.jpg";
+        platformImage.src = "assets/images/compass-pic.jpg";
         platformIcon.className = "far fa-compass";
       } else {
         platformImage.src = "assets/images/navigator-img.png";
