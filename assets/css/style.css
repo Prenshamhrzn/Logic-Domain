@@ -3623,9 +3623,9 @@ select#stateDepartment {
   .section-space.integration-section {
     margin-bottom: 24px;
   }
-  .intro-copy.contact {
+  /* .intro-copy.contact {
     text-align: center !important;
-  }
+  } */
   .strategy-section.break-sentence {
     display: none;
   }
