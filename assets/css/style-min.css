@@ -83,7 +83,6 @@ img.about-bg {
 .about-content {
   position: relative;
   z-index: 5;
-  padding-left: 50px;
 }
 .section-tag {
   display: inline-flex;
@@ -517,6 +516,9 @@ img.about-bg {
 .lifecycle-section {
   margin: -140px 0 75px;
 }
+.lifecycle-section.navigator-section {
+  margin: 0;
+}
 .lifecycle-shell {
   background: var(--deep);
   border-radius: 0 200px 200px 0;
@@ -586,8 +588,6 @@ img.about-bg {
 }
 .lifecycle-image {
   height: 270px;
-  border-radius: 20px;
-  background: linear-gradient(140deg, #e8edf4, #9eaec0);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   top: -60px;
 }
@@ -595,7 +595,7 @@ img.about-bg {
   width: 100%;
   height: 360px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 .facility-title {
   font-size: 52px;
@@ -625,7 +625,6 @@ img.about-bg {
   object-fit: cover;
 }
 .platform-section {
-  /* padding-bottom: 60px; */
   padding-top: 28px;
 }
 .platform-icon i {
@@ -1073,7 +1072,7 @@ img.about-bg {
 }
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 13px;
+  font-size: 15px;
   background-color: #0d2145;
 }
 .footer-links .triangle {
@@ -1324,6 +1323,7 @@ img.about-bg {
 .tab-visual {
   height: 371px;
   width: 100%;
+  object-fit: contain;
 }
 .visibility-heading {
   padding-bottom: 28px;
@@ -1557,15 +1557,15 @@ img.about-bg {
 }
 .strategy-copy {
   font-size: 16px;
-  margin: 28px 0 38px;
+  margin: 28px 0 25px;
 }
 .strategy-section {
   background: url(../images/implementationBg.jpg) center/cover no-repeat;
 }
 .strategy-image img {
-  margin-top: 40px;
+  margin-top: 9px;
   width: 100%;
-  height: 280px;
+  height: 325px;
   object-fit: cover;
 }
 .strategy-approach-grid {
@@ -1853,8 +1853,7 @@ select#stateDepartment {
   height: 310px;
   object-fit: cover;
 }
-.benefit-icon img,
-.play-button img {
+.benefit-icon img {
   width: 100%;
   height: 100%;
 }
@@ -2010,8 +2009,7 @@ select#stateDepartment {
   line-height: 1;
 }
 .purpose-content h3,
-.training-card h3,
-.education-card h3 {
+.training-card h3 {
   font-size: 20px;
   font-weight: 700;
 }
@@ -2059,6 +2057,7 @@ select#stateDepartment {
   padding: 24px;
   background: #fff;
   box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+  border-radius: 10px;
 }
 .training-card ul {
   list-style: none;
@@ -2211,40 +2210,6 @@ select#stateDepartment {
 }
 
 /*Education page*/
-.education-feature-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  align-items: stretch;
-}
-.education-card {
-  /* display: flex; */
-  /* min-height: 360px; */
-  border-radius: 20px;
-  height: 100%;
-  position: relative;
-  padding: 24px;
-  background: #fff;
-  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
-  overflow: hidden;
-}
-.education-card-content {
-  position: relative;
-  z-index: 2;
-  width: 58%;
-}
-.education-card-content h3 {
-  font-size: 23px;
-  font-weight: 700;
-  color: var(--navy);
-  /* margin-bottom: 12px; */
-}
-
-.education-card-content p {
-  font-size: 14px;
-
-  margin-top: 20px;
-}
 .k-12-learning-icon,
 .higher-education-icon {
   margin-bottom: 5px;
@@ -2254,9 +2219,7 @@ select#stateDepartment {
   align-items: center;
   display: flex;
   border-radius: 50%;
-
   padding: 10px;
-
   font-size: 28px;
 }
 .k-12-learning-icon {
@@ -2286,32 +2249,12 @@ select#stateDepartment {
   background: #1247ec;
   margin: 10px 0 10px;
 }
-
-.k12-img,
-.higher-education-img {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 52%;
-  height: 100%;
-}
-
-.k12-img img,
-.higher-education-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* clip-path: ellipse(78% 72% at 100% 50%); */
-  clip-path: polygon(round 10px, 52% 0, 100% 0, 100% 100%, 50% 100%, 20% 48%, 20% 46%);
-}
-
 .two-content-education {
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
 .k12-card {
-  /* display: flex; */
   gap: 20px;
   height: 100%;
   padding: 18px 20px;
@@ -2324,13 +2267,6 @@ select#stateDepartment {
   font-size: 20px;
   font-weight: 700;
 }
-.k12-heading {
-  display: flex;
-  flex-direction: column;
-}
-/* .k12-underline {
-  margin: 0 0 10px;
-} */
 .k12-card p {
   margin-bottom: 0;
 }
@@ -2347,33 +2283,6 @@ select#stateDepartment {
   display: block;
   border-radius: 10px;
 }
-/* .k12-section::before {
-  content: "";
-  position: absolute;
-
-  left: 0;
-  top: 25px;
-  width: 6px;
-  height: 55px;
-  background: #1596bd;
-  border-radius: 0 4px 4px 0;
-  border-top: 4px solid #1596bd;
-  border-left: 4px solid #1596bd;
-} */
-/* .education-section::before {
-  content: "";
-  position: absolute;
-
-  left: 0;
-  top: 25px;
-  width: 6px;
-  height: 55px;
-  background: #1247ec;
-  border-radius: 0 4px 4px 0;
-  border-top: 4px solid #1247ec;
-  border-left: 4px solid #1247ec;
-} */
-
 .k12-section,
 .education-section {
   position: relative;
@@ -2382,16 +2291,12 @@ select#stateDepartment {
 .k12-section::before {
   content: "";
   position: absolute;
-
   top: -4px;
   left: -4px;
-
   width: 55px;
   height: 55px;
-
   border-top: 4px solid #1596bd;
   border-left: 4px solid #1596bd;
-
   border-radius: 18px 0 0 0;
 }
 .k12-section::after {
@@ -2425,9 +2330,24 @@ select#stateDepartment {
   height: 55px;
   border-right: 4px solid #1247ec;
   border-bottom: 4px solid #1247ec;
-
   border-radius: 0 0 18px 0;
 }
+/*One vendor/solution loop in mobile*/
+@keyframes mobileWordLoop {
+  0%,
+  35% {
+    transform: translate3d(0, 0, 0);
+  }
+  45%,
+  80% {
+    transform: translate3d(0, -1.2em, 0);
+  }
+  90%,
+  100% {
+    transform: translate3d(0, -2.4em, 0);
+  }
+}
+
 @media (min-width: 1600px) {
   .site-header .navbar {
     width: 100%;
@@ -2444,14 +2364,9 @@ select#stateDepartment {
     padding: 12px 0;
   }
   .hero-section {
-    /* max-width: 1700px; */
     width: 100%;
     min-height: 700px;
   }
-  /* .site-header.scrolled .navbar {
-    padding: 10px 385px;
-    padding: 10px 492px;
-  } */
   .hero-section .row {
     display: flex;
     justify-content: space-between;
@@ -2552,6 +2467,13 @@ select#stateDepartment {
   }
   .site-header .navbar-nav > .dropdown:hover > .dropdown-toggle::after {
     transform: rotate(180deg);
+  }
+
+  .why-image {
+    height: 597px;
+  }
+  .platform-visual {
+    height: 144px;
   }
 }
 @media (max-width: 1200px) {
@@ -2699,7 +2621,6 @@ select#stateDepartment {
   .sys-integration-card h3,
   .training-card li,
   .training-card p,
-  .education-card p,
   .training-tabs .nav-link,
   .vendor-section p,
   .visibility-item p {
@@ -2791,7 +2712,6 @@ select#stateDepartment {
   .lifecycle-section {
     margin-top: 0 !important;
     padding: 0 !important;
-    /* margin-bottom: 30px; */
     margin-bottom: 0;
   }
   .lifecycle-shell {
@@ -2921,7 +2841,7 @@ select#stateDepartment {
   .intro-collage {
     margin: auto;
     max-width: 500px;
-    height: 340px;
+    height: 295px;
     aspect-ratio: auto;
   }
   .dot-pattern {
@@ -2936,8 +2856,10 @@ select#stateDepartment {
     padding: 12px;
   }
   .about-content {
-    /* margin-top: 30px; */
     padding: 0;
+  }
+  .about-description {
+    margin-top: 30px;
   }
   .compass-main-content {
     margin-top: 30px;
@@ -3036,13 +2958,12 @@ select#stateDepartment {
     transform: none !important;
   }
   .capability-row {
-    margin-bottom: 20px;
+    margin: 0px auto 15px;
     min-height: auto;
   }
   .facility-intel-row,
   .facility-intel-row.reverse,
-  .training-feature-grid,
-  .education-feature-grid {
+  .training-feature-grid {
     grid-template-columns: 1fr;
   }
   .facility-intel-row.reverse img {
@@ -3088,13 +3009,6 @@ select#stateDepartment {
     border-top: 1px solid #e2e8f0;
     margin-top: 12px;
     padding-top: 8px;
-  }
-  .education-content {
-    gap: 20px;
-  }
-  .k12-content,
-  .higher-education-content {
-    padding: 0;
   }
   .education-image-section {
     padding: 0;
@@ -3142,7 +3056,7 @@ select#stateDepartment {
   .logo {
     width: 135px;
   }
-  .cta-section,
+
   .footer-bottom,
   .navbar-collapse,
   .platform-icon {
@@ -3482,8 +3396,7 @@ select#stateDepartment {
   .company-benefits {
     gap: 10px;
   }
-  .training-card,
-  .education-card {
+  .training-card {
     padding: 22px 18px;
   }
   button:focus:not(:focus-visible) {
@@ -3502,12 +3415,13 @@ select#stateDepartment {
     max-width: 100%;
   }
   .intro-collage,
-  .training-feature-grid,
-  .education-feature-grid {
+  .training-feature-grid {
     grid-template-columns: 1fr;
   }
+  .training-feature-grid {
+    margin-top: 25px;
+  }
   .row {
-    /* display: block; */
     margin-left: 0;
     margin-right: 0;
   }
@@ -3577,7 +3491,7 @@ select#stateDepartment {
     border-radius: 12px;
   }
   .logo {
-    width: 150px;
+    width: 130px;
   }
   .hero-section {
     padding: 80px 15px 15px;
@@ -3737,10 +3651,14 @@ select#stateDepartment {
     text-align: left;
   }
   .contact-card-row,
-  .core-tools-items,
-  .integration-benefits,
-  .powerful-features-content {
+  .core-tools-items {
     margin-top: 25px;
+  }
+  .powerful-features-content {
+    margin-top: 15px;
+  }
+  .integration-benefits {
+    margin-top: 9px;
   }
   .custom-tabs {
     display: flex;
@@ -3828,7 +3746,7 @@ select#stateDepartment {
     font-size: 26px;
   }
   .our-mission {
-    margin-top: 30px;
+    margin-top: 25px;
   }
   .section-space.difference-section {
     padding: 30px 15px;
@@ -3844,6 +3762,8 @@ select#stateDepartment {
   .program {
     flex-direction: column;
     gap: 15px;
+    justify-content: start;
+    align-items: start;
   }
   .capabilities-heading .section-title,
   .choose-section .section-title,
@@ -3869,6 +3789,7 @@ select#stateDepartment {
     height: 38px;
   }
   .newsletter {
+    align-items: center;
     flex-direction: row;
     gap: 10px;
   }
@@ -3950,7 +3871,7 @@ select#stateDepartment {
   }
   .image-bottom-left,
   .image-bottom-right {
-    bottom: 45px;
+    bottom: 25px;
   }
   .check-list li {
     font-size: 15px;
@@ -3998,7 +3919,7 @@ select#stateDepartment {
     font-size: 12px !important;
   }
   .capability-row {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
   .core-capabilities-img {
     margin-top: 15px;
@@ -4044,7 +3965,7 @@ select#stateDepartment {
   .contact-card a,
   .contact-card p,
   .small {
-    font-size: 14px;
+    font-size: 12px;
   }
   .contact-card {
     padding-left: 6px;
@@ -4079,12 +4000,10 @@ select#stateDepartment {
     padding: 15px 0 !important;
   }
   .facility-intel-card h3,
-  .training-card h3,
-  .education-card h3 {
+  .training-card h3 {
     font-size: 18px !important;
   }
-  .training-card p,
-  .education-card p {
+  .training-card p {
     font-size: 15px !important;
   }
   .training-photo img {
@@ -4126,5 +4045,13 @@ select#stateDepartment {
   }
   .image-part {
     height: 200px;
+  }
+  .info-card {
+    margin-top: 15px;
+  }
+  .program-management,
+  .cta-desc,
+  .program-management-content {
+    padding: 0px;
   }
 }
