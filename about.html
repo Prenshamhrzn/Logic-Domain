@@ -18,8 +18,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style-min.css" />
   </head>
   <body>
     <div id="page-loader">
@@ -64,60 +65,72 @@
       </svg>
     </div>
     <header class="site-header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3 container-xl">
-        <img src="assets/images/logic-domain-logo.png" class="logo" />
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav mx-auto gap-lg-3">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="about.html">About us</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="compass.html">Compass :: Capital Project Management System</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="navigator.html">Navigator :: Asset and Space Management</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="implementation.html">Implementation</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="system-integration.html">System Integrations</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="training.html">Training & Support</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact us</a>
-            </li>
-          </ul>
-          <a href="contact.html" class="demo-btn">Request Demo </a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3">
+        <div class="container-xl">
+          <img src="assets/images/logic-domain-logo.png" class="logo" />
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav mx-auto gap-lg-4">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="compass.html">Compass :: Capital Project Management </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="navigator.html">Navigator :: Asset and Space Management</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Who We Serve</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="education.html">Education </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="implementation.html">Implementation</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="system-integration.html">System Integrations</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="training.html">Training & Support</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact us</a>
+              </li>
+            </ul>
+            <a href="contact.html" class="demo-btn">Request Demo </a>
+          </div>
         </div>
       </nav>
     </header>
 
     <main>
       <section id="home" class="hero-section-innerpage">
-        <img src="assets/images/banner-section.png" alt="Background" class="innerpage-banner-bg" />
+        <img src="assets/images/banner-section.png" alt="Every Banner Page Background" class="innerpage-banner-bg" />
         <div class="innerpage-hero-content" data-aos="zoom-in" data-aos-duration="1200">
           <h1>Our Story</h1>
           <p>
-            Delivering secure, cloud-based solutions that simplify project planning, improve collaboration, and help organizations successfully manage every stage of the capital project lifecycle.
+            Logic Domain puts people at the center of everything we do. By understanding the needs, challenges, and goals of the people we serve, we develop practical solutions that improve processes,
+            support better decision-making, and deliver measurable results. We believe the most effective solutions are those that are useful, efficient, and create lasting value for the people and
+            organizations we serve.
           </p>
         </div>
       </section>
@@ -125,7 +138,7 @@
       <section class="section-space company-section" style="background-image: url(&quot;assets/images/about-company-section.svg&quot;); background-repeat: no-repeat; background-size: cover">
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-lg-5">
+            <div class="col-lg-5 about-content">
               <span class="section-tag">About Company</span>
               <h2 class="section-title mt-3">
                 Building Smarter Software for
@@ -133,14 +146,15 @@
               </h2>
 
               <p class="section-copy">
-                Delivering intelligent, cloud-based software that empowers organizations to plan, manage, and deliver capital projects with greater visibility, collaboration, and control. Our
-                integrated platform centralizes project planning, budgeting, scheduling, documents, workflows, and reporting into a single, secure environment.
+                Founded in 1986 and headquartered in Irvine, California, Logic Domain has decades of experience delivering intelligent, cloud-based software that empowers organizations to plan,
+                manage, and deliver capital projects with greater visibility, collaboration, and control. Our integrated platform centralizes project planning, budgeting, scheduling, documents,
+                workflows, and reporting into a single, secure environment.
               </p>
 
               <div class="company-benefits">
                 <article>
                   <div class="benefit-icon">
-                    <img src="assets/images/about-cloud-based.svg" alt="" />
+                    <img src="assets/images/about-cloud-based.svg" alt="cloud-based-icon" />
                   </div>
                   <span>
                     Cloud-based<br class="break-sentence" />
@@ -150,7 +164,7 @@
 
                 <article>
                   <div class="benefit-icon">
-                    <img src="assets/images/about-visibility.svg" alt="" />
+                    <img src="assets/images/about-visibility.svg" alt="visibility-icon" />
                   </div>
                   <span>
                     End-to-end<br class="break-sentence" />
@@ -160,7 +174,7 @@
 
                 <article>
                   <div class="benefit-icon">
-                    <img src="assets/images/about-security.svg" alt="" />
+                    <img src="assets/images/about-security.svg" alt="security-icon" />
                   </div>
                   <span>
                     Enterprise grade<br class="break-sentence" />
@@ -170,29 +184,29 @@
               </div>
             </div>
 
-            <div class="col-lg-7">
+            <div class="col-lg-7 why-section-content">
               <div class="company-media-grid">
                 <div class="video-card" data-aos="zoom-in" data-aos-delay="0">
-                  <img src="assets/images/about-img.png" alt="Project team collaborating" />
+                  <img src="assets/images/about-img.png" alt="About company Project team collaborating" />
                   <span class="video-overlay"></span>
-                  <button type="button" class="play-button" aria-label="Play company video">
+                  <!-- <button type="button" class="play-button" aria-label="Play company video">
                     <img src="assets/images/play-icon-about.svg" alt="" />
-                  </button>
+                  </button> -->
                 </div>
 
                 <article class="connected-card" data-aos="zoom-in" data-aos-delay="200">
-                  <img src="assets/images/about-oneconnectedplatform.svg" alt="" />
+                  <img src="assets/images/about-oneconnectedplatform.svg" alt="One connected platform icon" />
                   <h3>One Connected Platform</h3>
                   <p>Manage projects, documents, budgets, schedules, and teams from one centralized platform designed for seamless collaboration.</p>
                 </article>
 
                 <article class="ecosystem-card" data-aos="zoom-in" data-aos-delay="300">
-                  <img src="assets/images/great-eco.svg" alt="" />
+                  <img src="assets/images/great-eco.svg" alt="great tech ecosystem icon" />
                   <h3>Great Tech Ecosystem</h3>
                   <p>Connect tools, data, and teams in one platform.</p>
-                  <a href="#" aria-label="Learn more">
+                  <!-- <a href="#" aria-label="Learn more">
                     <i class="bi bi-arrow-up-right"></i>
-                  </a>
+                  </a> -->
                 </article>
 
                 <article class="availability-card" data-aos="zoom-in" data-aos-delay="400">
@@ -208,8 +222,8 @@
 
       <section class="section-space purpose-section">
         <div class="container">
-          <div class="row align-items-start g-5 purpose-heading">
-            <div class="col-lg-6">
+          <div class="row align-items-center g-4 purpose-heading">
+            <div class="col-lg-6 our-purpose-section-content">
               <span class="section-tag">Our Purpose</span>
               <h2 class="section-title mt-3">
                 <span class="primary-color">Empowering Organizations</span>
@@ -233,17 +247,17 @@
                     <h3>Our Mission</h3>
                     <span class="title-line"></span>
                     <p>
-                      Simplify complex capital projects through one intelligent platform. Helping teams deliver projects with confidence and efficiency.Enabling better collaboration, visibility, and
+                      Simplify complex capital projects through one intelligent platform. Helping teams deliver projects with confidence and efficiency. Enabling better collaboration, visibility, and
                       control at every stage.
                     </p>
                   </div>
 
-                  <img src="assets/images/about-our-mission.svg" alt="" />
+                  <img src="assets/images/about-our-mission.svg" alt="Our mission icon" />
                 </div>
               </article>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 our-vision">
               <article class="purpose-card" style="background-image: url(&quot;assets/images/our-vision-section-bg.svg&quot;)" data-aos="fade-down" data-aos-duration="1000">
                 <div class="purpose-content">
                   <div>
@@ -252,7 +266,7 @@
                     <p>Shape the future of capital project management through continuous innovation. Enable organizations to deliver projects with confidence and lasting success.</p>
                   </div>
 
-                  <img src="assets/images/about-our-vision.svg" alt="" />
+                  <img src="assets/images/about-our-vision.svg" alt="Our vision icon" />
                 </div>
               </article>
             </div>
@@ -260,11 +274,11 @@
         </div>
       </section>
 
-      <section class="lifecycle-section" data-aos="fade-right" data-aos-duration="1000" style="margin-top: 30px">
-        <div class="container-xl enterprise">
+      <section class="lifecycle-section" data-aos="fade-right" data-aos-duration="1000" style="margin-top: 70px">
+        <div class="container enterprise">
           <div class="lifecycle-shell">
             <div class="row align-items-center g-4">
-              <div class="col-lg-8 text-white mt-0">
+              <div class="col-lg-8 text-white mt-0 quote-section-data">
                 <div class="enterprise-section">
                   <div class="small text-uppercase text-info fw-semibold mb-4">cloud-based platform</div>
                   <div class="label-line"></div>
@@ -281,7 +295,7 @@
                   ><span><i class="far fa-check-circle"></i>Cloud-based Access</span><span><i class="far fa-check-circle"></i>Better Workflow</span>
                 </div>
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4 column-lifecycle-image">
                 <div class="lifecycle-image">
                   <img src="assets/images/about-quote-section.png" alt="quote-image" />
                 </div>
@@ -292,9 +306,9 @@
       </section>
 
       <section id="platform" class="section-space platform-section" style="margin-bottom: 24px">
-        <div class="container-xl">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6 mt-lg-0">
+        <div class="container">
+          <div class="row align-items-start g-4">
+            <div class="col-lg-6 mt-lg-0 one-platform-content">
               <span class="section-tag">One Platform</span>
               <h2 class="section-title mt-3" style="color: #0c44b3">Two Powerful Solutions for Every Stage of Capital Projects</h2>
               <p class="section-title-subdesc">
@@ -307,13 +321,13 @@
                 <i class="far fa-compass"></i>
               </div> -->
               <div class="platform-visual">
-                <img id="platformImage" src="assets/images/compass-pic.jpg" alt="Platform Image" />
+                <img id="platformImage" src="assets/images/compass-platform.jpg" alt="Compass Platform Image" />
                 <div class="platform-icon">
                   <i id="platformIcon" class="far fa-compass"></i>
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 mt-0">
+            <div class="col-lg-6 mt-0 one-platform-content">
               <ul class="nav nav-tabs custom-tabs" role="tablist">
                 <li class="nav-item">
                   <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#compass">
@@ -335,8 +349,8 @@
                     <span class="badge rounded-pill text-bg-primary">Project Management</span>
                   </div>
                   <p>
-                    Plan, coordinate, and deliver capital projects with complete visibility. From scheduling and budgeting to documents, workflows, and reporting, Compass keeps every stakeholder
-                    aligned throughout the project lifecycle.
+                    Plan, coordinate, and deliver capital projects with complete visibility. From scheduling and budgeting to documents, workflows, forecasting, cashflows, and reporting, Compass keeps
+                    every stakeholder aligned throughout the project lifecycle.
                   </p>
                   <div class="d-flex flex-wrap gap-3 mb-4">
                     <span class="pill"><i class="fas fa-check-circle"></i> Project Planning</span><span class="pill"><i class="fas fa-check-circle"></i> Budget Control</span
@@ -351,8 +365,8 @@
                   </div>
 
                   <p>
-                    Centralize facility information, asset records, and space utilization into one intelligent platform. Monitor occupancy, manage equipment, and generate detailed reports that support
-                    better operational and strategic decisions.
+                    Centralize facility information, asset records, facility oversight , and space utilization in one intelligent platform. Monitor occupancy, manage equipment, and generate detailed
+                    reports that support better operational and strategic decisions.
                   </p>
                   <div class="d-flex flex-wrap gap-3 mb-4">
                     <span class="pill"><i class="fas fa-check-circle"></i> Space Analytics</span><span class="pill"><i class="fas fa-check-circle"></i> Asset Registry</span
@@ -374,12 +388,12 @@
     </div>
 
     <footer id="footer" class="footer-section text-white">
-      <div class="container-xl">
-        <div class="row g-4 py-5">
+      <div class="container">
+        <div class="row g-4 py-4">
           <!-- Company information -->
           <div class="col-md-12 col-lg-3">
             <div class="footer-brand mb-3">
-              <img src="assets/images/logic-domain-logo1.png" class="logo" alt="Logic Domain" />
+              <img src="assets/images/logic-domain-logo-footer.png" class="logo" alt="Logic Domain" />
             </div>
 
             <p>
@@ -391,8 +405,8 @@
                 <i class="fab fa-facebook-f"></i>
               </a>
 
-              <a href="#" aria-label="Google">
-                <i class="fab fa-google"></i>
+              <a href="#" aria-label="Twitter">
+                <i class="bi bi-twitter-x"></i>
               </a>
 
               <a href="#" aria-label="Instagram">
@@ -503,8 +517,8 @@
 
       <!-- Footer bottom -->
       <div class="footer-bottom py-3">
-        <div class="container-xl d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-          <span class="footer-copyright"> © 2018 Logic Domain. All rights reserved. </span>
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+          <span class="footer-copyright"> © 2026 Logic Domain. All rights reserved. </span>
 
           <div>
             <a href="privacy-policy.html">Privacy Policy</a>

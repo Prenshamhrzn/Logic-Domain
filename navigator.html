@@ -18,8 +18,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style-min.css" />
   </head>
   <body>
     <div id="page-loader">
@@ -63,50 +64,61 @@
         </g>
       </svg>
     </div>
+
     <header class="site-header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3 container-xl">
-        <img src="assets/images/logic-domain-logo.png" class="logo" />
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav mx-auto gap-lg-3">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About us</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="compass.html">Compass :: Capital Project Management System</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="navigator.html">Navigator :: Asset and Space Management</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="implementation.html">Implementation</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="system-integration.html">System Integrations</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="training.html">Training & Support</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact us</a>
-            </li>
-          </ul>
-          <a href="contact.html" class="demo-btn">Request Demo </a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3">
+        <div class="container-xl">
+          <img src="assets/images/logic-domain-logo.png" class="logo" />
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav mx-auto gap-lg-4">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="compass.html">Compass :: Capital Project Management </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="navigator.html">Navigator :: Asset and Space Management</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Who We Serve</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="education.html">Education </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="implementation.html">Implementation</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="system-integration.html">System Integrations</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="training.html">Training & Support</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact us</a>
+              </li>
+            </ul>
+            <a href="contact.html" class="demo-btn">Request Demo </a>
+          </div>
         </div>
       </nav>
     </header>
@@ -140,7 +152,7 @@
           </div>
 
           <div class="facility-intel-row">
-            <img src="assets/images/navigator1.jpg" alt="Facility planning team" data-aos="fade-right" data-aos-duration="800" />
+            <img src="assets/images/navigator-asset-space.jpg" alt="Centralized Asset and Space Intelligence" data-aos="fade-right" data-aos-duration="800" />
             <article class="facility-intel-card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
               <span class="facility-card-no">01</span>
               <h3>Centralized Asset and Space Intelligence</h3>
@@ -158,7 +170,7 @@
           </div>
 
           <div class="facility-intel-row reverse">
-            <img src="assets/images/navigator2.jpg" alt="Facility analytics presentation" data-aos="fade-right" data-aos-duration="800" data-aos-delay="150" />
+            <img src="assets/images/navigator-reporting&operational.jpg" alt="Reporting & Operational Insights" data-aos="fade-right" data-aos-duration="800" data-aos-delay="150" />
             <article class="facility-intel-card" data-aos="fade-left" data-aos-duration="800">
               <span class="facility-card-no">02</span>
               <h3>Powerful Reporting &amp; Operational Insights</h3>
@@ -177,11 +189,11 @@
         </div>
       </section>
 
-      <section class="lifecycle-section" style="margin-top: 30px; padding-bottom: 30px" data-aos="fade-right" data-aos-duration="1000">
-        <div class="container-xl enterprise">
+      <section class="lifecycle-section" style="margin-top: 70px; padding: 30px 0" data-aos="fade-right" data-aos-duration="1000">
+        <div class="container enterprise">
           <div class="lifecycle-shell">
             <div class="row align-items-center g-4">
-              <div class="col-lg-8 text-white mt-0">
+              <div class="col-lg-8 text-white mt-0 quote-section-data">
                 <div class="enterprise-section">
                   <div class="small text-uppercase text-info fw-semibold mb-4">asset & Space intelligence</div>
                   <div class="label-line"></div>
@@ -201,9 +213,9 @@
                   ><span><i class="far fa-check-circle"></i>Occupancy Insights</span><span><i class="far fa-check-circle"></i>Detailed Reporting</span>
                 </div>
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4 column-lifecycle-image">
                 <div class="lifecycle-image">
-                  <img src="assets/images/quote-navigator.jpg" alt="quote-image" />
+                  <img src="assets/images/quote-navigator.jpg" alt="Navigator-quote-image" />
                 </div>
               </div>
             </div>
@@ -214,7 +226,7 @@
       <section class="section-space choose-section" style="margin-bottom: 24px">
         <div class="container text-center">
           <span class="section-tag">Core Capabilities</span>
-          <h2 class="section-title mt-3 mb-3">Everything You Need to Manage Assets and Spaces Efficiently</h2>
+          <h2 class="section-title mt-3">Everything You Need to Manage Assets and Spaces Efficiently</h2>
           <p class="section-description mx-auto">Gain complete building visibility with integrated tools to optimize assets, space, and occupancy.</p>
 
           <ul class="nav nav-pills navigate-tabs justify-content-center" role="tablist">
@@ -222,7 +234,7 @@
               <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#asset-tracking"><i class="bi bi-briefcase"></i> Asset Tracking</button>
             </li>
             <li class="nav-item">
-              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#space-management"><i class="bi bi-kanban"></i>Space management</button>
+              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#space-management"><i class="bi bi-kanban"></i>Space Management</button>
             </li>
             <li class="nav-item">
               <button class="nav-link" data-bs-toggle="pill" data-bs-target="#occupancy"><i class="bi bi-display"></i> Occupancy Monitoring</button>
@@ -252,7 +264,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <img class="tab-visual" src="assets/images/navigate1.png" />
+                  <img class="tab-visual" src="assets/images/asset-tracking.png" alt="Navigator Asset Tracking" />
                 </div>
               </div>
             </div>
@@ -314,7 +326,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <img class="tab-visual" src="assets/images/navigate2.png" />
+                  <img class="tab-visual" src="assets/images/space-management.png" alt="Navigator Space Management" />
                 </div>
               </div>
             </div>
@@ -335,7 +347,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <img class="tab-visual" src="assets/images/navigate3.png" />
+                  <img class="tab-visual" src="assets/images/occupancy-monitoring.png" alt="Navigator Occupancy Monitoring" />
                 </div>
               </div>
             </div>
@@ -359,7 +371,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <img class="tab-visual" src="assets/images/navigate4.png" />
+                  <img class="tab-visual" src="assets/images/utilization-analytics.png" alt="Navigator Utilization Analytics" />
                 </div>
               </div>
             </div>
@@ -375,8 +387,8 @@
     </div>
 
     <footer id="footer" class="footer-section text-white">
-      <div class="container-xl">
-        <div class="row g-4 py-5">
+      <div class="container">
+        <div class="row g-4 py-">
           <!-- Company information -->
           <div class="col-md-12 col-lg-3">
             <div class="footer-brand mb-3">
@@ -392,8 +404,8 @@
                 <i class="fab fa-facebook-f"></i>
               </a>
 
-              <a href="#" aria-label="Google">
-                <i class="fab fa-google"></i>
+              <a href="#" aria-label="Twitter">
+                <i class="bi bi-twitter-x"></i>
               </a>
 
               <a href="#" aria-label="Instagram">
@@ -504,8 +516,8 @@
 
       <!-- Footer bottom -->
       <div class="footer-bottom py-3">
-        <div class="container-xl d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-          <span class="footer-copyright"> © 2018 Logic Domain. All rights reserved. </span>
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+          <span class="footer-copyright"> © 2026 Logic Domain. All rights reserved. </span>
 
           <div>
             <a href="privacy-policy.html">Privacy Policy</a>

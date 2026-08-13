@@ -41,10 +41,10 @@ document.querySelectorAll('[data-bs-toggle="tab"]').forEach((tab) => {
 
     setTimeout(() => {
       if (e.target.dataset.bsTarget === "#compass") {
-        platformImage.src = "assets/images/compass-pic.jpg";
+        platformImage.src = "assets/images/compass-platform.jpg";
         platformIcon.className = "far fa-compass";
       } else {
-        platformImage.src = "assets/images/navigator-img.png";
+        platformImage.src = "assets/images/navigator-platform.png";
         platformIcon.className = "fab fa-telegram";
       }
 
@@ -96,19 +96,6 @@ document.querySelectorAll(".date-time-group").forEach((group) => {
 });
 
 /*Active of navbar*/
-// document.addEventListener("DOMContentLoaded", () => {
-//   const page = location.pathname.split("/").pop() || "index.html";
-
-//   document.querySelectorAll(".navbar-nav a[href]").forEach((link) => {
-//     if (link.getAttribute("href")?.split("/").pop() !== page) return;
-
-//     link.classList.add("active");
-//     link
-//       .closest(".dropdown")
-//       ?.querySelector(":scope > .nav-link")
-//       ?.classList.add("active");
-//   });
-// });
 
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
@@ -139,3 +126,23 @@ window.addEventListener("load", function () {
     pageLoader.remove();
   }, 500);
 });
+
+//Showing title without .html file
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   let page = location.pathname.split("/").pop().replace(".html", "") || "index";
+
+//   if (location.pathname.endsWith(".html")) {
+//     history.replaceState(null, "", location.pathname.replace(".html", ""));
+//   }
+
+//   document.querySelectorAll(".navbar-nav a[href]").forEach((link) => {
+//     const linkPage = link.getAttribute("href").split("/").pop().replace(".html", "");
+
+//     if (linkPage === page) {
+//       link.classList.add("active");
+
+//       link.closest(".dropdown")?.querySelector(".dropdown-toggle")?.classList.add("active");
+//     }
+//   });
+// });

@@ -19,8 +19,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style-min.css" />
   </head>
   <body>
     <div id="page-loader">
@@ -64,50 +65,61 @@
         </g>
       </svg>
     </div>
+
     <header class="site-header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3 container-xl">
-        <img src="assets/images/logic-domain-logo.png" class="logo" />
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav mx-auto gap-lg-3">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About us</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="compass.html">Compass :: Capital Project Management System</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="navigator.html">Navigator :: Asset and Space Management</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="implementation.html">Implementation</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="system-integration.html">System Integrations</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="training.html">Training & Support</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact us</a>
-            </li>
-          </ul>
-          <a href="contact.html" class="demo-btn">Request Demo </a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3">
+        <div class="container-xl">
+          <img src="assets/images/logic-domain-logo.png" class="logo" />
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav mx-auto gap-lg-4">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="compass.html">Compass :: Capital Project Management </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="navigator.html">Navigator :: Asset and Space Management</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Who We Serve</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="education.html">Education </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="implementation.html">Implementation</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="system-integration.html">System Integrations</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="training.html">Training & Support</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact us</a>
+              </li>
+            </ul>
+            <a href="contact.html" class="demo-btn">Request Demo </a>
+          </div>
         </div>
       </nav>
     </header>
@@ -116,7 +128,7 @@
       <section id="home" class="hero-section-innerpage">
         <img src="assets/images/banner-section.png" alt="Background" class="innerpage-banner-bg" />
         <div class="innerpage-hero-content" data-aos="zoom-in" data-aos-duration="1200">
-          <h1>Capital Program / Project Management</h1>
+          <h1>Compass - Capital Program / Project Management</h1>
           <p>Compass™ brings budgets, schedules, workflows, documents, and project teams together in one secure, cloud-based platform.</p>
           <a href="assets/compass-flyer.pdf" target="_blank" class="btn btn-warning text-white"> <i class="bi bi-download me-2"></i>Download Data Sheet</a>
         </div>
@@ -124,8 +136,8 @@
 
       <section class="section-space intro-section compass-section">
         <div class="container">
-          <div class="row align-items-start">
-            <div class="col-lg-5">
+          <div class="row align-items-center">
+            <div class="col-lg-5 compass-image-section">
               <div class="intro-collage" data-aos="fade-right">
                 <div class="collage-item quote-item">
                   <!-- <div class="intro-quote">
@@ -149,25 +161,25 @@
                 </div>
 
                 <div class="collage-item image-top">
-                  <img src="assets/images/compass-capital-img1.jpg" alt="Team collaboration" />
+                  <img src="assets/images/compass-capital-project-img1.jpg" alt="Capital Project Management Image 1" />
                 </div>
 
                 <div class="collage-item image-bottom-left">
-                  <img src="assets/images/compass-capital-img2.jpg" alt="Project meeting" />
+                  <img src="assets/images/compass-capital-project-img2.jpg" alt="Capital Project Management Image 2" />
                 </div>
 
                 <div class="collage-item image-bottom-right">
-                  <img src="assets/images/compass-capital-img3.jpg" alt="Team discussion" />
+                  <img src="assets/images/compass-capital-project-img3.jpg" alt="Capital Project Management Image 3" />
                 </div>
               </div>
             </div>
-            <div class="col-lg-7 about-content" data-aos="fade-left">
+            <div class="col-lg-7 about-content compass-main-content" data-aos="fade-left">
               <span class="section-tag">Capital Project Management</span>
-              <h2 class="section-title mt-3 mb-3">
+              <h2 class="section-title mt-3">
                 Building
                 <span class="primary-color">Smarter Capital Programs</span> with Complete Control.
               </h2>
-              <p class="section-title-subdesc">
+              <p class="section-title-subdesc mb-0">
                 Modern capital projects require more than spreadsheets and disconnected tools. Our Capital Project Management Software brings planning, budgeting, scheduling, cost control, reporting,
                 and collaboration into one centralized platform, giving you real-time visibility and complete control over every project. With real-time visibility, organizations can make smarter
                 decisions and keep projects on schedule and within budget.
@@ -180,10 +192,10 @@
         </div>
       </section>
 
-      <section class="section-space feature-overview" style="background-image: url(&quot;assets/images/powerful-features.png&quot;)">
+      <section class="section-space feature-overview" style="background-image: url(&quot;assets/images/powerful-features-background.png&quot;)">
         <div class="container">
-          <div class="row align-items-start g-4 feature-heading">
-            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+          <div class="row align-items-center g-4 feature-heading">
+            <div class="col-lg-6 featuring-content" data-aos="fade-right" data-aos-duration="800">
               <span class="section-tag">Powerful Features</span>
               <h2 class="section-title mt-3">
                 Powerful Features for
@@ -192,15 +204,15 @@
             </div>
 
             <div class="col-lg-6 our-purpose-about" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
-              <p class="section-copy">
+              <p class="section-copy mb-0">
                 Everything you need to plan, manage, and deliver capital projects from one intelligent platform. Streamline workflows, control costs, and gain real-time visibility across every stage
                 of the project lifecycle.
               </p>
             </div>
           </div>
 
-          <div class="row g-3">
-            <div class="col-md-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="0">
+          <div class="row g-3 powerful-features-content">
+            <div class="col-md-6 featuring-content-item-left" data-aos="fade-up" data-aos-duration="700" data-aos-delay="0">
               <article class="feature-card">
                 <div class="compass-feature-icon">
                   <i class="bi bi-currency-dollar"></i>
@@ -212,7 +224,7 @@
               </article>
             </div>
 
-            <div class="col-md-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+            <div class="col-md-6 featuring-content-item-right" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
               <article class="feature-card">
                 <div class="compass-feature-icon">
                   <i class="bi bi-graph-up"></i>
@@ -224,7 +236,7 @@
               </article>
             </div>
 
-            <div class="col-md-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+            <div class="col-md-6 featuring-content-item-left" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
               <article class="feature-card">
                 <div class="compass-feature-icon">
                   <i class="bi bi-file-earmark-text"></i>
@@ -236,7 +248,7 @@
               </article>
             </div>
 
-            <div class="col-md-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+            <div class="col-md-6 featuring-content-item-right" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
               <article class="feature-card">
                 <div class="compass-feature-icon">
                   <i class="bi bi-bar-chart"></i>
@@ -247,6 +259,30 @@
                 </div>
               </article>
             </div>
+
+            <div class="col-md-6 featuring-content-item-left" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+              <article class="feature-card">
+                <div class="compass-feature-icon">
+                  <i class="bi bi-graph-up-arrow"></i>
+                </div>
+                <div>
+                  <h3 class="card-title-color">Forecast</h3>
+                  <p>Stay ahead of project costs by forecasting budgets, commitments, pending changes, before they impact project outcomes.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 featuring-content-item-right" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+              <article class="feature-card">
+                <div class="compass-feature-icon">
+                  <i class="bi bi-cash-stack"></i>
+                </div>
+                <div>
+                  <h3 class="card-title-color">Cashflow</h3>
+                  <p>Generate accurate cashflows from live budgets, actual costs and forecast items to manage every dollar of your project.</p>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -254,10 +290,10 @@
       <section class="section-space choose-section">
         <div class="container text-center">
           <span class="section-tag">Why Choose Compass</span>
-          <h2 class="section-title mt-3 mb-3">Everything you need in one place</h2>
-          <p class="section-description mx-auto">Switch between views to see how CapitalProject helps you manage every aspects of your projects.</p>
+          <h2 class="section-title mt-3">Everything you need in one place</h2>
+          <p class="section-description mx-auto">Switch between views to see how Compass helps you manage every aspects of your projects.</p>
 
-          <ul class="nav nav-pills compass-tabs justify-content-center" role="tablist">
+          <ul class="nav nav-pills compass-tabs justify-content-between" role="tablist">
             <li class="nav-item">
               <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#easy-use"><i class="bi bi-window"></i> Easy to Use</button>
             </li>
@@ -292,7 +328,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <img class="tab-visual" src="assets/images/compass-tab1.png" />
+                  <img class="tab-visual" src="assets/images/easy-to-use-tab.png" alt="Easy to use Image" />
                 </div>
               </div>
             </div>
@@ -313,7 +349,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <img class="tab-visual" src="assets/images/compass-tab2.png" />
+                  <img class="tab-visual" src="assets/images/quick-live-launch.png" alt="Quick Live launch Image" />
                 </div>
               </div>
             </div>
@@ -334,7 +370,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <img class="tab-visual" src="assets/images/compass-tab3.png" />
+                  <img class="tab-visual" src="assets/images/access-browser.png" alt="Access via browser image" />
                 </div>
               </div>
             </div>
@@ -358,7 +394,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <img class="tab-visual" src="assets/images/compass-tab4.png" />
+                  <img class="tab-visual" src="assets/images/ability-to-grow.png" alt="Ability to grow image" />
                 </div>
               </div>
             </div>
@@ -374,7 +410,7 @@
                   <p class="section-title-subdesc">Compass™ provides detailed visibility into project budgets, costs, schedules, and overall performance.</p>
 
                   <ul class="check-list">
-                    <li><i class="bi bi-check-circle-fill"></i>Detailed budget, cost, and schedule tracking</li>
+                    <li><i class="bi bi-check-circle-fill"></i>Detailed budget, cost, forecast, cashflow, and schedule tracking</li>
                     <li><i class="bi bi-check-circle-fill"></i>Real-time performance insights and variance analysis</li>
                     <li><i class="bi bi-check-circle-fill"></i>Customizable, executive-ready reports</li>
                     <li><i class="bi bi-check-circle-fill"></i>Easy reporting for teams and stakeholders</li>
@@ -382,7 +418,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <img class="tab-visual" src="assets/images/compass-tab5.png" />
+                  <img class="tab-visual" src="assets/images/robust-reporting.png" alt="Robust reposting image" />
                 </div>
               </div>
             </div>
@@ -407,30 +443,30 @@
           </div>
 
           <div class="row g-4 visibility-grid">
-            <div class="col-lg-4" data-aos="fade-down" data-aos-duration="500">
+            <div class="col-lg-4 visibility-item-content" data-aos="fade-down" data-aos-duration="500">
               <article class="visibility-item">
                 <i class="bi bi-clipboard-data"></i>
                 <h3>Command Every Project with Confidence</h3>
                 <p class="section-title-subdesc">Keep timelines, budgets, locations, charts and progress aligned with complete visibility across every project.</p>
-                <img src="assets/images/capital-visibility-command.jpg" alt="Project planning and management" />
+                <img src="assets/images/capital-visibility-command.jpg" alt="Visibility Command Every Project" />
               </article>
             </div>
 
-            <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000">
+            <div class="col-lg-4 visibility-item-content" data-aos="fade-up" data-aos-duration="1000">
               <article class="visibility-item visibility-item-middle">
-                <img src="assets/images/capital-visibility-trackingPic.jpg" alt="Project financial tracking" />
+                <img src="assets/images/capital-visibility-tracking.jpg" alt="Project financial tracking" />
                 <i class="bi bi-graph-up-arrow"></i>
                 <h3>Track Every Amount Across Your Project</h3>
                 <p class="section-title-subdesc">Gain complete control over contracts, encumbrances, work orders, and committed costs before they impact your capital project budget.</p>
               </article>
             </div>
 
-            <div class="col-lg-4" data-aos="fade-down" data-aos-duration="1500">
+            <div class="col-lg-4 visibility-item-content third-one" data-aos="fade-down" data-aos-duration="1500">
               <article class="visibility-item">
                 <i class="bi bi-grid"></i>
                 <h3>Generate Clear Project Reports for Better Decisions</h3>
                 <p class="section-title-subdesc">Create clear reports on progress, budgets, schedules, and commitments for leadership, owners and stakeholders.</p>
-                <img src="assets/images/capital-visibility-decisions.jpg" alt="Project reporting and analysis" />
+                <img src="assets/images/capital-visibility-decisions.jpg" alt="Generate Clear Project" />
               </article>
             </div>
           </div>
@@ -451,13 +487,13 @@
           <div class="solution-icon-grid">
             <div><i class="bi bi-kanban"></i><span>Project Planning</span></div>
             <div><i class="bi bi-file-earmark-bar-graph"></i><span class="section-title-subdesc">Reports &amp; Analytics</span></div>
-            <div><i class="bi bi-pie-chart"></i><span class="section-title-subdesc">Charts</span></div>
+            <div><i class="bi bi-graph-up-arrow"></i><span class="section-title-subdesc">Forecast</span></div>
             <div><i class="bi bi-cash-coin"></i><span class="section-title-subdesc">Budget &amp; Cost Control</span></div>
-            <div><i class="bi bi-folder"></i><span class="section-title-subdesc">Documents</span></div>
+            <div><i class="bi bi-cash-stack"></i><span class="section-title-subdesc">Cashflow</span></div>
 
             <div><i class="bi bi-speedometer2"></i><span class="section-title-subdesc">Dashboard</span></div>
             <div><i class="bi bi-people"></i><span>Resource Management</span></div>
-            <div><i class="bi bi-file-earmark-text"></i><span>Files &amp; Contracts</span></div>
+            <div><i class="bi bi-file-earmark-text"></i><span>Contracts &amp; Documents</span></div>
             <div><i class="bi bi-calculator"></i><span>Accounting</span></div>
             <div><i class="bi bi-calendar-check"></i><span>Schedule &amp; Tracking</span></div>
           </div>
@@ -465,7 +501,7 @@
           <div class="solution-bottom">
             <div class="solution-divider">
               <span class="line"></span>
-              <span style="color: #2f55ff; font-weight: 600; font-size: 16px">
+              <span class="many-more" style="color: #2f55ff; font-weight: 600; font-size: 16px">
                 <i class="bi bi-stars"></i>
                 Many more
               </span>
@@ -494,7 +530,7 @@
                 <!-- Capability 1 -->
                 <div class="capability-row row align-items-center g-5">
                   <div class="col-lg-6 core-capabilities-img">
-                    <img src="assets/images/budget-core.jpg" alt="Compass budget management screen" />
+                    <img src="assets/images/budget-management.jpg" alt="Compass budget management" />
                   </div>
 
                   <div class="col-lg-6 core-capabilities-title">
@@ -510,7 +546,7 @@
                 <!-- Capability 2 -->
                 <div class="capability-row row align-items-center g-5">
                   <div class="col-lg-6 core-capabilities-img">
-                    <img src="assets/images/schedule-management.jpg" alt="Compass schedule management screen" />
+                    <img src="assets/images/schedule-management.jpg" alt="Compass schedule management " />
                   </div>
 
                   <div class="col-lg-6 core-capabilities-title">
@@ -527,7 +563,7 @@
                 <!-- Capability 3 -->
                 <div class="capability-row row align-items-center g-5">
                   <div class="col-lg-6 core-capabilities-img">
-                    <img src="assets/images/project-management.jpg" alt="Project management screen" />
+                    <img src="assets/images/project-management.jpg" alt="Compass Project management" />
                   </div>
 
                   <div class="col-lg-6 core-capabilities-title">
@@ -535,8 +571,8 @@
 
                     <p class="section-title-subdesc">
                       Centralize project information, responsibilities, activities, approvals, risks, and progress in one connected workspace. Assign ownership, coordinate teams, monitor project
-                      health, and keep important actions moving forward. Track issues, decisions, and status updates in real time so project managers can improve accountability, respond to risks
-                      early, and deliver projects with greater control.
+                      health, and keep important actions moving forward. Track issues, decisions, status updates, and enter forecasts in real time so project managers can improve accountability,
+                      respond to risks early, and deliver projects with greater control.
                     </p>
                   </div>
                 </div>
@@ -544,7 +580,7 @@
                 <!-- Capability 4 -->
                 <div class="capability-row row align-items-center g-5">
                   <div class="col-lg-6 core-capabilities-img">
-                    <img src="assets/images/fiscal-accounting.jpg" alt="Fiscal accounting screen" />
+                    <img src="assets/images/fiscal-accounting.jpg" alt="Compass Fiscal accounting" />
                   </div>
 
                   <div class="col-lg-6 core-capabilities-title">
@@ -552,8 +588,8 @@
 
                     <p class="section-title-subdesc">
                       Track fiscal-year budgets, funding sources, expenditures, encumbrances, and financial transactions in one accurate accounting view. Maintain clear records across multiple fiscal
-                      periods, monitor how funds are allocated and spent, and reconcile project activity with financial data. Improve audit readiness, reporting accuracy, and compliance while giving
-                      finance teams better control over every capital project.
+                      periods, monitor how funds are allocated and spent, reconcile project activity with financial data, and generate cashflows. Improve audit readiness, reporting accuracy, and
+                      compliance while giving finance teams better control over every capital project.
                     </p>
                   </div>
                 </div>
@@ -562,10 +598,11 @@
           </div>
         </div>
       </section>
+
       <section class="section-space gantt-section">
         <div class="container">
-          <div class="row align-items-start g-5">
-            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+          <div class="row align-items-start g-4">
+            <div class="col-lg-6 advanced-project-section" data-aos="fade-right" data-aos-duration="800">
               <span class="section-tag">Advanced Project Scheduling</span>
               <h2 class="section-title mt-3">
                 Plan, Assign, and Control Every Task with
@@ -614,7 +651,7 @@
             </div>
           </div>
 
-          <img class="gantt-image" src="assets/images/advanced-scheduling.jpg" alt="Compass Gantt chart" data-aos="zoom-in-up" data-aos-duration="900" data-aos-delay="150" />
+          <img class="gantt-image" src="assets/images/advanced-scheduling.jpg" alt="Advanced Project Scheduling Image" data-aos="zoom-in-up" data-aos-duration="900" data-aos-delay="150" />
         </div>
       </section>
 
@@ -622,15 +659,15 @@
         <div class="container">
           <div class="text-center section-heading-centered">
             <span class="section-tag">Core Tools</span>
-            <h2 class="section-title mt-3 mb-3"><span>Explore the Tools</span> That Keep Every Project Under Control</h2>
+            <h2 class="section-title mt-3"><span>Tools</span> That Keep Every Project Under Control</h2>
             <p class="section-description mx-auto">
               From planning and budgeting to reporting and closeout, your team gets the tools needed to manage<br class="break-sentence" />
               every project with clarity.
             </p>
           </div>
 
-          <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
+          <div class="row g-4 core-tools-items">
+            <div class="col-md-6 col-lg-4 tools-content-section left-content">
               <article class="tool-card">
                 <div class="tool-image">
                   <img src="assets/images/compass-core-project.jpg" alt="Project dashboard" />
@@ -642,53 +679,52 @@
               </article>
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 tools-content-section right-content">
               <article class="tool-card">
                 <div class="tool-image">
-                  <img src="https://www.figma.com/api/mcp/asset/48f633e6-a5cf-4aed-8e32-06c88ac54712" alt="Financial control" />
+                  <img src="assets/images/compass-core-document.jpg" alt="Document control" />
                 </div>
-                <h3>Financial Control</h3>
-                <p>Track budgets, committed amounts, location, contracts, work orders, capitals disbursements.</p>
+                <h3>Document Control</h3>
+                <p>Manage drawings, contracts, approvals, reports, budgets, agreements and project files securely.</p>
               </article>
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 tools-content-section left-content">
               <article class="tool-card">
                 <div class="tool-image">
-                  <img src="https://www.figma.com/api/mcp/asset/a31e5bb2-2c9d-4b39-9f67-d20947eccca1" alt="Project schedule" />
+                  <img src="assets/images/compass-core-project.jpg" alt="Project schedule" />
                 </div>
                 <h3>Project Schedule</h3>
                 <p>Plan tasks, phases, dates, members, manage phases and delays with clear Gantt timeline views.</p>
               </article>
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 tools-content-section right-content">
               <article class="tool-card">
                 <div class="tool-image">
-                  <img src="https://www.figma.com/api/mcp/asset/7b82cfa2-dd31-4d0e-ad67-c239418d7855" alt="Project reporting" />
+                  <img src="assets/images/compass-core-report.jpg" alt="Project reporting" />
                 </div>
                 <h3>Project Reporting</h3>
                 <p>Track project progress, budgets, timelines, and performance with centralized reporting and actionable insights.</p>
               </article>
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 tools-content-section left-content">
               <article class="tool-card">
                 <div class="tool-image">
-                  <img src="https://www.figma.com/api/mcp/asset/f5812e0e-ebfe-44eb-89c1-1c2d5035acb3" alt="Project location view" />
+                  <img src="assets/images/compass-core-location.jpg" alt="Project location view" />
                 </div>
                 <h3>Location View</h3>
                 <p>Visualize projects by location on an interactive map to monitor site distribution and regional activity at a glance.</p>
               </article>
             </div>
-
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 tools-content-section right-content">
               <article class="tool-card">
                 <div class="tool-image">
-                  <img src="https://www.figma.com/api/mcp/asset/3f2669ec-5c7f-4e5d-93fc-cd0ceb2d15fc" alt="Document control" />
+                  <img src="assets/images/compass-core-financial.jpg" alt="Financial control" />
                 </div>
-                <h3>Document Control</h3>
-                <p>Manage drawings, contracts, approvals, reports, budgets, agreements and project files securely.</p>
+                <h3>Financial Control</h3>
+                <p>Track budgets, committed amounts, forecasts, contracts, work orders, capitals disbursements, cashflows.</p>
               </article>
             </div>
           </div>
@@ -696,7 +732,7 @@
       </section>
 
       <section id="cta" class="cta-section">
-        <div class="container-xl">
+        <div class="container">
           <div class="row align-items-center g-4">
             <div class="col-lg-6">
               <div class="small text-uppercase fw-semibold program text-secondary" style="margin-bottom: 15px">
@@ -726,7 +762,7 @@
     </div>
 
     <footer id="footer" class="footer-section text-white">
-      <div class="container-xl">
+      <div class="container">
         <div class="row g-4 py-5">
           <!-- Company information -->
           <div class="col-md-12 col-lg-3">
@@ -743,8 +779,8 @@
                 <i class="fab fa-facebook-f"></i>
               </a>
 
-              <a href="#" aria-label="Google">
-                <i class="fab fa-google"></i>
+              <a href="#" aria-label="Twitter">
+                <i class="bi bi-twitter-x"></i>
               </a>
 
               <a href="#" aria-label="Instagram">
@@ -855,8 +891,8 @@
 
       <!-- Footer bottom -->
       <div class="footer-bottom py-3">
-        <div class="container-xl d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-          <span class="footer-copyright"> © 2018 Logic Domain. All rights reserved. </span>
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+          <span class="footer-copyright"> © 2026 Logic Domain. All rights reserved. </span>
 
           <div>
             <a href="privacy-policy.html">Privacy Policy</a>

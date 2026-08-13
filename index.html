@@ -18,8 +18,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style-min.css" />
   </head>
 
   <body>
@@ -65,58 +66,68 @@
       </svg>
     </div>
     <header class="site-header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3 container-xl">
-        <img src="assets/images/logic-domain-logo.png" class="logo" />
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav mx-auto gap-lg-3">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About us</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="compass.html">Compass :: Capital Project Management System</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="navigator.html">Navigator :: Asset and Space Management</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="implementation.html">Implementation</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="system-integration.html">System Integrations</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="training.html">Training & Support</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact us</a>
-            </li>
-          </ul>
-          <a href="contact.html" class="demo-btn">Request Demo </a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3">
+        <div class="container-xl">
+          <img src="assets/images/logic-domain-logo.png" class="logo" alt="logic domain logo" />
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav mx-auto gap-lg-4">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="compass.html">Compass :: Capital Project Management </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="navigator.html">Navigator :: Asset and Space Management</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Who We Serve</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="education.html">Education </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="implementation.html">Implementation</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="system-integration.html">System Integrations</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="training.html">Training & Support</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact us</a>
+              </li>
+            </ul>
+            <a href="contact.html" class="demo-btn">Request Demo </a>
+          </div>
         </div>
       </nav>
     </header>
 
     <main>
       <section id="home" class="hero-section">
-        <img src="assets/images/logicdomain-homebanner.png" alt="Background" class="banner-bg" />
-        <div class="container-xl position-relative">
-          <div class="row align-items-center min-vh-75 py-5">
+        <img src="assets/images/logicdomain-homebanner.png" alt="Banner-Background" class="banner-bg" />
+        <div class="container position-relative home-banner-content">
+          <div class="row align-items-center min-vh-75 py-4">
             <div class="col-lg-6 text-white banner-left" data-aos="fade-right">
               <div class="banner-first-tag text-uppercase mb-3"><i class="fas fa-cloud-upload-alt"></i>Cloud-based <span>•</span> Secure <span>•</span> Scalable</div>
               <h1 class="display-5 fw-bold lh-sm mb-1">
@@ -126,26 +137,26 @@
               <p class="subdesc mb-3">100% SaaS & Cloud-based Program/Project Management Software</p>
               <p class="lead hero-copy mb-4">A secure cloud-based platform that automates business channels and workflows for owners across the full facilities lifecycle.</p>
               <div class="req-demo-social-icons">
-                <a href="contact.html" class="btn btn-light text-primary rounded-3 px-4 py-2 fw-semibold">Request Demo <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn btn-light req-demo-btn text-primary rounded-3 px-4 py-2 fw-semibold">Request Demo <i class="fas fa-arrow-right"></i></a>
 
                 <div class="social-icons">
                   <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-google"></i></a>
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
                   <a href="#"><i class="fab fa-instagram"></i></a>
                   <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 banner-right-image" data-aos="fade-left">
-              <img src="assets/images/laptop-image-new.png" class="monitor" />
+              <img src="assets/images/laptop-banner-image.png" class="monitor" alt="banner computer image" />
             </div>
           </div>
         </div>
       </section>
 
       <section class="feature-strip" data-aos="fade-up">
-        <div class="container-xl">
-          <div class="row g-0 py-3 px-3 px-lg-4">
+        <div class="container">
+          <div class="row g-0 px-lg-4">
             <div class="col-md-4 feature-item">
               <div class="feature-icon cloud">
                 <i class="fas fa-cloud-upload-alt"></i>
@@ -180,19 +191,19 @@
       </section>
 
       <section id="about" class="section-space about-section">
-        <img src="assets/images/about-background.jpg" alt="Background" class="about-bg" />
-        <div class="container-xl">
+        <img src="assets/images/about-background.jpg" alt="About Background" class="about-bg" />
+        <div class="container">
           <div class="row align-items-center gx-5 about-content">
-            <div class="col-lg-5">
+            <div class="col-lg-5 about-image">
               <div class="about-collage">
                 <div class="about-small top-left">
-                  <img src="assets/images/aboutConstruct.jpg" alt="Small Image 1" />
+                  <img src="assets/images/aboutUs-top-img.jpg" alt="About Us top Image" />
                 </div>
                 <div class="about-main">
-                  <img src="assets/images/2imgAbout.png" alt="Main Image" />
+                  <img src="assets/images/aboutUs-middle-img.png" alt="About us Middle Image" />
                 </div>
                 <div class="about-small bottom-right">
-                  <img src="assets/images/3ImageAbout.png" alt="Small Image 2" />
+                  <img src="assets/images/aboutUs-bottom-img.png" alt="About us bottom Image" />
                 </div>
                 <div class="about-badge">
                   <div class="customer-icon">
@@ -239,10 +250,10 @@
       </section>
 
       <section class="lifecycle-section" data-aos="fade-right" data-aos-duration="1000">
-        <div class="container-xl enterprise">
+        <div class="container enterprise">
           <div class="lifecycle-shell">
             <div class="row align-items-center g-4">
-              <div class="col-lg-8 text-white mt-0">
+              <div class="col-lg-8 text-white mt-0 quote-section-data">
                 <div class="enterprise-section">
                   <div class="small text-uppercase text-info fw-semibold mb-4">Enterprise Level</div>
                   <div class="label-line"></div>
@@ -257,9 +268,9 @@
                   ><span><i class="far fa-check-circle"></i> Optimize Performance</span><span><i class="far fa-check-circle"></i> Ensure Compliance</span>
                 </div>
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4 column-lifecycle-image">
                 <div class="lifecycle-image">
-                  <img src="assets/images/quoteHomeimg.jpg" alt="quote-image" />
+                  <img src="assets/images/quoteHomeimg.jpg" alt="quote-home-image" />
                 </div>
               </div>
             </div>
@@ -268,22 +279,22 @@
       </section>
 
       <section id="platform" class="section-space platform-section">
-        <div class="container-xl">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6 mt-lg-0">
+        <div class="container">
+          <div class="row align-items-start g-4">
+            <div class="col-lg-6 mt-lg-0 one-platform-content">
               <span class="section-tag">One Platform</span>
               <h2 class="section-title mt-3" style="color: #0c44b3">Two Powerful Solutions for Every Stage of Capital Projects</h2>
               <p class="section-title-subdesc">
                 Bring planning, operations, data, and teams together in one connected platform designed to simplify complex workflows, improve visibility, and support smarter decisions.
               </p>
               <div class="platform-visual">
-                <img id="platformImage" src="assets/images/compass-pic.jpg" alt="Platform Image" />
+                <img id="platformImage" src="assets/images/compass-platform.jpg" alt="Compass Platform Image" />
                 <div class="platform-icon">
                   <i id="platformIcon" class="far fa-compass"></i>
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 mt-0">
+            <div class="col-lg-6 mt-0 one-platform-content">
               <ul class="nav nav-tabs custom-tabs" role="tablist">
                 <li class="nav-item">
                   <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#compass">
@@ -305,8 +316,8 @@
                     <span class="badge rounded-pill text-bg-primary">Project Management</span>
                   </div>
                   <p>
-                    Plan, coordinate, and deliver capital projects with complete visibility. From scheduling and budgeting to documents, workflows, and reporting, Compass keeps every stakeholder
-                    aligned throughout the project lifecycle.
+                    Plan, coordinate, and deliver capital projects with complete visibility. From scheduling and budgeting to documents, workflows, forecasting, cashflows, and reporting, Compass keeps
+                    every stakeholder aligned throughout the project lifecycle.
                   </p>
                   <div class="d-flex flex-wrap gap-3 mb-4">
                     <span class="pill"><i class="fas fa-check-circle"></i> Project Planning</span><span class="pill"><i class="fas fa-check-circle"></i> Budget Control</span
@@ -321,8 +332,8 @@
                   </div>
 
                   <p>
-                    Centralize facility information, asset records, and space utilization into one intelligent platform. Monitor occupancy, manage equipment, and generate detailed reports that support
-                    better operational and strategic decisions.
+                    Centralize facility information, asset records, facility oversight , and space utilization in one intelligent platform. Monitor occupancy, manage equipment, and generate detailed
+                    reports that support better operational and strategic decisions.
                   </p>
                   <div class="d-flex flex-wrap gap-3 mb-4">
                     <span class="pill"><i class="fas fa-check-circle"></i> Space Analytics</span><span class="pill"><i class="fas fa-check-circle"></i> Asset Registry</span
@@ -338,19 +349,19 @@
 
       <section class="section-space why-section">
         <div class="why-decor"></div>
-        <div class="container-xl position-relative">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-5">
+        <div class="container position-relative why-section-content">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-5 why-section-content">
               <div class="why-image">
                 <img src="assets/images/whyChooseUs.png" alt="why choose us img" />
               </div>
             </div>
             <div class="col-lg-7 why-choose-us-content">
               <span class="section-tag">Why Choose Us</span>
-              <h2 class="section-title mt-3">A Smart Way to Manage <span>Capital Projects</span></h2>
+              <h2 class="section-title mt-3">A Smarter Way to Manage <span>Capital Projects</span></h2>
               <p class="section-title-subdesc">
-                Manage the complete facilities life cycle through one secure, cloud-based platform. Our solution connects teams, processes, and project information so you can improve visibility,
-                reduce delays, and make better decisions at every stage.
+                We bring critical information and workflows together and create a shared source that gives teams greater visibility across every stage of a project and facility lifecycle. Our
+                connected approach helps reduce information gaps and ensure that the right people have access to the right information when they need it.
               </p>
               <div class="why-list">
                 <div class="why-item" data-aos="zoom-in" data-aos-duration="500">
@@ -359,8 +370,8 @@
                   </div>
 
                   <div class="why-content">
-                    <h3>Complete Life-Cycle Management</h3>
-                    <p>Manage the complete facility life cycle within one connected platform.</p>
+                    <h3>Complete Lifecycle Management</h3>
+                    <p>Manage the complete facility lifecycle within one connected platform.</p>
                   </div>
                 </div>
                 <div class="why-item" data-aos="zoom-in" data-aos-duration="1000">
@@ -400,7 +411,7 @@
       </section>
 
       <section class="vendor-section text-white text-center">
-        <div class="container-xl">
+        <div class="container">
           <div class="small text-uppercase text-info vendor fw-semibold mb-3">
             <div class="label-vendor"></div>
             Unified Facilities Lifecycle Platform
@@ -416,10 +427,10 @@
       </section>
 
       <section id="difference" class="section-space difference-section">
-        <div class="container-xl">
+        <div class="container domain-difference">
           <div class="row g-4">
             <!-- Left content -->
-            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+            <div class="col-lg-6 domain-difference title-content" data-aos="fade-right" data-aos-duration="800">
               <span class="section-tag">The Logic Domain Difference</span>
 
               <h2 class="section-title mt-3">
@@ -433,7 +444,7 @@
             </div>
 
             <!-- Card 01 -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="0">
+            <div class="col-md-6 col-lg-3 domain-difference left-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="0">
               <div class="difference-card" style="--hover-image: url(&quot;../images/customer-centric.png&quot;)">
                 <span class="card-number">01</span>
 
@@ -449,8 +460,8 @@
             </div>
 
             <!-- Card 02 -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
-              <div class="difference-card" style="--hover-image: url(&quot;../images/dedicated.png&quot;)">
+            <div class="col-md-6 col-lg-3 domain-difference right-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+              <div class="difference-card" style="--hover-image: url(&quot;../images/dedicated-client-support.png&quot;)">
                 <span class="card-number">02</span>
 
                 <div class="difference-icon">
@@ -465,7 +476,7 @@
             </div>
 
             <!-- Card 03 -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+            <div class="col-md-6 col-lg-3 domain-difference left-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
               <div class="difference-card" style="--hover-image: url(&quot;../images/custom-implementation.png&quot;)">
                 <span class="card-number">03</span>
 
@@ -481,7 +492,7 @@
             </div>
 
             <!-- Card 04 -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+            <div class="col-md-6 col-lg-3 domain-difference right-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
               <div class="difference-card" style="--hover-image: url(&quot;../images/innovative-dev.jpg&quot;)">
                 <span class="card-number">04</span>
 
@@ -497,7 +508,7 @@
             </div>
 
             <!-- Card 05 -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+            <div class="col-md-6 col-lg-3 domain-difference left-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
               <div class="difference-card" style="--hover-image: url(&quot;../images/seamless-integration.jpg&quot;)">
                 <span class="card-number">05</span>
 
@@ -513,8 +524,8 @@
             </div>
 
             <!-- Card 06 -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
-              <div class="difference-card" style="--hover-image: url(&quot;../images/industry.jpg&quot;)">
+            <div class="col-md-6 col-lg-3 domain-difference right-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
+              <div class="difference-card" style="--hover-image: url(&quot;../images/industry-expertise.jpg&quot;)">
                 <span class="card-number">06</span>
 
                 <div class="difference-icon">
@@ -532,7 +543,7 @@
       </section>
 
       <section id="cta" class="cta-section">
-        <div class="container-xl">
+        <div class="container">
           <div class="row align-items-center g-4">
             <div class="col-lg-6">
               <div class="small text-uppercase fw-semibold program text-secondary" style="margin-bottom: 15px">
@@ -559,7 +570,7 @@
     </div>
 
     <footer id="footer" class="footer-section text-white">
-      <div class="container-xl">
+      <div class="container">
         <div class="row g-4 py-5">
           <!-- Company information -->
           <div class="col-md-12 col-lg-3">
@@ -576,8 +587,8 @@
                 <i class="fab fa-facebook-f"></i>
               </a>
 
-              <a href="#" aria-label="Google">
-                <i class="fab fa-google"></i>
+              <a href="#" aria-label="Twitter">
+                <i class="bi bi-twitter-x"></i>
               </a>
 
               <a href="#" aria-label="Instagram">
@@ -688,8 +699,8 @@
 
       <!-- Footer bottom -->
       <div class="footer-bottom py-3">
-        <div class="container-xl d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-          <span class="footer-copyright"> © 2018 Logic Domain. All rights reserved. </span>
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+          <span class="footer-copyright"> © 2026 Logic Domain. All rights reserved. </span>
 
           <div>
             <a href="privacy-policy.html">Privacy Policy</a>
