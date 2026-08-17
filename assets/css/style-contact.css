@@ -1,0 +1,142 @@
+
+
+
+/* .form-control:focus,
+.form-select:focus {
+  border-color: #7ea8ff;
+  box-shadow: 0 0 0 3px rgba(4, 97, 250, 0.10);
+} */
+/* .input-group .input-group-text,
+.input-group .form-control {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+} */
+
+
+
+
+/* .date-time-group:focus-within {
+  border-color: #7ea8ff;
+  box-shadow: 0 0 0 3px rgba(4, 97, 250, 0.1);
+} */
+
+
+
+@media (max-width: 991.98px) {
+  /* .innerpage-hero-content {
+    padding-top: 72px;
+  } */
+}
+
+@media (max-width: 767.98px) {
+  /* .innerpage-hero-content {
+    padding-top: 80px;
+  } */
+  .innerpage-hero-content p {
+    padding: 0 18px;
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 575.98px) {
+  /* .section-space {
+    padding: 30px 0;
+  } */
+
+  /* .hero-section-innerpage {
+    min-height: 270px;
+  } */
+
+  /* .innerpage-hero-content p {
+    font-size: 13px;
+  } */
+
+}
+
+/* Navigator Section Start */
+
+
+@media (max-width: 991.98px) {
+
+}
+@media (max-width: 767.98px) {
+  
+}
+
+/* Navigator Section End */
+
+/* About Us Section */
+
+
+
+
+
+
+
+
+
+@media (max-width: 991.98px) {
+
+}
+
+@media (max-width: 767.98px) {
+ 
+
+  
+
+}
+@media (max-width: 575.98px) {
+  
+}
+
+/* About Us Section End*/
+
+/* Implementation Section Start  */
+
+/* .strategy-copy {
+  font-size: 16px;
+  margin: 28px 0 38px;
+  margin: 28px 0 39px;
+} */
+
+@media (max-width: 767.98px) {
+
+}
+@media (max-width: 575.98px) {
+  
+ 
+
+
+
+
+}
+
+/* Implementation Section End  */
+
+/* Training and Support Start*/
+
+
+@media (max-width: 575.98px) {
+
+}
+@media (max-width: 767.98px) {
+
+}
+
+/* Training and Support End */
+
+/* System Integration Start */
+
+
+
+
+
+@media (max-width: 991.98px) {
+
+}
+
+/* System Implementation End */
+
+/*Training tabs*/

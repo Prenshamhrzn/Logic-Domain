@@ -1644,8 +1644,8 @@ img.about-bg {
 }
 .bottom-blue-shape {
   position: absolute;
-  left: 6%;
-  right: 6%;
+  left: 0;
+  right: 0;
   bottom: 0;
   height: 440px;
   background: linear-gradient(135deg, #052a9d, #003ec3);
@@ -2332,6 +2332,42 @@ select#stateDepartment {
   border-bottom: 4px solid #1247ec;
   border-radius: 0 0 18px 0;
 }
+
+.industry-group {
+  position: relative;
+}
+
+.industry-image {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.industry-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.industry-solutions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  position: relative;
+
+  z-index: 5;
+  margin-top: -22px;
+  padding: 0 14px;
+}
+.municipality-facility-section {
+  margin-top: 40px;
+}
+
 /*One vendor/solution loop in mobile*/
 @keyframes mobileWordLoop {
   0%,
@@ -2346,6 +2382,108 @@ select#stateDepartment {
   100% {
     transform: translate3d(0, -2.4em, 0);
   }
+}
+/*End of One vendor/solution loop in mobile*/
+
+/*Our story section*/
+.our-story-layout {
+  margin-top: 30px;
+}
+.story-left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.story-image {
+  overflow: hidden;
+  border-radius: 18px;
+  position: relative;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.story-image-top {
+  height: 310px;
+}
+
+.story-image-top img {
+  object-position: center;
+}
+.experience-card {
+  gap: 15px;
+  padding: 20px;
+  background: var(--primary-dark);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 18px 35px rgba(0, 46, 162, 0.25);
+}
+.stat-content h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.stat-content p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* RIGHT */
+.story-right {
+  height: 100%;
+  display: grid;
+}
+
+/* Who we are */
+.story-content {
+  align-self: start;
+}
+/* Checklist */
+.story-points {
+  margin-bottom: 10px;
+  gap: 18px;
+  align-items: center;
+  padding-top: 2px;
+  display: flex;
+}
+
+.story-point {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--warning);
+}
+
+/* Bottom image */
+.story-image-bottom {
+  height: 255px;
+  border-radius: 18px;
+}
+
+.story-image-bottom img {
+  object-position: center 45%;
 }
 
 @media (min-width: 1600px) {
@@ -3026,6 +3164,32 @@ select#stateDepartment {
   .k12-card p {
     font-size: 15px;
   }
+  .story-left {
+    display: none;
+  }
+  .our-story-layout {
+    margin-top: 0px;
+  }
+  .our-story-right-content {
+    padding: 0;
+  }
+  .k12-higher-education-section,
+  .municipality-facility-section {
+    padding: 0;
+  }
+  .industry-image {
+    height: 200px;
+  }
+
+  .industry-solutions {
+    margin-top: -40px;
+    padding-bottom: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .municipality-facility-section {
+    margin-top: 24px;
+  }
 }
 @media (max-width: 767.98px) {
   .hero-section,
@@ -3406,6 +3570,31 @@ select#stateDepartment {
     border-top: 1px solid #e2e8f0;
     margin-top: 12px;
     padding-top: 8px;
+  }
+  .industry-group {
+    padding: 7px 7px 0;
+    border-radius: 17px;
+  }
+
+  .industry-image {
+    height: 200px;
+    border-radius: 10px;
+  }
+  .industry-solutions {
+    margin-top: -30px;
+    grid-template-columns: 1fr;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .k12-higher-education-section,
+  .municipality-facility-section {
+    padding: 0;
+  }
+  .k12-card p {
+    font-size: 14px;
+  }
+  .municipality-facility-section {
+    margin-top: 24px;
   }
 }
 @media (max-width: 575.98px) {
@@ -4043,9 +4232,6 @@ select#stateDepartment {
   .featuring-content-item-left:first-child {
     margin-top: 0;
   }
-  .image-part {
-    height: 200px;
-  }
   .info-card {
     margin-top: 15px;
   }
@@ -4053,5 +4239,26 @@ select#stateDepartment {
   .cta-desc,
   .program-management-content {
     padding: 0px;
+  }
+  .story-points {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .our-story-layout {
+    margin-top: 25px;
+  }
+
+  .story-image-top {
+    height: 260px;
+  }
+
+  .experience-card {
+    min-height: 80px;
+  }
+  .story-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
 }
