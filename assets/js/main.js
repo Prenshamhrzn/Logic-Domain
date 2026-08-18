@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
   document.querySelectorAll(".navbar-nav a[href]").forEach((link) => {
-    const linkPage = link.getAttribute("href").split("/").pop();
+    const linkPage = link.getAttribute("href").split("#")[0].split("/").pop();
 
     if (linkPage === currentPage) {
       // Active current page
@@ -127,22 +127,4 @@ window.addEventListener("load", function () {
   }, 500);
 });
 
-//Showing title without .html file
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   let page = location.pathname.split("/").pop().replace(".html", "") || "index";
-
-//   if (location.pathname.endsWith(".html")) {
-//     history.replaceState(null, "", location.pathname.replace(".html", ""));
-//   }
-
-//   document.querySelectorAll(".navbar-nav a[href]").forEach((link) => {
-//     const linkPage = link.getAttribute("href").split("/").pop().replace(".html", "");
-
-//     if (linkPage === page) {
-//       link.classList.add("active");
-
-//       link.closest(".dropdown")?.querySelector(".dropdown-toggle")?.classList.add("active");
-//     }
-//   });
-// });
+//who we serve

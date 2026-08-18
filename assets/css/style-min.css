@@ -516,6 +516,27 @@ img.about-bg {
 .lifecycle-section {
   margin: -140px 0 75px;
 }
+.navigate-section {
+  position: relative;
+  padding-bottom: 235px;
+  overflow: hidden;
+}
+img.navigate-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.navigate-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
 .lifecycle-section.navigator-section {
   margin: 0;
 }
@@ -1083,6 +1104,13 @@ img.about-bg {
   margin-right: 7px;
   flex-shrink: 0;
 }
+.privacy-section {
+  display: flex;
+}
+.privacy-section p {
+  margin-bottom: 0;
+  font-size: 15px;
+}
 .hero-section-innerpage {
   position: relative;
   min-height: 400px;
@@ -1207,7 +1235,8 @@ img.about-bg {
 .education-heading {
   margin-bottom: 28px;
 }
-.feature-card {
+.feature-card,
+.price-card {
   display: flex;
   gap: 15px;
   height: 100%;
@@ -1215,8 +1244,10 @@ img.about-bg {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(217, 217, 217, 0.7);
+  border: 1px solid #e2e8f0;
 }
-.compass-feature-icon {
+.compass-feature-icon,
+.pricing-feature-icon {
   display: grid;
   flex: 0 0 44px;
   width: 44px;
@@ -1227,15 +1258,20 @@ img.about-bg {
   border-radius: 10px;
   font-size: 19px;
 }
+.pricing-feature-icon {
+  background: var(--primary);
+}
 .feature-card h3,
-.projectSchedule-title h3 {
+.projectSchedule-title h3,
+.price-card h3 {
   font-weight: 700;
   margin: 0 0 6px;
   font-size: 16px;
 }
 .feature-card p,
 .number-list p,
-.projectSchedule-title p {
+.projectSchedule-title p,
+.price-card p {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
@@ -1903,11 +1939,15 @@ select#stateDepartment {
   gap: 18px;
   margin-top: 18px;
 }
-.company-benefits {
+.company-benefits,
+.pricing-items {
   display: flex;
   justify-content: space-between;
   gap: 25px;
   margin-top: 25px;
+}
+.pricing-items {
+  gap: 20px;
 }
 .company-benefits article {
   text-align: center;
@@ -2272,11 +2312,18 @@ select#stateDepartment {
 }
 .image-part {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  height: 214px;
   overflow: hidden;
 }
+.image-part-government {
+  height: 262px;
+  overflow: hidden;
+  width: 100%;
+}
 
-.image-part img {
+.image-part img,
+.image-part-government img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -2332,41 +2379,15 @@ select#stateDepartment {
   border-bottom: 4px solid #1247ec;
   border-radius: 0 0 18px 0;
 }
-
-.industry-group {
-  position: relative;
+.pricing-section-space {
+  padding-bottom: 50px;
 }
-
-.industry-image {
-  height: 250px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-}
-
-.industry-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.industry-solutions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  gap: 12px;
-
-  position: relative;
-
-  z-index: 5;
-  margin-top: -22px;
-  padding: 0 14px;
-}
-.municipality-facility-section {
-  margin-top: 40px;
-}
+/* #k12,
+#higher-education,
+#municipalities,
+#county-facilities {
+  scroll-margin-top: 140px;
+} */
 
 /*One vendor/solution loop in mobile*/
 @keyframes mobileWordLoop {
@@ -2484,6 +2505,270 @@ select#stateDepartment {
 
 .story-image-bottom img {
   object-position: center 45%;
+}
+
+/*Pricing page start*/
+.pricing-each-item {
+  width: 33%;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  gap: 13px;
+  border-radius: 10px;
+  border: 1px solid #e1e9ff;
+  background-color: #f4f7fe;
+  padding: 16px;
+}
+.pricing-each-item p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.pricing-each-item h6 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.pricing-each-item i {
+  font-size: 26px;
+  color: var(--primary);
+}
+
+.pricing-image-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-main-image {
+  position: relative;
+  width: 88%;
+  height: 444px;
+  margin-left: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+.pricing-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.image-decoration {
+  border-radius: 10px;
+  position: absolute;
+  left: 37px;
+  bottom: -29px;
+  width: 174px;
+  height: 140px;
+  background: #002ea2;
+}
+.quote-content {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  padding: 75px 0;
+}
+
+.custom-quote-section {
+  position: relative;
+  min-height: 360px;
+  width: 100%;
+  /* margin-top: 120px; */
+  margin-bottom: 50px;
+  margin-top: 0px;
+}
+
+.custom-quote-bg {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  /* background: linear-gradient(90deg, #001d6e, #002ea2 45%, #2f6bff); */
+  display: flex;
+  align-items: flex-start;
+  background:
+    linear-gradient(rgba(0, 29, 110, 0.65), rgba(0, 29, 110, 0.65)),
+    url("../images/price-bg.jpg") center center / cover no-repeat;
+}
+
+.custom-quote-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+.quote-content {
+  width: 55%;
+  padding: 42px 0;
+  color: #fff;
+}
+
+.quote-content h3 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.quote-content h3 span {
+  font-weight: 700;
+}
+
+.quote-content p {
+  font-size: 18px;
+  color: #fff;
+}
+
+.quote-form-card {
+  position: absolute;
+  z-index: 5;
+  top: -110px;
+  /* right: 130px; */
+  right: 175px;
+  width: 500px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 8px 25px rgba(20, 45, 100, 0.12);
+}
+
+.quote-form-card h4 {
+  position: relative;
+  margin: 0 0 20px;
+  padding-left: 15px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.quote-form-card h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 30px;
+  border-radius: 10px;
+  background: var(--primary);
+}
+
+.quote-form-card label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #27364e;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  height: 34px;
+  padding: 4px 7px;
+  border: 1px solid #dce1e8;
+  border-radius: 5px;
+  background: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 4px 7px;
+  border: 1px solid #dce1e8;
+  border-radius: 5px;
+  background: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  border-color: #3b73e8;
+  box-shadow: 0 0 0 2px rgba(59, 115, 232, 0.08);
+}
+
+.form-question {
+  margin-bottom: 8px;
+}
+
+.checkbox-row {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr 1fr;
+  column-gap: 9px;
+  row-gap: 5px;
+}
+
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  accent-color: #2169ef;
+}
+.quote-submit {
+  padding: 10px 16px;
+  width: 100%;
+  margin-top: 5px;
+  border: none;
+  border-radius: 6px;
+  background: #0635ad;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: all 0.25s ease;
+}
+
+.quote-submit:hover {
+  background: #052d96;
+  transform: translateY(-1px);
+}
+
+.quote-submit i {
+  font-size: 14px;
+}
+.pricing-built-your-success-heading {
+  margin-bottom: 16px;
+}
+.price-card p {
+  font-size: 15px;
+}
+.pricing-overview {
+  padding-bottom: 75px;
+  padding-top: 60px;
+}
+.k12-card {
+  scroll-margin-top: 130px;
+}
+.pricing-plans-section {
+  position: relative;
+  padding-bottom: 160px;
+  background-image: url(&quot;assets/images/about-company-section.svg&quot;);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.who-we-serve-government-title,
+.who-we-serve-government-desc,
+.government-title {
+  text-align: right;
 }
 
 @media (min-width: 1600px) {
@@ -2741,6 +3026,9 @@ select#stateDepartment {
   .innerpage-hero-content h1 {
     font-size: 30px;
     margin-bottom: 20px;
+  }
+  .innerpage-hero-content .break-sentence {
+    display: none;
   }
   .btn,
   .check-list li,
@@ -3148,15 +3436,9 @@ select#stateDepartment {
     margin-top: 12px;
     padding-top: 8px;
   }
-  .education-image-section {
-    padding: 0;
-  }
-  .image-part {
+  .image-part,
+  .image-part-government {
     height: 300px;
-  }
-  .k12-education-content {
-    margin-top: 25px;
-    padding: 0;
   }
   .two-content-education {
     gap: 25px;
@@ -3173,22 +3455,88 @@ select#stateDepartment {
   .our-story-right-content {
     padding: 0;
   }
-  .k12-higher-education-section,
-  .municipality-facility-section {
+  .pricing-items h3,
+  i,
+  p {
+    order: 0;
+  }
+  .pricing-image-wrap {
+    width: 100%;
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .image-decoration {
+    display: none;
+  }
+  .pricing-main-image {
+    width: 100%;
+    height: 300px;
+    margin-top: 25px;
+  }
+  .pricing-image-section {
     padding: 0;
   }
-  .industry-image {
-    height: 200px;
+  .pricing-items {
+    margin-top: 14px;
   }
 
-  .industry-solutions {
-    margin-top: -40px;
-    padding-bottom: 0;
-    padding-left: 12px;
-    padding-right: 12px;
+  .custom-quote-section {
+    min-height: auto;
+    padding-bottom: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
-  .municipality-facility-section {
-    margin-top: 24px;
+  .custom-quote-bg {
+    min-height: 220px;
+  }
+  .quote-content {
+    width: 100%;
+    padding: 50px 0;
+    gap: 15px;
+  }
+  .quote-form-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: calc(100% - 40px);
+    margin: -25px auto 0;
+  }
+  .quote-content h3 {
+    font-size: 30px;
+  }
+  .quote-content p {
+    font-size: 15px;
+  }
+  .pricing-built-content {
+    margin-top: 0;
+  }
+  .price-card p {
+    font-size: 14px;
+  }
+  .pricing-section-title {
+    width: 90%;
+  }
+  .pricing-built-content {
+    width: 50%;
+  }
+  .pricing-overview {
+    padding-bottom: 55px;
+  }
+  .who-we-serve-content-section-government,
+  .who-we-serve-content-section-education {
+    padding: 0;
+  }
+  .who-we-serve-items {
+    margin-top: 25px;
+    padding: 0;
+  }
+  .government-title,
+  .who-we-serve-government-title,
+  .who-we-serve-government-desc {
+    text-align: left;
+  }
+  .pricing-section-space {
+    padding-bottom: 30px;
   }
 }
 @media (max-width: 767.98px) {
@@ -3571,30 +3919,38 @@ select#stateDepartment {
     margin-top: 12px;
     padding-top: 8px;
   }
-  .industry-group {
-    padding: 7px 7px 0;
-    border-radius: 17px;
+
+  .custom-quote-section {
+    margin-top: 40px;
+    padding-bottom: 0;
   }
 
-  .industry-image {
-    height: 200px;
-    border-radius: 10px;
+  .custom-quote-bg {
+    min-height: auto;
   }
-  .industry-solutions {
-    margin-top: -30px;
-    grid-template-columns: 1fr;
-    padding-left: 6px;
-    padding-right: 6px;
+
+  .quote-content {
+    width: 100%;
+    padding: 40px 20px 170px;
   }
-  .k12-higher-education-section,
-  .municipality-facility-section {
-    padding: 0;
+
+  .quote-content h3 {
+    font-size: 24px;
   }
-  .k12-card p {
-    font-size: 14px;
+
+  .quote-content p {
+    font-size: 12px;
   }
-  .municipality-facility-section {
-    margin-top: 24px;
+
+  .quote-form-card {
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    width: calc(100% - 40px);
+
+    margin: -120px auto 0;
   }
 }
 @media (max-width: 575.98px) {
@@ -3991,7 +4347,8 @@ select#stateDepartment {
   .footer-bottom a,
   .footer-bottom p,
   .micro-label,
-  .mini-checks span {
+  .mini-checks span,
+  .privacy-section p {
     font-size: 13px;
   }
   .newsletter button {
@@ -4245,9 +4602,9 @@ select#stateDepartment {
     flex-direction: column;
     align-items: start;
   }
-  .our-story-layout {
+  /* .our-story-layout {
     margin-top: 25px;
-  }
+  } */
 
   .story-image-top {
     height: 260px;
@@ -4260,5 +4617,100 @@ select#stateDepartment {
     display: flex;
     flex-direction: column;
     gap: 5px;
+  }
+  .pricing-items {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .pricing-each-item {
+    gap: 5px;
+    width: 100%;
+  }
+  .pricing-items h3,
+  i,
+  p {
+    order: 0;
+  }
+  .image-decoration {
+    display: none;
+  }
+  .pricing-main-image {
+    width: 100%;
+    margin-top: 25px;
+    height: 260px;
+  }
+  .pricing-each-item h6 {
+    font-size: 16px;
+  }
+  .pricing-image-section {
+    padding: 0;
+  }
+  .custom-quote-section {
+    margin-top: 0px;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+  }
+  .quote-content p {
+    font-size: 15px;
+  }
+
+  .quote-content {
+    padding: 35px 0px 130px;
+    gap: 15px;
+  }
+
+  .quote-content h3 {
+    font-size: 22px;
+  }
+  .quote-form-card h4 {
+    font-size: 18px;
+  }
+  .quote-form-card h4::before {
+    height: 25px;
+  }
+  .quote-form-card {
+    /* width: calc(100% - 30px); */
+    padding: 20px;
+  }
+
+  .checkbox-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quote-submit {
+    height: 38px;
+  }
+  .price-card p {
+    font-size: 13px;
+  }
+  .pricing-overview {
+    padding-top: 40px;
+    padding-bottom: 45px;
+  }
+  .built-your-success {
+    margin-top: 8px;
+  }
+  .k12-card h3 {
+    font-size: 18px;
+  }
+  .image-part,
+  .image-part-government {
+    height: 200px;
+    margin-top: 25px;
+  }
+  .who-we-serve-government-title,
+  .who-we-serve-government-desc,
+  .government-title {
+    text-align: left;
+  }
+  .who-we-serve-content-section-education,
+  .who-we-serve-content-section-government {
+    padding: 0;
+  }
+  .who-we-serve-content-section-government {
+    margin-top: 30px;
+  }
+  .pricing-section-space {
+    padding-bottom: 15px;
   }
 }
