@@ -121,7 +121,7 @@
         </g>
       </svg>
     </div>
-<header class="site-header">
+    <header class="site-header">
       <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3">
         <div class="container-xl">
           <img src="assets/images/logic-domain-logo.png" class="logo" alt="logic domain logo" />
@@ -208,7 +208,7 @@
             <span class="section-tag
             ">Get in Touch</span>
             <h2 class="section-title mt-3 ">Start a conversation with our team.</h2>
-            <p class="section-title-subdesc">Reach out to our team for product inquiries, live demonstrations, implementation guidance, <br class="break-sentence"> technical support, or partnership opportunities. We are here to help you every step of the way.</p>
+            <p class="section-title-subdesc">Reach out to our team for product inquiries, live demonstrations, <a href="./implementation">implementation guidance</a>, <br class="break-sentence"> <a href="./training">technical support</a>, or partnership opportunities. We are here to help you every step of the way.</p>
           </div>
 
           <div class="row g-3 g-lg-4 contact-card-row">
@@ -284,7 +284,7 @@
                   <label for="phone" class="form-label"> Phone Number <span>*</span> </label>
                   <div class="input-group inputfield-space">
                     <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
-                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter phone number" required />
+                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter phone number" maxlength="10" pattern="[0-9]{10}" required />
                     <div class="invalid-feedback">Please enter your phone number.</div>
                   </div>
                 </div>
@@ -309,26 +309,31 @@
 
                 <div class="col-md-6">
                   <label for="stateDepartment" class="form-label">Service Department <span>*</span></label>
-                  <select class="form-select" name="department" id="stateDepartment">
-                    <option selected disabled></i>Choose an option</option>
+                  <select class="form-select" name="department" id="stateDepartment" required>
+                    <option value="" selected disabled></i>Choose an option</option>
                     <option>Sales</option>
                     <option>Support</option>
                     <option>Information Request</option>
- 
                   </select>
+                  <div class="invalid-feedback">
+                    Please select a service department.
+                  </div>
                 </div>
 
                 <div class="col-md-6">
                   <label class="form-label"> Products Interested In <span>*</span> </label>
                   <div class="product-options" role="group" aria-label="Products interested in">
                     <label class="product-option w-50">
-                      <input class="form-check-input" name="products[]" type="checkbox" value="Compass" required />
+                      <input class="form-check-input" name="products[]" type="checkbox" value="Compass"/>
                       <span>Compass</span>
                     </label>
                     <label class="product-option w-50">
-                      <input class="form-check-input" name="products[]" type="checkbox" value="Navigator" required />
+                      <input class="form-check-input" name="products[]" type="checkbox" value="Navigator" />
                       <span>Navigator</span>
                     </label>
+                    <div class="invalid-feedback product-error">
+                      Please select at least one product.
+                    </div>
                   </div>
                 </div>
 
@@ -384,14 +389,14 @@
                 </div>
             </div>
         </section>
-</div>
+    </div>
     </main>
 
         <div class="top-button d-flex justify-content-end align-items-center">
       <a href="#" class="top-button-link">
         <i class="fa-solid fa-arrow-up"></i>
       </a>
-    </div>
+        </div>
 
     <footer id="footer" class="footer-section text-white">
       <div class="container">

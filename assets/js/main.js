@@ -114,9 +114,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+function removeWhoWeServeHash() {
+  if (location.hash && location.pathname.includes("whoweserve")) {
+    history.replaceState(null, "", location.pathname);
+  }
+}
+
+window.addEventListener("load", removeWhoWeServeHash);
+window.addEventListener("hashchange", removeWhoWeServeHash);
 
 //loader
-
 window.addEventListener("load", function () {
   const pageLoader = document.getElementById("page-loader");
 
@@ -125,4 +132,17 @@ window.addEventListener("load", function () {
   setTimeout(function () {
     pageLoader.remove();
   }, 500);
+});
+
+//Contact form validation
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function (e) {
+  if (!contactForm.checkValidity()) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    contactForm.classList.add("was-validated");
+    contactForm.reportValidity();
+  }
 });
