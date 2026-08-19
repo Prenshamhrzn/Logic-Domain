@@ -126,5 +126,3 @@ window.addEventListener("load", function () {
     pageLoader.remove();
   }, 500);
 });
-
-//who we serve
