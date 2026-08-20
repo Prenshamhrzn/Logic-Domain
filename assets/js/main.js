@@ -44,7 +44,7 @@ document.querySelectorAll('[data-bs-toggle="tab"]').forEach((tab) => {
         platformImage.src = "assets/images/compass-platform.jpg";
         platformIcon.className = "far fa-compass";
       } else {
-        platformImage.src = "assets/images/navigator-platform.png";
+        platformImage.src = "assets/images/navigator-platform.jpg";
         platformIcon.className = "fab fa-telegram";
       }
 
@@ -98,18 +98,27 @@ document.querySelectorAll(".date-time-group").forEach((group) => {
 /*Active of navbar*/
 
 document.addEventListener("DOMContentLoaded", () => {
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  const pathname = window.location.pathname;
+
+  const currentPage = pathname === "/" || pathname === "" ? "/" : pathname.split("/").pop();
 
   document.querySelectorAll(".navbar-nav a[href]").forEach((link) => {
-    const linkPage = link.getAttribute("href").split("#")[0].split("/").pop();
+    const href = link.getAttribute("href");
+
+    // Remove hash and query string before comparing
+    const linkPage = href.split("#")[0].split("?")[0].split("/").pop();
 
     if (linkPage === currentPage) {
-      // Active current page
       link.classList.add("active");
 
       const dropdown = link.closest(".dropdown");
+
       if (dropdown) {
-        dropdown.querySelector(".dropdown-toggle").classList.add("active");
+        const toggle = dropdown.querySelector(".dropdown-toggle");
+
+        if (toggle) {
+          toggle.classList.add("active");
+        }
       }
     }
   });
