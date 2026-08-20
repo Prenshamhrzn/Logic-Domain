@@ -211,54 +211,54 @@
 
           <form id="priceForm">
             <div class="form-question">
-              <label>What type of organization do you represent?</label>
+              <label>What type of organization do you represent? <span>*</span></label>
 
               <div class="checkbox-row">
                 <label>
-                  <input name="org[]" type="radio" value="K-12"/>
+                  <input name="org[]" type="radio" value="K-12" />
                   K-12
                 </label>
 
                 <label>
-                  <input name="org[]" type="radio" value="College/University"/>
+                  <input name="org[]" type="radio" value="College/University" />
                   College/University
                 </label>
 
                 <label>
-                  <input name="org[]" type="radio" value="Municipality"/>
+                  <input name="org[]" type="radio" value="Municipality" />
                   Municipality
                 </label>
 
                 <label>
-                  <input name="org[]" type="radio" value="County Office"/>
+                  <input name="org[]" type="radio" value="County Office" />
                   County Office
                 </label>
 
                 <label>
-                  <input name="org[]" type="radio" value="Other"/>
+                  <input name="org[]" type="radio" value="Other" />
                   Other
                 </label>
               </div>
             </div>
 
             <div class="form-group">
-              <label>What is the size of your organization?</label>
-              <input type="text" class="form-control" name="size_org"/>
+              <label>What is the size of your organization? <span>*</span></label>
+              <input type="text" class="form-control" name="size_org" required />
             </div>
 
             <div class="form-group">
-              <label>Number of users?</label>
-              <input type="text" class="form-control" name="no_org"/>
+              <label>Number of users? <span>*</span></label>
+              <input type="text" class="form-control" name="no_org" required />
             </div>
 
             <div class="form-group">
-              <label>What is your average annual capital projects?</label>
-              <input type="text" class="form-control" name="avg_cap"/>
+              <label>What is your average annual capital projects? <span>*</span></label>
+              <input type="text" class="form-control" name="avg_cap" required />
             </div>
 
             <div class="form-group">
-              <label>What email should we use to contact you?</label>
-              <input type="email" class="form-control" name="email"/>
+              <label>What email should we use to contact you? <span>*</span></label>
+              <input type="email" class="form-control" name="email" required />
             </div>
             <div class="form-group">
               <label>Comments</label>
@@ -319,7 +319,7 @@
               </article>
             </div>
 
-            <div class="col-md-6 featuring-content-item-right" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+            <div class="col-md-6 featuring-content-item-left" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
               <article class="price-card">
                 <div class="pricing-feature-icon">
                   <i class="bi bi-gear"></i>
@@ -343,7 +343,7 @@
               </article>
             </div>
 
-            <div class="col-md-6 featuring-content-item-right" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+            <div class="col-md-6 featuring-content-item-left" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
               <article class="price-card">
                 <div class="pricing-feature-icon">
                   <i class="bi bi-cloud"></i>
@@ -355,7 +355,7 @@
               </article>
             </div>
 
-            <div class="col-md-6 featuring-content-item-right" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
+            <div class="col-md-6 featuring-content-item-left" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
               <article class="price-card">
                 <div class="pricing-feature-icon">
                   <i class="bi bi-headset"></i>
@@ -551,13 +551,13 @@
           allowEscapeKey: false,
           didOpen: () => {
             Swal.showLoading();
-          }
+          },
         });
 
         try {
           const response = await fetch("mail/sendPriceMail.php", {
             method: "POST",
-            body: formData
+            body: formData,
           });
 
           const result = await response.json();
@@ -569,33 +569,32 @@
               icon: "success",
               title: "Request Submitted!",
               text: result.message,
-              confirmButtonText: "OK"
+              confirmButtonText: "OK",
+            }).then(() => {
+              window.location.reload();
             });
 
             e.target.reset();
-
           } else {
             Swal.fire({
               icon: "error",
               title: "Oops!",
-              text: result.message
+              text: result.message,
             });
           }
-
         } catch (error) {
-
           Swal.close();
 
           Swal.fire({
             icon: "error",
             title: "Connection Error",
-            text: "Unable to submit your request. Please try again later."
+            text: "Unable to submit your request. Please try again later.",
           });
 
           console.error(error);
         }
       });
-      
+
       AOS.init({
         duration: 900,
         offset: 100,

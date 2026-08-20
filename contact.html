@@ -548,6 +548,8 @@
             title: "Request Submitted!",
             text: result.message,
             confirmButtonText: "OK"
+          }).then(() => {
+            window.location.reload();
           });
 
           e.target.reset();
