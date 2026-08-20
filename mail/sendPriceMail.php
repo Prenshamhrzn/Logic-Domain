@@ -1,0 +1,213 @@
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../vendor/autoload.php';
+
+header('Content-Type: application/json');
+
+
+// ==========================================
+// READ FORM DATA
+// ==========================================
+
+$organizations = $_POST['org'] ?? [];
+$sizeOrg       = trim($_POST['size_org'] ?? '');
+$noOrg         = trim($_POST['no_org'] ?? '');
+$avgCap        = trim($_POST['avg_cap'] ?? '');
+$email         = trim($_POST['email'] ?? '');
+$comments      = trim($_POST['comments'] ?? '');
+
+
+// Make sure org is always an array
+if (!is_array($organizations)) {
+    $organizations = [$organizations];
+}
+
+
+// ==========================================
+// BASIC SERVER-SIDE VALIDATION
+// ==========================================
+
+if (empty($organizations)) {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Please select at least one organization type.'
+    ]);
+    exit;
+}
+
+if ($sizeOrg === '') {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Please enter the size of your organization.'
+    ]);
+    exit;
+}
+
+if ($noOrg === '' || !ctype_digit($noOrg) || (int)$noOrg <= 0) {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Please enter a valid number of users.'
+    ]);
+    exit;
+}
+
+if ($avgCap === '') {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Please enter your average annual capital projects.'
+    ]);
+    exit;
+}
+
+if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Please enter a valid email address.'
+    ]);
+    exit;
+}
+
+if (strlen($comments) > 1000) {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Comments cannot exceed 1000 characters.'
+    ]);
+    exit;
+}
+
+
+// ==========================================
+// SANITIZE DATA FOR EMAIL
+// ==========================================
+
+$organizationsHtml = htmlspecialchars(
+    implode(', ', $organizations),
+    ENT_QUOTES,
+    'UTF-8'
+);
+
+$sizeOrgHtml = htmlspecialchars(
+    $sizeOrg,
+    ENT_QUOTES,
+    'UTF-8'
+);
+
+$noOrgHtml = htmlspecialchars(
+    $noOrg,
+    ENT_QUOTES,
+    'UTF-8'
+);
+
+$avgCapHtml = htmlspecialchars(
+    $avgCap,
+    ENT_QUOTES,
+    'UTF-8'
+);
+
+$emailHtml = htmlspecialchars(
+    $email,
+    ENT_QUOTES,
+    'UTF-8'
+);
+
+$commentsHtml = nl2br(
+    htmlspecialchars(
+        $comments,
+        ENT_QUOTES,
+        'UTF-8'
+    )
+);
+
+
+// ==========================================
+// LOAD EMAIL TEMPLATE
+// ==========================================
+
+$template = file_get_contents('emailPriceTemplate.html');
+
+if ($template === false) {
+
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Unable to load email template.'
+    ]);
+
+    exit;
+}
+
+
+
+    $template = str_replace('{{organizations}}',$organizationsHtml,$template);
+
+    $template = str_replace('{{size_org}}',$sizeOrgHtml,$template);
+
+    $template = str_replace(
+        '{{no_org}}',
+        $noOrgHtml,
+        $template
+    );
+
+    $template = str_replace(
+        '{{avg_cap}}',
+        $avgCapHtml,
+        $template
+    );
+
+    $template = str_replace(
+        '{{email}}',
+        $emailHtml,
+        $template
+    );
+
+    $template = str_replace(
+        '{{comments}}',
+        $commentsHtml,
+        $template
+    );
+
+    $mail = new PHPMailer(true);
+
+    try {
+
+        // SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+
+        $mail->Username = 'arbinbighero6@gmail.com';
+        $mail->Password = 'hprpxahbchrgzssv';
+
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+
+        // Sender
+        $mail->setFrom('arbinbighero6@gmail.com', 'Website Demo Request');
+
+        // Recipient
+        $mail->addAddress('arbinbighero6@gmail.com');
+
+        // Email
+        $mail->isHTML(true);
+        $mail->Subject = 'New Quote Request';
+        $mail->Body = $template;
+
+
+        // Send
+        $mail->send();
+
+
+        echo json_encode([
+            'status' => 'success',
+            'message' => 'Your quote request has been submitted successfully.'
+        ]);
+    } catch (Exception $e) {
+
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'Unable to send your request. Please try again later.'
+        ]);
+    }
+?>

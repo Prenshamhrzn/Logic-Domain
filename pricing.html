@@ -209,33 +209,33 @@
         <div class="quote-form-card" data-aos="fade-left" data-aos-duration="800">
           <h4>Get your Custom Quote</h4>
 
-          <form>
+          <form id="priceForm">
             <div class="form-question">
               <label>What type of organization do you represent?</label>
 
               <div class="checkbox-row">
                 <label>
-                  <input type="checkbox" />
+                  <input name="org[]" type="radio" value="K-12"/>
                   K-12
                 </label>
 
                 <label>
-                  <input type="checkbox" />
+                  <input name="org[]" type="radio" value="College/University"/>
                   College/University
                 </label>
 
                 <label>
-                  <input type="checkbox" />
+                  <input name="org[]" type="radio" value="Municipality"/>
                   Municipality
                 </label>
 
                 <label>
-                  <input type="checkbox" />
+                  <input name="org[]" type="radio" value="County Office"/>
                   County Office
                 </label>
 
                 <label>
-                  <input type="checkbox" />
+                  <input name="org[]" type="radio" value="Other"/>
                   Other
                 </label>
               </div>
@@ -243,26 +243,26 @@
 
             <div class="form-group">
               <label>What is the size of your organization?</label>
-              <input type="text" />
+              <input type="text" class="form-control" name="size_org"/>
             </div>
 
             <div class="form-group">
               <label>Number of users?</label>
-              <input type="text" />
+              <input type="text" class="form-control" name="no_org"/>
             </div>
 
             <div class="form-group">
               <label>What is your average annual capital projects?</label>
-              <input type="text" />
+              <input type="text" class="form-control" name="avg_cap"/>
             </div>
 
             <div class="form-group">
               <label>What email should we use to contact you?</label>
-              <input type="email" />
+              <input type="email" class="form-control" name="email"/>
             </div>
             <div class="form-group">
               <label>Comments</label>
-              <textarea rows="2"></textarea>
+              <textarea rows="2" class="form-control" name="comments"></textarea>
             </div>
 
             <button type="submit" class="quote-submit">
@@ -528,10 +528,74 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- AOS JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <script>
+      document.getElementById("priceForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        if (!validatePriceForm()) {
+          return;
+        }
+
+        const formData = new FormData(e.target);
+
+        // Show loading popup
+        Swal.fire({
+          title: "Submitting Request...",
+          text: "Please wait while we send your request.",
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+          didOpen: () => {
+            Swal.showLoading();
+          }
+        });
+
+        try {
+          const response = await fetch("mail/sendPriceMail.php", {
+            method: "POST",
+            body: formData
+          });
+
+          const result = await response.json();
+
+          Swal.close();
+
+          if (result.status === "success") {
+            Swal.fire({
+              icon: "success",
+              title: "Request Submitted!",
+              text: result.message,
+              confirmButtonText: "OK"
+            });
+
+            e.target.reset();
+
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Oops!",
+              text: result.message
+            });
+          }
+
+        } catch (error) {
+
+          Swal.close();
+
+          Swal.fire({
+            icon: "error",
+            title: "Connection Error",
+            text: "Unable to submit your request. Please try again later."
+          });
+
+          console.error(error);
+        }
+      });
+      
       AOS.init({
         duration: 900,
         offset: 100,

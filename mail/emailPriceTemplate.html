@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Product Demo Request</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,Helvetica,sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:30px 0;">
+    <tr>
+        <td align="center">
+
+            <table width="650" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e5e5e5;">
+
+                <tr>
+                    <td style="background:#0056b3;color:#ffffff;padding:25px;">
+                        <h2 style="margin:0;">New Custom Quote Request</h2>
+                        <p style="margin:8px 0 0;font-size:14px;">
+                            A visitor has send a custom quote through the website.
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="padding:30px;">
+
+                        <h3 style="margin-top:0;color:#333;">
+                            Organization Information
+                        </h3>
+
+                        <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse:collapse;">
+
+                            <tr>
+                                <td width="35%" style="font-weight:bold;background:#f8f8f8;">Type</td>
+                                <td>{{organizations}}</td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-weight:bold;background:#f8f8f8;">Size</td>
+                                <td>{{size_org}}</td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-weight:bold;background:#f8f8f8;">Number of Users</td>
+                                <td>{{no_org}}</td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-weight:bold;background:#f8f8f8;">Average annual capital projects</td>
+                                <td>{{avg_cap}}</td>
+                            </tr>
+
+                        </table>
+
+                        <br>
+
+                        <h3 style="color:#333;">
+                            Contact Information
+                        </h3>
+
+                        <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse:collapse;">
+
+                            <tr>
+                                <td width="35%" style="font-weight:bold;background:#f8f8f8;">
+                                    Email
+                                </td>
+
+                                <td>{{email}}</td>
+                            </tr>
+
+                        </table>
+
+                        <br>
+
+                        <h3 style="color:#333;">
+                            Additional Comments
+                        </h3>
+
+                        <div style="padding:15px;background:#fafafa;border:1px solid #e5e5e5;border-radius:5px;">
+                            {{comments}}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
