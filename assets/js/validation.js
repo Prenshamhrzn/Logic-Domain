@@ -291,14 +291,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("priceForm");
 
+    const pname = document.querySelector('input[name="contact_name"]');
+    const premail = document.querySelector('input[name="email"]');
+    const prephone = document.querySelector('input[name="phone"]');
+    const precompany = document.querySelector('input[name="corganization_name"]');
+
     const organizationCheckboxes = document.querySelectorAll(
         'input[name="org[]"]'
     );
 
-    const sizeOrg = document.querySelector('input[name="size_org"]');
-    const noOrg = document.querySelector('input[name="no_org"]');
-    const avgCap = document.querySelector('input[name="avg_cap"]');
-    const email = document.querySelector('input[name="email"]');
+    const sizeOrg = document.querySelector('select[name="size_org"]');
+    const noOrg = document.querySelector('select[name="no_org"]');
+    const prod = document.querySelector('select[name="prod"]');
     const comments = document.querySelector('textarea[name="comments"]');
 
 
@@ -332,6 +336,91 @@ document.addEventListener("DOMContentLoaded", function () {
         if (feedback) {
             feedback.style.display = "none";
         }
+    }
+
+    function validateName() {
+        const value = pname.value.trim();
+
+        if (value === "") {
+            setError(pname, "Please enter your name.");
+            return false;
+        }
+
+        if (value.length < 2) {
+            setError(pname, "Name must be at least 2 characters.");
+            return false;
+        }
+
+        if (!/^[a-zA-Z\s.'-]+$/.test(value)) {
+            setError(pname, "Please enter a valid name.");
+            return false;
+        }
+
+        setValid(pname);
+        return true;
+    }
+
+    function validatePremail() {
+        const value = premail.value.trim();
+
+        const premailPattern =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (value === "") {
+            setError(premail, "Please enter your premail.");
+            return false;
+        }
+
+        if (!premailPattern.test(value)) {
+            setError(premail, "Please enter a valid premail address.");
+            return false;
+        }
+
+        setValid(premail);
+        return true;
+    }
+
+    function validatePrephone() {
+        const value = prephone.value.trim();
+
+        if (value === "") {
+            setError(prephone, "Please enter your prephone number.");
+            return false;
+        }
+
+        const prephonePattern = /^\+?[0-9\s\-()]{7,20}$/;
+
+        if (!prephonePattern.test(value)) {
+            setError(prephone, "Please enter a valid prephone number.");
+            return false;
+        }
+
+        const digits = value.replace(/\D/g, "");
+
+        if (digits.length < 7 || digits.length > 15) {
+            setError(prephone, "Prephone number must contain 7-15 digits.");
+            return false;
+        }
+
+        setValid(prephone);
+        return true;
+    }
+
+    function validatePrecompany() {
+        const value = precompany.value.trim();
+
+        if (value === "") {
+            setError(precompany, "Please enter your precompany name.");
+            return false;
+        }
+
+        if (value.length < 2) {
+            setError(precompany, "Precompany name must be at least 2 characters.");
+            return false;
+        }
+
+        setValid(precompany);
+        return true;
     }
 
 
@@ -385,18 +474,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function validateSizeOrg() {
 
-        const value = sizeOrg.value.trim();
-
-        if (value === "") {
-            setError(
-                sizeOrg,
-                "Please enter the size of your organization."
-            );
-
+        if (!sizeOrg.value) {
+            sizeOrg.classList.add("is-invalid");
+            sizeOrg.classList.remove("is-valid");
             return false;
         }
 
-        setValid(sizeOrg);
+        sizeOrg.classList.remove("is-invalid");
+        sizeOrg.classList.add("is-valid");
 
         return true;
     }
@@ -407,37 +492,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==========================================
 
     function validateNoOrg() {
-
-        const value = noOrg.value.trim();
-
-        if (value === "") {
-            setError(
-                noOrg,
-                "Please enter the number of users."
-            );
-
+        if (!noOrg.value) {
+            noOrg.classList.add("is-invalid");
+            noOrg.classList.remove("is-valid");
             return false;
         }
 
-        if (!/^\d+$/.test(value)) {
-            setError(
-                noOrg,
-                "Please enter a valid number of users."
-            );
-
-            return false;
-        }
-
-        if (parseInt(value, 10) <= 0) {
-            setError(
-                noOrg,
-                "Number of users must be greater than 0."
-            );
-
-            return false;
-        }
-
-        setValid(noOrg);
+        noOrg.classList.remove("is-invalid");
+        noOrg.classList.add("is-valid");
 
         return true;
     }
@@ -447,69 +509,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // AVERAGE CAPITAL PROJECTS
     // ==========================================
 
-    function validateAvgCap() {
-        const value = avgCap.value.trim();
-
-        if (value === "") {
-            setError(
-                avgCap,
-                "Please enter your average annual capital projects."
-            );
+    function validateprod() {
+        if (!prod.value) {
+            prod.classList.add("is-invalid");
+            prod.classList.remove("is-valid");
             return false;
         }
 
-        if (!/^\d+$/.test(value)) {
-            setError(
-                avgCap,
-                "Please enter a valid number."
-            );
-
-            return false;
-        }
-
-        if (isNaN(value) || Number(value) <= 0) {
-            setError(
-                avgCap,
-                "Please enter a valid number greater than 0."
-            );
-            return false;
-        }
-
-        setValid(avgCap);
-        return true;
-    }
-
-
-    // ==========================================
-    // EMAIL
-    // ==========================================
-
-    function validateEmail() {
-
-        const value = email.value.trim();
-
-        const emailPattern =
-            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-        if (value === "") {
-            setError(
-                email,
-                "Please enter your email address."
-            );
-
-            return false;
-        }
-
-        if (!emailPattern.test(value)) {
-            setError(
-                email,
-                "Please enter a valid email address."
-            );
-
-            return false;
-        }
-
-        setValid(email);
+        prod.classList.remove("is-invalid");
+        prod.classList.add("is-valid");
 
         return true;
     }
@@ -525,8 +533,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Optional field
         if (value === "") {
-            comments.classList.remove("is-invalid", "is-valid");
-            return true;
+            setError(comments, "Please enter a comment.");
+            return false;
         }
 
         if (value.length > 1000) {
@@ -550,19 +558,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.validatePriceForm = function () {
 
+        const isNameValid = validateName();
+        const isPremailValid = validatePremail();
+        const isPrephoneValid = validatePrephone();
+        const isPrecompanyValid = validatePrecompany();
         const isOrganizationValid = validateOrganization();
         const isSizeValid = validateSizeOrg();
         const isUsersValid = validateNoOrg();
-        const isAvgCapValid = validateAvgCap();
-        const isEmailValid = validateEmail();
+        const isprodValid = validateprod();
         const areCommentsValid = validateComments();
 
         const isValid =
+            isNameValid &&
+            isPremailValid &&
+            isPrephoneValid &&
+            isPrecompanyValid &&
             isOrganizationValid &&
             isSizeValid &&
             isUsersValid &&
-            isAvgCapValid &&
-            isEmailValid &&
+            isprodValid &&
             areCommentsValid;
 
 
@@ -602,27 +616,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     sizeOrg.addEventListener(
-        "blur",
+        "change",
         validateSizeOrg
     );
 
 
     noOrg.addEventListener(
-        "blur",
+        "change",
         validateNoOrg
     );
 
 
-    avgCap.addEventListener(
-        "blur",
-        validateAvgCap
-    );
-
-
-    email.addEventListener(
-        "blur",
-        validateEmail
-    );
+    prod.addEventListener("change",validateprod);
+    pname.addEventListener("blur", validateName);
+    premail.addEventListener("blur", validatePremail);
+    prephone.addEventListener("blur", validatePrephone);
+    precompany.addEventListener("blur", validatePrecompany);
 
 
     comments.addEventListener(

@@ -12,10 +12,13 @@ header('Content-Type: application/json');
 // READ FORM DATA
 // ==========================================
 
+$name         = trim($_POST['contact_name'] ?? '');
+$company         = trim($_POST['corganization_name'] ?? '');
+$phone         = trim($_POST['phone'] ?? '');
 $organizations = $_POST['org'] ?? [];
 $sizeOrg       = trim($_POST['size_org'] ?? '');
 $noOrg         = trim($_POST['no_org'] ?? '');
-$avgCap        = trim($_POST['avg_cap'] ?? '');
+$prod        = trim($_POST['prod'] ?? '');
 $email         = trim($_POST['email'] ?? '');
 $comments      = trim($_POST['comments'] ?? '');
 
@@ -46,7 +49,31 @@ if ($sizeOrg === '') {
     exit;
 }
 
-if ($noOrg === '' || !ctype_digit($noOrg) || (int)$noOrg <= 0) {
+if ($name === '') {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Please enter your name.'
+    ]);
+    exit;
+}
+
+if ($phone === '') {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Please enter a phone number.'
+    ]);
+    exit;
+}
+
+if ($company === '') {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Please enter a company name.'
+    ]);
+    exit;
+}
+
+if ($noOrg === '') {
     echo json_encode([
         'status' => 'error',
         'message' => 'Please enter a valid number of users.'
@@ -54,7 +81,7 @@ if ($noOrg === '' || !ctype_digit($noOrg) || (int)$noOrg <= 0) {
     exit;
 }
 
-if ($avgCap === '') {
+if ($prod === '') {
     echo json_encode([
         'status' => 'error',
         'message' => 'Please enter your average annual capital projects.'
@@ -101,14 +128,30 @@ $noOrgHtml = htmlspecialchars(
     'UTF-8'
 );
 
-$avgCapHtml = htmlspecialchars(
-    $avgCap,
+$prodHtml = htmlspecialchars(
+    $prod,
     ENT_QUOTES,
     'UTF-8'
 );
 
 $emailHtml = htmlspecialchars(
     $email,
+    ENT_QUOTES,
+    'UTF-8'
+);
+
+$nameHtml = htmlspecialchars(
+    $name,
+    ENT_QUOTES,
+    'UTF-8'
+);
+$phoneHtml = htmlspecialchars(
+    $phone,
+    ENT_QUOTES,
+    'UTF-8'
+);
+$companyHtml = htmlspecialchars(
+    $company,
     ENT_QUOTES,
     'UTF-8'
 );
@@ -142,6 +185,9 @@ if ($template === false) {
 
     $template = str_replace('{{organizations}}',$organizationsHtml,$template);
 
+    $template = str_replace('{{name}}',$nameHtml,$template);
+    $template = str_replace('{{phone}}',$phoneHtml,$template);
+    $template = str_replace('{{company}}',$companyHtml,$template);
     $template = str_replace('{{size_org}}',$sizeOrgHtml,$template);
 
     $template = str_replace(
@@ -152,7 +198,7 @@ if ($template === false) {
 
     $template = str_replace(
         '{{avg_cap}}',
-        $avgCapHtml,
+        $prodHtml,
         $template
     );
 
