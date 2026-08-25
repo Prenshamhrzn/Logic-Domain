@@ -1,642 +1,450 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
 
-    const form = document.getElementById("contactForm");
+  const name = document.getElementById("contactName");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
+  const company = document.getElementById("company");
+  const department = document.getElementById("stateDepartment");
+  const bestContactTime = document.getElementById("bestReachTime");
+  const demoTime = document.getElementById("bestCallTime");
+  const comments = document.getElementById("comments");
 
-    const name = document.getElementById("contactName");
-    const email = document.getElementById("email");
-    const phone = document.getElementById("phone");
-    const company = document.getElementById("company");
-    const department = document.getElementById("stateDepartment");
-    const bestContactTime = document.getElementById("bestReachTime");
-    const demoTime = document.getElementById("bestCallTime");
-    const comments = document.getElementById("comments");
+  const productCheckboxes = document.querySelectorAll('input[name="products[]"]');
 
-    const productCheckboxes = document.querySelectorAll(
-        'input[name="products[]"]'
-    );
+  function setError(input, message) {
+    input.classList.add("is-invalid");
+    input.classList.remove("is-valid");
 
-    function setError(input, message) {
-        input.classList.add("is-invalid");
-        input.classList.remove("is-valid");
+    let feedback = input.closest(".input-group, .col-md-6, .col-12")?.querySelector(".invalid-feedback");
 
-        let feedback = input
-            .closest(".input-group, .col-md-6, .col-12")
-            ?.querySelector(".invalid-feedback");
+    if (feedback) {
+      feedback.textContent = message;
+    }
+  }
 
-        if (feedback) {
-            feedback.textContent = message;
-        }
+  function setValid(input) {
+    input.classList.remove("is-invalid");
+    input.classList.add("is-valid");
+  }
+
+  function validateName() {
+    const value = name.value.trim();
+
+    if (value === "") {
+      setError(name, "Please enter your name.");
+      return false;
     }
 
-    function setValid(input) {
-        input.classList.remove("is-invalid");
-        input.classList.add("is-valid");
+    if (value.length < 2) {
+      setError(name, "Name must be at least 2 characters.");
+      return false;
     }
 
-    function validateName() {
-        const value = name.value.trim();
-
-        if (value === "") {
-            setError(name, "Please enter your name.");
-            return false;
-        }
-
-        if (value.length < 2) {
-            setError(name, "Name must be at least 2 characters.");
-            return false;
-        }
-
-        if (!/^[a-zA-Z\s.'-]+$/.test(value)) {
-            setError(name, "Please enter a valid name.");
-            return false;
-        }
-
-        setValid(name);
-        return true;
+    if (!/^[a-zA-Z\s.'-]+$/.test(value)) {
+      setError(name, "Please enter a valid name.");
+      return false;
     }
 
-    function validateEmail() {
-        const value = email.value.trim();
+    setValid(name);
+    return true;
+  }
 
-        const emailPattern =
-            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  function validateEmail() {
+    const value = email.value.trim();
 
-        if (value === "") {
-            setError(email, "Please enter your email.");
-            return false;
-        }
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-        if (!emailPattern.test(value)) {
-            setError(email, "Please enter a valid email address.");
-            return false;
-        }
-
-        setValid(email);
-        return true;
+    if (value === "") {
+      setError(email, "Please enter your email.");
+      return false;
     }
 
-    function validatePhone() {
-        const value = phone.value.trim();
-
-        if (value === "") {
-            setError(phone, "Please enter your phone number.");
-            return false;
-        }
-
-        const phonePattern = /^\+?[0-9\s\-()]{7,20}$/;
-
-        if (!phonePattern.test(value)) {
-            setError(phone, "Please enter a valid phone number.");
-            return false;
-        }
-
-        const digits = value.replace(/\D/g, "");
-
-        if (digits.length < 7 || digits.length > 15) {
-            setError(phone, "Phone number must contain 7-15 digits.");
-            return false;
-        }
-
-        setValid(phone);
-        return true;
+    if (!emailPattern.test(value)) {
+      setError(email, "Please enter a valid email address.");
+      return false;
     }
 
-    function validateCompany() {
-        const value = company.value.trim();
+    setValid(email);
+    return true;
+  }
 
-        if (value === "") {
-            setError(company, "Please enter your company name.");
-            return false;
-        }
+  function validatePhone() {
+    const value = phone.value.trim();
 
-        if (value.length < 2) {
-            setError(company, "Company name must be at least 2 characters.");
-            return false;
-        }
-
-        setValid(company);
-        return true;
+    if (value === "") {
+      setError(phone, "Please enter your phone number.");
+      return false;
     }
 
-    function validateDepartment() {
-        if (!department.value) {
-            department.classList.add("is-invalid");
-            department.classList.remove("is-valid");
-            return false;
-        }
+    const phonePattern = /^\+?[0-9\s\-()]{7,20}$/;
 
-        department.classList.remove("is-invalid");
-        department.classList.add("is-valid");
-
-        return true;
+    if (!phonePattern.test(value)) {
+      setError(phone, "Please enter a valid phone number.");
+      return false;
     }
 
-    function validateProducts() {
-        const checkedProducts = document.querySelectorAll(
-            'input[name="products[]"]:checked'
-        );
+    const digits = value.replace(/\D/g, "");
 
-        const productContainer = document.querySelector(".product-options");
-
-        // Find or create validation message
-        let feedback = productContainer.parentElement.querySelector(
-            ".product-invalid-feedback"
-        );
-
-        if (!feedback) {
-            feedback = document.createElement("div");
-            feedback.className = "invalid-feedback product-invalid-feedback";
-            productContainer.parentElement.appendChild(feedback);
-        }
-
-        if (checkedProducts.length === 0) {
-            productContainer.classList.add("is-invalid");
-
-            feedback.textContent = "Please select an option.";
-            feedback.style.display = "block";
-
-            return false;
-        }
-
-        productContainer.classList.remove("is-invalid");
-
-        feedback.style.display = "none";
-
-        return true;
+    if (digits.length < 7 || digits.length > 15) {
+      setError(phone, "Phone number must contain 7-15 digits.");
+      return false;
     }
 
-    function validateDateTime(input) {
+    setValid(phone);
+    return true;
+  }
 
-        // Optional field
-        if (!input.value.trim()) {
-            input.classList.remove("is-invalid", "is-valid");
-            return true;
-        }
+  function validateCompany() {
+    const value = company.value.trim();
 
-        // Flatpickr format:
-        // m/d/Y h:i K
-        const selectedDate = flatpickr.parseDate(
-            input.value,
-            "m/d/Y h:i K"
-        );
-
-        if (!selectedDate || isNaN(selectedDate.getTime())) {
-            setError(input, "Please select a valid date and time.");
-            return false;
-        }
-
-        if (selectedDate < new Date()) {
-            setError(input, "Please select a future date and time.");
-            return false;
-        }
-
-        setValid(input);
-        return true;
+    if (value === "") {
+      setError(company, "Please enter your company name.");
+      return false;
     }
 
-    function validateComments() {
-        const value = comments.value.trim();
-
-        if (value.length > 1000) {
-            setError(
-                comments,
-                "Comments cannot exceed 1000 characters."
-            );
-
-            return false;
-        }
-
-        comments.classList.remove("is-invalid");
-
-        return true;
+    if (value.length < 2) {
+      setError(company, "Company name must be at least 2 characters.");
+      return false;
     }
 
+    setValid(company);
+    return true;
+  }
 
-    // ==========================================
-    // MAIN VALIDATION FUNCTION
-    // ==========================================
+  function validateDepartment() {
+    if (!department.value) {
+      department.classList.add("is-invalid");
+      department.classList.remove("is-valid");
+      return false;
+    }
 
-    window.validateContactForm = function () {
+    department.classList.remove("is-invalid");
+    department.classList.add("is-valid");
 
-        const isNameValid = validateName();
-        const isEmailValid = validateEmail();
-        const isPhoneValid = validatePhone();
-        const isCompanyValid = validateCompany();
-        const isDepartmentValid = validateDepartment();
-        const areProductsValid = validateProducts();
-        const isContactTimeValid = validateDateTime(bestContactTime);
-        const isDemoTimeValid = validateDateTime(demoTime);
-        const areCommentsValid = validateComments();
+    return true;
+  }
 
-        const isValid =
-            isNameValid &&
-            isEmailValid &&
-            isPhoneValid &&
-            isCompanyValid &&
-            isDepartmentValid &&
-            areProductsValid &&
-            isContactTimeValid &&
-            isDemoTimeValid &&
-            areCommentsValid;
+  function validateProducts() {
+    const checkedProducts = document.querySelectorAll('input[name="products[]"]:checked');
 
+    const productContainer = document.querySelector(".product-options");
 
-        if (!isValid) {
+    // Find or create validation message
+    let feedback = productContainer.parentElement.querySelector(".product-invalid-feedback");
 
-            const firstInvalid = form.querySelector(".is-invalid");
+    if (!feedback) {
+      feedback = document.createElement("div");
+      feedback.className = "invalid-feedback product-invalid-feedback";
+      productContainer.parentElement.appendChild(feedback);
+    }
 
-            if (firstInvalid) {
-                firstInvalid.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
-                });
+    if (checkedProducts.length === 0) {
+      productContainer.classList.add("is-invalid");
 
-                firstInvalid.focus();
-            }
+      feedback.textContent = "Please select an option.";
+      feedback.style.display = "block";
 
-            return false;
-        }
+      return false;
+    }
 
-        return true;
-    };
+    productContainer.classList.remove("is-invalid");
 
+    feedback.style.display = "none";
 
-    // ==========================================
-    // LIVE VALIDATION
-    // ==========================================
+    return true;
+  }
 
-    name.addEventListener("blur", validateName);
-    email.addEventListener("blur", validateEmail);
-    phone.addEventListener("blur", validatePhone);
-    company.addEventListener("blur", validateCompany);
+  function validateDateTime(input) {
+    // Optional field
+    if (!input.value.trim()) {
+      input.classList.remove("is-invalid", "is-valid");
+      return true;
+    }
 
-    department.addEventListener("change", validateDepartment);
+    // Flatpickr format:
+    // m/d/Y h:i K
+    const selectedDate = flatpickr.parseDate(input.value, "m/d/Y h:i K");
 
-    productCheckboxes.forEach(function (checkbox) {
-        checkbox.addEventListener("change", validateProducts);
-    });
+    if (!selectedDate || isNaN(selectedDate.getTime())) {
+      setError(input, "Please select a valid date and time.");
+      return false;
+    }
 
-    bestContactTime.addEventListener("change", function () {
-        validateDateTime(bestContactTime);
-    });
+    if (selectedDate < new Date()) {
+      setError(input, "Please select a future date and time.");
+      return false;
+    }
 
-    demoTime.addEventListener("change", function () {
-        validateDateTime(demoTime);
-    });
+    setValid(input);
+    return true;
+  }
 
-    comments.addEventListener("blur", validateComments);
+  function validateComments() {
+    const value = comments.value.trim();
 
+    if (value.length > 1000) {
+      setError(comments, "Comments cannot exceed 1000 characters.");
+
+      return false;
+    }
+
+    comments.classList.remove("is-invalid");
+
+    return true;
+  }
+
+  // ==========================================
+  // MAIN VALIDATION FUNCTION
+  // ==========================================
+
+  window.validateContactForm = function () {
+    const isNameValid = validateName();
+    const isEmailValid = validateEmail();
+    const isPhoneValid = validatePhone();
+    const isCompanyValid = validateCompany();
+    const isDepartmentValid = validateDepartment();
+    const areProductsValid = validateProducts();
+    const isContactTimeValid = validateDateTime(bestContactTime);
+    const isDemoTimeValid = validateDateTime(demoTime);
+    const areCommentsValid = validateComments();
+
+    const isValid = isNameValid && isEmailValid && isPhoneValid && isCompanyValid && isDepartmentValid && areProductsValid && isContactTimeValid && isDemoTimeValid && areCommentsValid;
+
+    if (!isValid) {
+      const firstInvalid = form.querySelector(".is-invalid");
+
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+
+        firstInvalid.focus();
+      }
+
+      return false;
+    }
+
+    return true;
+  };
+
+  // ==========================================
+  // LIVE VALIDATION
+  // ==========================================
+
+  name.addEventListener("blur", validateName);
+  email.addEventListener("blur", validateEmail);
+  phone.addEventListener("blur", validatePhone);
+  company.addEventListener("blur", validateCompany);
+
+  department.addEventListener("change", validateDepartment);
+
+  productCheckboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", validateProducts);
+  });
+
+  bestContactTime.addEventListener("change", function () {
+    validateDateTime(bestContactTime);
+  });
+
+  demoTime.addEventListener("change", function () {
+    validateDateTime(demoTime);
+  });
+
+  comments.addEventListener("blur", validateComments);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("priceForm");
+  const pname = document.querySelector('input[name="contact_name"]');
+  const premail = document.querySelector('input[name="email"]');
+  const precompany = document.querySelector('input[name="corganization_name"]');
+  const organizationCheckboxes = document.querySelectorAll('input[name="org[]"]');
+  const prod = document.querySelector('select[name="prod"]');
 
-    const form = document.getElementById("priceForm");
+  // ==========================================
+  // HELPER FUNCTIONS
+  // ==========================================
 
-    const pname = document.querySelector('input[name="contact_name"]');
-    const premail = document.querySelector('input[name="email"]');
-    const prephone = document.querySelector('input[name="phone"]');
-    const precompany = document.querySelector('input[name="corganization_name"]');
+  function setError(input, message) {
+    input.classList.add("is-invalid");
+    input.classList.remove("is-valid");
 
-    const organizationCheckboxes = document.querySelectorAll(
-        'input[name="org[]"]'
-    );
+    let feedback = input.parentElement.querySelector(".invalid-feedback");
 
-    const sizeOrg = document.querySelector('select[name="size_org"]');
-    const noOrg = document.querySelector('select[name="no_org"]');
-    const prod = document.querySelector('select[name="prod"]');
-    const comments = document.querySelector('textarea[name="comments"]');
-
-
-    // ==========================================
-    // HELPER FUNCTIONS
-    // ==========================================
-
-    function setError(input, message) {
-        input.classList.add("is-invalid");
-        input.classList.remove("is-valid");
-
-        let feedback = input.parentElement.querySelector(".invalid-feedback");
-
-        if (!feedback) {
-            feedback = document.createElement("div");
-            feedback.className = "invalid-feedback";
-            input.parentElement.appendChild(feedback);
-        }
-
-        feedback.textContent = message;
-        feedback.style.display = "block";
+    if (!feedback) {
+      feedback = document.createElement("div");
+      feedback.className = "invalid-feedback";
+      input.parentElement.appendChild(feedback);
     }
 
+    feedback.textContent = message;
+    feedback.style.display = "block";
+  }
 
-    function setValid(input) {
-        input.classList.remove("is-invalid");
-        input.classList.add("is-valid");
+  function setValid(input) {
+    input.classList.remove("is-invalid");
+    input.classList.add("is-valid");
 
-        const feedback = input.parentElement.querySelector(".invalid-feedback");
+    const feedback = input.parentElement.querySelector(".invalid-feedback");
 
-        if (feedback) {
-            feedback.style.display = "none";
-        }
+    if (feedback) {
+      feedback.style.display = "none";
+    }
+  }
+
+  function validateName() {
+    const value = pname.value.trim();
+
+    if (value === "") {
+      setError(pname, "Please enter your name.");
+      return false;
     }
 
-    function validateName() {
-        const value = pname.value.trim();
-
-        if (value === "") {
-            setError(pname, "Please enter your name.");
-            return false;
-        }
-
-        if (value.length < 2) {
-            setError(pname, "Name must be at least 2 characters.");
-            return false;
-        }
-
-        if (!/^[a-zA-Z\s.'-]+$/.test(value)) {
-            setError(pname, "Please enter a valid name.");
-            return false;
-        }
-
-        setValid(pname);
-        return true;
+    if (value.length < 2) {
+      setError(pname, "Name must be at least 2 characters.");
+      return false;
     }
 
-    function validatePremail() {
-        const value = premail.value.trim();
-
-        const premailPattern =
-            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-        if (value === "") {
-            setError(premail, "Please enter your premail.");
-            return false;
-        }
-
-        if (!premailPattern.test(value)) {
-            setError(premail, "Please enter a valid premail address.");
-            return false;
-        }
-
-        setValid(premail);
-        return true;
+    if (!/^[a-zA-Z\s.'-]+$/.test(value)) {
+      setError(pname, "Please enter a valid name.");
+      return false;
     }
 
-    function validatePrephone() {
-        const value = prephone.value.trim();
+    setValid(pname);
+    return true;
+  }
 
-        if (value === "") {
-            setError(prephone, "Please enter your prephone number.");
-            return false;
-        }
+  function validatePremail() {
+    const value = premail.value.trim();
 
-        const prephonePattern = /^\+?[0-9\s\-()]{7,20}$/;
+    const premailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-        if (!prephonePattern.test(value)) {
-            setError(prephone, "Please enter a valid prephone number.");
-            return false;
-        }
-
-        const digits = value.replace(/\D/g, "");
-
-        if (digits.length < 7 || digits.length > 15) {
-            setError(prephone, "Prephone number must contain 7-15 digits.");
-            return false;
-        }
-
-        setValid(prephone);
-        return true;
+    if (value === "") {
+      setError(premail, "Please enter your email.");
+      return false;
     }
 
-    function validatePrecompany() {
-        const value = precompany.value.trim();
-
-        if (value === "") {
-            setError(precompany, "Please enter your precompany name.");
-            return false;
-        }
-
-        if (value.length < 2) {
-            setError(precompany, "Precompany name must be at least 2 characters.");
-            return false;
-        }
-
-        setValid(precompany);
-        return true;
+    if (!premailPattern.test(value)) {
+      setError(premail, "Please enter a valid email address.");
+      return false;
     }
 
+    setValid(premail);
+    return true;
+  }
 
-    // ==========================================
-    // ORGANIZATION VALIDATION
-    // ==========================================
+  function validatePrecompany() {
+    const value = precompany.value.trim();
 
-    function validateOrganization() {
-
-        const checked = document.querySelectorAll(
-            'input[name="org[]"]:checked'
-        );
-
-        const container = document.querySelector(".checkbox-row");
-
-        let feedback = container.parentElement.querySelector(
-            ".organization-invalid-feedback"
-        );
-
-        if (!feedback) {
-            feedback = document.createElement("div");
-            feedback.className =
-                "invalid-feedback organization-invalid-feedback";
-
-            container.parentElement.appendChild(feedback);
-        }
-
-        if (checked.length === 0) {
-
-            container.classList.add("is-invalid");
-
-            feedback.textContent =
-                "Please select at least one organization type.";
-
-            feedback.style.display = "block";
-
-            return false;
-        }
-
-        container.classList.remove("is-invalid");
-
-        feedback.style.display = "none";
-
-        return true;
+    if (value === "") {
+      setError(precompany, "Please enter your organization name.");
+      return false;
     }
 
-
-    // ==========================================
-    // ORGANIZATION SIZE
-    // ==========================================
-
-    function validateSizeOrg() {
-
-        if (!sizeOrg.value) {
-            sizeOrg.classList.add("is-invalid");
-            sizeOrg.classList.remove("is-valid");
-            return false;
-        }
-
-        sizeOrg.classList.remove("is-invalid");
-        sizeOrg.classList.add("is-valid");
-
-        return true;
+    if (value.length < 2) {
+      setError(precompany, "Organization name must be at least 2 characters.");
+      return false;
     }
 
+    setValid(precompany);
+    return true;
+  }
 
-    // ==========================================
-    // NUMBER OF USERS
-    // ==========================================
+  // ==========================================
+  // ORGANIZATION VALIDATION
+  // ==========================================
 
-    function validateNoOrg() {
-        if (!noOrg.value) {
-            noOrg.classList.add("is-invalid");
-            noOrg.classList.remove("is-valid");
-            return false;
-        }
+  function validateOrganization() {
+    const checked = document.querySelectorAll('input[name="org[]"]:checked');
 
-        noOrg.classList.remove("is-invalid");
-        noOrg.classList.add("is-valid");
+    const container = document.querySelector(".checkbox-row");
 
-        return true;
+    let feedback = container.parentElement.querySelector(".organization-invalid-feedback");
+
+    if (!feedback) {
+      feedback = document.createElement("div");
+      feedback.className = "invalid-feedback organization-invalid-feedback";
+
+      container.parentElement.appendChild(feedback);
     }
 
+    if (checked.length === 0) {
+      container.classList.add("is-invalid");
 
-    // ==========================================
-    // AVERAGE CAPITAL PROJECTS
-    // ==========================================
+      feedback.textContent = "Please select the organization type.";
 
-    function validateprod() {
-        if (!prod.value) {
-            prod.classList.add("is-invalid");
-            prod.classList.remove("is-valid");
-            return false;
-        }
+      feedback.style.display = "block";
 
-        prod.classList.remove("is-invalid");
-        prod.classList.add("is-valid");
-
-        return true;
+      return false;
     }
 
+    container.classList.remove("is-invalid");
 
-    // ==========================================
-    // COMMENTS
-    // ==========================================
+    feedback.style.display = "none";
 
-    function validateComments() {
+    return true;
+  }
 
-        const value = comments.value.trim();
+  // ==========================================
+  // AVERAGE CAPITAL PROJECTS
+  // ==========================================
 
-        // Optional field
-        if (value === "") {
-            setError(comments, "Please enter a comment.");
-            return false;
-        }
-
-        if (value.length > 1000) {
-            setError(
-                comments,
-                "Comments cannot exceed 1000 characters."
-            );
-
-            return false;
-        }
-
-        setValid(comments);
-
-        return true;
+  function validateprod() {
+    if (!prod.value) {
+      prod.classList.add("is-invalid");
+      prod.classList.remove("is-valid");
+      return false;
     }
 
+    prod.classList.remove("is-invalid");
+    prod.classList.add("is-valid");
 
-    // ==========================================
-    // MAIN VALIDATION
-    // ==========================================
+    return true;
+  }
 
-    window.validatePriceForm = function () {
+  // ==========================================
+  // MAIN VALIDATION
+  // ==========================================
 
-        const isNameValid = validateName();
-        const isPremailValid = validatePremail();
-        const isPrephoneValid = validatePrephone();
-        const isPrecompanyValid = validatePrecompany();
-        const isOrganizationValid = validateOrganization();
-        const isSizeValid = validateSizeOrg();
-        const isUsersValid = validateNoOrg();
-        const isprodValid = validateprod();
-        const areCommentsValid = validateComments();
+  window.validatePriceForm = function () {
+    const isNameValid = validateName();
+    const isPremailValid = validatePremail();
+    const isPrecompanyValid = validatePrecompany();
+    const isOrganizationValid = validateOrganization();
+    const isprodValid = validateprod();
 
-        const isValid =
-            isNameValid &&
-            isPremailValid &&
-            isPrephoneValid &&
-            isPrecompanyValid &&
-            isOrganizationValid &&
-            isSizeValid &&
-            isUsersValid &&
-            isprodValid &&
-            areCommentsValid;
+    const isValid = isNameValid && isPremailValid && isPrephoneValid && isPrecompanyValid && isOrganizationValid && isprodValid;
 
+    if (!isValid) {
+      const firstInvalid = form.querySelector(".is-invalid");
 
-        if (!isValid) {
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
 
-            const firstInvalid = form.querySelector(".is-invalid");
+        firstInvalid.focus();
+      }
 
-            if (firstInvalid) {
+      return false;
+    }
 
-                firstInvalid.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
-                });
+    return true;
+  };
 
-                firstInvalid.focus();
-            }
+  // ==========================================
+  // LIVE VALIDATION
+  // ==========================================
 
-            return false;
-        }
+  organizationCheckboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", validateOrganization);
+  });
 
-        return true;
-    };
-
-
-    // ==========================================
-    // LIVE VALIDATION
-    // ==========================================
-
-    organizationCheckboxes.forEach(function (checkbox) {
-
-        checkbox.addEventListener(
-            "change",
-            validateOrganization
-        );
-
-    });
-
-
-    sizeOrg.addEventListener(
-        "change",
-        validateSizeOrg
-    );
-
-
-    noOrg.addEventListener(
-        "change",
-        validateNoOrg
-    );
-
-
-    prod.addEventListener("change",validateprod);
-    pname.addEventListener("blur", validateName);
-    premail.addEventListener("blur", validatePremail);
-    prephone.addEventListener("blur", validatePrephone);
-    precompany.addEventListener("blur", validatePrecompany);
-
-
-    comments.addEventListener(
-        "blur",
-        validateComments
-    );
-
+  prod.addEventListener("change", validateprod);
+  pname.addEventListener("blur", validateName);
+  premail.addEventListener("blur", validatePremail);
+  precompany.addEventListener("blur", validatePrecompany);
 });
