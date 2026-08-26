@@ -415,7 +415,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const isOrganizationValid = validateOrganization();
     const isprodValid = validateprod();
 
-    const isValid = isNameValid && isPremailValid && isPrephoneValid && isPrecompanyValid && isOrganizationValid && isprodValid;
+    const isValid = isNameValid && isPremailValid && isPrecompanyValid && isOrganizationValid && isprodValid;
 
     if (!isValid) {
       const firstInvalid = form.querySelector(".is-invalid");
