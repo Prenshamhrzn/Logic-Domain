@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const value = name.value.trim();
 
     if (value === "") {
-      setError(name, "Please enter your name.");
+      setError(name, "Please enter your full name.");
       return false;
     }
 
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const value = company.value.trim();
 
     if (value === "") {
-      setError(company, "Please enter your company name.");
+      setError(company, "Please enter your organization name.");
       return false;
     }
 
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (checkedProducts.length === 0) {
       productContainer.classList.add("is-invalid");
 
-      feedback.textContent = "Please select an option.";
+      feedback.textContent = "Please select at least one product.";
       feedback.style.display = "block";
 
       return false;
@@ -259,10 +259,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("priceForm");
   const pname = document.querySelector('input[name="contact_name"]');
   const premail = document.querySelector('input[name="email"]');
+  const prephone = document.querySelector('input[name="phone"]');
   const precompany = document.querySelector('input[name="corganization_name"]');
   const organizationCheckboxes = document.querySelectorAll('input[name="org[]"]');
   const prod = document.querySelector('select[name="prod"]');
 
+  console.log("hello");
+  console.log(prephone);
   // ==========================================
   // HELPER FUNCTIONS
   // ==========================================
@@ -298,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const value = pname.value.trim();
 
     if (value === "") {
-      setError(pname, "Please enter your name.");
+      setError(pname, "Please enter your full name.");
       return false;
     }
 
@@ -313,6 +316,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setValid(pname);
+    return true;
+  }
+
+  function validatePrePhone() {
+    console.log("Trigger");
+    const value = prephone.value.trim();
+    console.log(value);
+
+    if (value !== "") {
+      const phonePattern = /^\+?[0-9\s\-()]{7,20}$/;
+
+      if (!phonePattern.test(value)) {
+        setError(prephone, "Please enter a valid phone number.");
+        return false;
+      }
+
+      const digits = value.replace(/\D/g, "");
+
+      if (digits.length < 7 || digits.length > 15) {
+        setError(prephone, "Phone number must contain 7-15 digits.");
+        return false;
+      }
+    }
+    setValid(prephone);
     return true;
   }
 
@@ -414,8 +441,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const isPrecompanyValid = validatePrecompany();
     const isOrganizationValid = validateOrganization();
     const isprodValid = validateprod();
+    const isPrePhoneValid = validatePrePhone();
 
-    const isValid = isNameValid && isPremailValid && isPrecompanyValid && isOrganizationValid && isprodValid;
+    const isValid = isNameValid && isPremailValid && isPrecompanyValid && isOrganizationValid && isprodValid && isPrePhoneValid;
 
     if (!isValid) {
       const firstInvalid = form.querySelector(".is-invalid");
@@ -446,5 +474,6 @@ document.addEventListener("DOMContentLoaded", function () {
   prod.addEventListener("change", validateprod);
   pname.addEventListener("blur", validateName);
   premail.addEventListener("blur", validatePremail);
+  prephone.addEventListener("blur", validatePrePhone);
   precompany.addEventListener("blur", validatePrecompany);
 });

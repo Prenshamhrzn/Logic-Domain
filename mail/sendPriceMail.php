@@ -41,13 +41,6 @@ if (empty($organizations)) {
     exit;
 }
 
-if ($sizeOrg === '') {
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'Please enter the size of your organization.'
-    ]);
-    exit;
-}
 
 if ($name === '') {
     echo json_encode([
@@ -57,13 +50,6 @@ if ($name === '') {
     exit;
 }
 
-if ($phone === '') {
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'Please enter a phone number.'
-    ]);
-    exit;
-}
 
 if ($company === '') {
     echo json_encode([
@@ -73,13 +59,6 @@ if ($company === '') {
     exit;
 }
 
-if ($noOrg === '') {
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'Please enter a valid number of users.'
-    ]);
-    exit;
-}
 
 if ($prod === '') {
     echo json_encode([
@@ -97,13 +76,6 @@ if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-if (strlen($comments) > 1000) {
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'Comments cannot exceed 1000 characters.'
-    ]);
-    exit;
-}
 
 
 // ==========================================
@@ -247,7 +219,7 @@ if ($template === false) {
 
         echo json_encode([
             'status' => 'success',
-            'message' => 'Your quote request has been submitted successfully.'
+            'message' => 'Your message has been forwarded to the appropriate department, and our team will get back to you within 24 business hours.'
         ]);
     } catch (Exception $e) {
 

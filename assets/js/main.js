@@ -98,6 +98,20 @@ document.querySelectorAll(".date-time-group").forEach((group) => {
 /*Active of navbar*/
 
 document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".site-header");
+
+  function updateNavbar() {
+    if (!header) return;
+
+    header.classList.toggle("scrolled", window.scrollY > 50);
+  }
+
+  // Check immediately
+  updateNavbar();
+
+  // Update when scrolling
+  window.addEventListener("scroll", updateNavbar);
+
   const pathname = window.location.pathname;
 
   const currentPage = pathname === "/" || pathname === "" ? "/" : pathname.split("/").pop();
