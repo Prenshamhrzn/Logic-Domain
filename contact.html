@@ -597,7 +597,17 @@
       enableTime: true,
       dateFormat: "m/d/Y h:i K",
       time_24hr: false,
-      minuteIncrement: 5
+      minuteIncrement: 5,
+
+      // Disable dates before today
+      minDate: "today",
+
+      // Disable Saturday (6) and Sunday (0)
+      disable: [
+      function (date) {
+        return date.getDay() === 0 || date.getDay() === 6;
+      }
+      ]
     });
   </script>
   <!-- AOS JavaScript -->
