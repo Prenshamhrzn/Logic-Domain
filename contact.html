@@ -561,7 +561,8 @@ didOpen: () => {
               html: result.message,
               confirmButtonText: "OK",
                 customClass: {
-    htmlContainer: "custom-swal-text"
+    htmlContainer: "custom-swal-text",
+    confirmButton: "custom-swal-button",
   }
           }).then(() => {
             window.location.reload();
