@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (selectedDate < new Date()) {
-      setError(input, "Please select a future date and time.");
+      setError(input, "Please select a date and time that has not passed.");
       return false;
     }
 
