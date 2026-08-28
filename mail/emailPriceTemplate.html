@@ -1,102 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>New Product Demo Request</title>
-</head>
-<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,Helvetica,sans-serif;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <title>Logic domain email</title>
+    <style>
+      body {
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #ffffff;
+        color: #242b38;
+      }
 
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:30px 0;">
-    <tr>
-        <td align="center">
+      .first-information h5,
+      .additional-comment h5 {
+        font-size: 17px;
+        font-weight: 600;
+        color: #3f4468;
+        margin-bottom: 15px;
+      }
+      .first-information {
+        margin-bottom: 36px;
+      }
+      .email-table-info {
+        width: 100%;
+        background-color: #f6f9fe;
+        border: 1px solid #eef3fb;
+        border-radius: 8px;
+        padding: 0 28px;
+        box-sizing: border-box;
+      }
+      .email-table-info table {
+        width: 100%;
+        border-collapse: collapse;
+      }
 
-            <table width="650" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e5e5e5;">
+      .email-table-info td {
+        padding: 22px 0;
+        font-size: 15px;
+        color: #4f5662;
+        border-bottom: 1px solid #e2e8f0;
+      }
 
-                <tr>
-                    <td style="background:#0056b3;color:#ffffff;padding:25px;">
-                        <h2 style="margin:0;">New Custom Quote Request</h2>
-                        <p style="margin:8px 0 0;font-size:14px;">
-                            A visitor has send a custom quote through the website.
-                        </p>
-                    </td>
-                </tr>
+      td.label-title {
+        width: 52%;
+        font-weight: 500;
+        color: #252b35;
+      }
+      .email-table-info tr:last-child {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="width: 100%; min-height: 100vh">
+      <div class="email-box" style="width: 100%; max-width: 700px; margin: 0 auto; background: #f8f8f8; overflow: hidden">
+        <div class="email-blue-part" style="width: 100%; background-color: #1647b7; padding: 120px 0 0; border-radius: 0 0 90px 90px; box-sizing: border-box">
+          <div style="width: 82%; max-width: 600px; margin: 0 auto; padding: 30px 30px 25px; background: #ffffff; border-radius: 10px 10px 0 0; box-sizing: border-box">
+            <div class="email-heading" style="display: block; text-align: center; margin: 0">
+              <div class="icon-part">
+                <img src="https://logicdomain.com/corporate/assets/images/logic-domain-logo.png" alt="Logic Domain" style="display: block; margin: 0 auto 30px; border: 0" />
+              </div>
 
-                <tr>
-                    <td style="padding:30px;">
+              <h4 style="display: block; margin: 0 0 5px; font-size: 22px; font-weight: 700; color: #3f4468">New Custom Quote Request</h4>
 
-                        <h3 style="margin-top:0;color:#333;">
-                            Contact Information
-                        </h3>
+              <p style="display: block; margin: 0; font-size: 16px; font-weight: 400; color: #7c7a7a; line-height: 1.5">A new quote request was submitted through the website.</p>
+            </div>
+          </div>
+        </div>
 
-                        <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse:collapse;">
+        <div style="width: 100%; background: #f8f8f8; padding: 0 0 50px">
+          <div style="width: 82%; max-width: 600px; margin: 0 auto; padding: 15px 30px 30px; background: #ffffff; border-radius: 0 0 10px 10px; box-sizing: border-box">
+            <div class="email-information">
+              <div class="first-information">
+                <h5>Contact Information</h5>
 
-                            <tr>
-                                <td width="35%" style="font-weight:bold;background:#f8f8f8;">Name</td>
-                                <td>{{name}}</td>
-                            </tr>
+                <div class="email-table-info">
+                  <table>
+                    <tr>
+                      <td class="label-title">Name:</td>
+                      <td>{{name}}</td>
+                    </tr>
 
-                            <tr>
-                                <td style="font-weight:bold;background:#f8f8f8;">Company</td>
-                                <td>{{company}}</td>
-                            </tr>
+                    <tr>
+                      <td class="label-title">Company:</td>
+                      <td>{{company}}</td>
+                    </tr>
 
-                            <tr>
-                                <td style="font-weight:bold;background:#f8f8f8;">Phone Number</td>
-                                <td>{{phone}}</td>
-                            </tr>
+                    <tr>
+                      <td class="label-title">Phone Number:</td>
+                      <td>{{phone}}</td>
+                    </tr>
 
-                            <tr>
-                                <td style="font-weight:bold;background:#f8f8f8;">Email Address</td>
-                                <td>{{email}}</td>
-                            </tr>
+                    <tr>
+                      <td class="label-title">Email Address:</td>
+                      <td>{{email}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
 
-                        </table>
+              <div class="first-information">
+                <h5>Organization Information</h5>
 
-                        <br>
+                <div class="email-table-info">
+                  <table>
+                    <tr>
+                      <td class="label-title">Type:</td>
+                      <td>{{organizations}}</td>
+                    </tr>
 
-                        <h3 style="margin-top:0;color:#333;">
-                            Organization Information
-                        </h3>
+                    <tr>
+                      <td class="label-title">Size:</td>
+                      <td>{{size_org}}</td>
+                    </tr>
 
-                        <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse:collapse;">
+                    <tr>
+                      <td class="label-title">No. of Users:</td>
+                      <td>{{no_org}}</td>
+                    </tr>
 
-                            <tr>
-                                <td width="35%" style="font-weight:bold;background:#f8f8f8;">Type</td>
-                                <td>{{organizations}}</td>
-                            </tr>
+                    <tr>
+                      <td class="label-title">Interested Product:</td>
+                      <td>{{avg_cap}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
 
-                            <tr>
-                                <td style="font-weight:bold;background:#f8f8f8;">Size</td>
-                                <td>{{size_org}}</td>
-                            </tr>
+              <div class="additional-comment">
+                <h5>Additional Comments</h5>
 
-                            <tr>
-                                <td style="font-weight:bold;background:#f8f8f8;">Number of Users</td>
-                                <td>{{no_org}}</td>
-                            </tr>
-
-                            <tr>
-                                <td style="font-weight:bold;background:#f8f8f8;">Average annual capital projects</td>
-                                <td>{{avg_cap}}</td>
-                            </tr>
-
-                        </table>
-
-                        <br>
-
-                        <h3 style="color:#333;">
-                            Additional Comments
-                        </h3>
-
-                        <div style="padding:15px;background:#fafafa;border:1px solid #e5e5e5;border-radius:5px;">
-                            {{comments}}
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-
-</body>
+                <div style="padding: 18px; border-radius: 12px; background: #f6f9fe; border: 1px solid #eef3fb; font-size: 15px; color: #68717e">{{comments}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

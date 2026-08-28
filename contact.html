@@ -334,13 +334,16 @@
       </section>
 
       <section class="location-map px-3 py-5 mb-4">
-        
-          <div class="map-wrapper">
 
-           <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7896.258581172691!2d-117.82886308801326!3d33.68389878263376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sPharmacies!5e0!3m2!1sen!2snp!4v1787570756641!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            
-          </div>
-   
+        <div class="map-wrapper">
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7896.258581172691!2d-117.82886308801326!3d33.68389878263376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sPharmacies!5e0!3m2!1sen!2snp!4v1787570756641!5m2!1sen!2snp"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+        </div>
+
       </section>
     </div>
   </main>
@@ -521,26 +524,25 @@
       const formData = new FormData(e.target);
 
       // Show loading popup
-Swal.fire({
-          title: "Submitting Request...",
-          text: "Please wait while we send your request.",
-          allowOutsideClick: false,
-          allowEscapeKey: false,
-            customClass: {
-    htmlContainer: "custom-swal-text",
-  },
-didOpen: () => {
-  Swal.showLoading();
+      Swal.fire({
+        title: "Submitting Request...",
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        customClass: {
+          htmlContainer: "custom-swal-text",
+        },
+        didOpen: () => {
+          Swal.showLoading();
 
-  const popup = Swal.getPopup();
-  const loader = popup.querySelector(".swal2-loader");
-  const title = Swal.getTitle();
+          const popup = Swal.getPopup();
+          const loader = popup.querySelector(".swal2-loader");
+          const title = Swal.getTitle();
 
-  popup.insertBefore(loader, title);
+          popup.insertBefore(loader, title);
 
-  loader.classList.add("custom-swal-loader");
-},
-        });
+          loader.classList.add("custom-swal-loader");
+        },
+      });
 
 
       try {
@@ -554,16 +556,16 @@ didOpen: () => {
         Swal.close();
 
         if (result.status === "success") {
-            Swal.fire({
-              icon: "success",
-              title: "Request Submitted!",
-              // text: result.message,
-              html: result.message,
-              confirmButtonText: "OK",
-                customClass: {
-    htmlContainer: "custom-swal-text",
-    confirmButton: "custom-swal-button",
-  }
+          Swal.fire({
+            icon: "success",
+            title: "Request Submitted!",
+            // text: result.message,
+            html: result.message,
+            confirmButtonText: "OK",
+            customClass: {
+              htmlContainer: "custom-swal-text",
+              confirmButton: "custom-swal-button",
+            }
           }).then(() => {
             window.location.reload();
           });
