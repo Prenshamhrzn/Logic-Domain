@@ -75,7 +75,7 @@
 
         echo json_encode([
             'status' => 'success',
-            'message' => 'Thank you for your demo request. Our team has received your submission and will respond within 24 hours on business days.'
+            'message' => 'Thank you for contacting us.<br> A member of our team will get in touch with you within 24 hours on the next business day.'
         ]);
 
     } catch (Exception $e) {

@@ -593,9 +593,20 @@
           text: "Please wait while we send your request.",
           allowOutsideClick: false,
           allowEscapeKey: false,
-          didOpen: () => {
-            Swal.showLoading();
-          },
+            customClass: {
+    htmlContainer: "custom-swal-text",
+  },
+didOpen: () => {
+  Swal.showLoading();
+
+  const popup = Swal.getPopup();
+  const loader = popup.querySelector(".swal2-loader");
+  const title = Swal.getTitle();
+
+  popup.insertBefore(loader, title);
+
+  loader.classList.add("custom-swal-loader");
+},
         });
 
         try {
@@ -612,8 +623,13 @@
             Swal.fire({
               icon: "success",
               title: "Request Submitted!",
-              text: result.message,
+              // text: result.message,
+              html: result.message,
               confirmButtonText: "OK",
+                customClass: {
+    htmlContainer: "custom-swal-text",
+    confirmButton: "custom-swal-button",
+  }
             }).then(() => {
               window.location.reload();
             });

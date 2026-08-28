@@ -521,15 +521,27 @@
       const formData = new FormData(e.target);
 
       // Show loading popup
-      Swal.fire({
-        title: "Submitting Request...",
-        text: "Please wait while we send your demo request.",
-        allowOutsideClick: false,
-        allowEscapeKey: false,
-        didOpen: () => {
-          Swal.showLoading();
-        }
-      });
+Swal.fire({
+          title: "Submitting Request...",
+          text: "Please wait while we send your request.",
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+            customClass: {
+    htmlContainer: "custom-swal-text",
+  },
+didOpen: () => {
+  Swal.showLoading();
+
+  const popup = Swal.getPopup();
+  const loader = popup.querySelector(".swal2-loader");
+  const title = Swal.getTitle();
+
+  popup.insertBefore(loader, title);
+
+  loader.classList.add("custom-swal-loader");
+},
+        });
+
 
       try {
         const response = await fetch("mail/sendMail.php", {
@@ -542,11 +554,15 @@
         Swal.close();
 
         if (result.status === "success") {
-          Swal.fire({
-            icon: "success",
-            title: "Request Submitted!",
-            text: result.message,
-            confirmButtonText: "OK"
+            Swal.fire({
+              icon: "success",
+              title: "Request Submitted!",
+              // text: result.message,
+              html: result.message,
+              confirmButtonText: "OK",
+                customClass: {
+    htmlContainer: "custom-swal-text"
+  }
           }).then(() => {
             window.location.reload();
           });

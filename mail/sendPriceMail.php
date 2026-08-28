@@ -219,7 +219,7 @@ if ($template === false) {
 
         echo json_encode([
             'status' => 'success',
-            'message' => 'Your message has been forwarded to the appropriate department, and our team will get back to you within 24 business hours.'
+            'message' => 'Thank you for contacting us.<br> A member of our team will get in touch with you within 24 hours on the next business day.'
         ]);
     } catch (Exception $e) {
 
