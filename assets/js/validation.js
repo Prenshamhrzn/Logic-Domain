@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	  const phonePattern = /^\+1 \(\d{3}\) \d{3}-\d{4}$/;
 
 	  if (!phonePattern.test(value)) {
-		setError(phone, "Phone number must be in the format +1 (###) ###-####.");
+		setError(phone, "Please enter a valid phone number.");
 		return false;
 	  }
 
