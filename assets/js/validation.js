@@ -70,30 +70,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function validatePhone() {
-    const value = phone.value.trim();
+	  const value = phone.value.trim();
 
-    if (value === "") {
-      setError(phone, "Please enter your phone number.");
-      return false;
-    }
+	  if (value === "") {
+		setError(phone, "Please enter your phone number.");
+		return false;
+	  }
 
-    const phonePattern = /^\+?[0-9\s\-()]{7,20}$/;
+	  const phonePattern = /^\+1 \(\d{3}\) \d{3}-\d{4}$/;
 
-    if (!phonePattern.test(value)) {
-      setError(phone, "Please enter a valid phone number.");
-      return false;
-    }
+	  if (!phonePattern.test(value)) {
+		setError(phone, "Phone number must be in the format +1 (###) ###-####.");
+		return false;
+	  }
 
-    const digits = value.replace(/\D/g, "");
-
-    if (digits.length < 7 || digits.length > 15) {
-      setError(phone, "Phone number must contain 7-15 digits.");
-      return false;
-    }
-
-    setValid(phone);
-    return true;
-  }
+	  setValid(phone);
+	  return true;
+	}
 
   function validateCompany() {
     const value = company.value.trim();
@@ -325,17 +318,10 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(value);
 
     if (value !== "") {
-      const phonePattern = /^\+?[0-9\s\-()]{7,20}$/;
+      const phonePattern = /^\+1 \(\d{3}\) \d{3}-\d{4}$/;
 
       if (!phonePattern.test(value)) {
         setError(prephone, "Please enter a valid phone number.");
-        return false;
-      }
-
-      const digits = value.replace(/\D/g, "");
-
-      if (digits.length < 7 || digits.length > 15) {
-        setError(prephone, "Phone number must contain 7-15 digits.");
         return false;
       }
     }
