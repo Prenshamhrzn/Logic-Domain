@@ -169,3 +169,6 @@ contactForm.addEventListener("submit", function (e) {
     contactForm.reportValidity();
   }
 });
+
+//faq open
+
