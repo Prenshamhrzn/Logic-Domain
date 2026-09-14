@@ -157,6 +157,27 @@ window.addEventListener("load", function () {
   }, 500);
 });
 
+// faq section
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+    const isActive = item.classList.contains("active");
+
+    faqItems.forEach((faq) => {
+      faq.classList.remove("active");
+
+      faq.querySelector(".faq-icon i").className = "bi bi-plus-lg";
+    });
+
+    if (!isActive) {
+      item.classList.add("active");
+
+      item.querySelector(".faq-icon i").className = "bi bi-dash-lg";
+    }
+  });
+});
+
 //Contact form validation
 const contactForm = document.getElementById("contactForm");
 
@@ -169,6 +190,3 @@ contactForm.addEventListener("submit", function (e) {
     contactForm.reportValidity();
   }
 });
-
-//faq open
-
