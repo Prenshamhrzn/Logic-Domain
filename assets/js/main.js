@@ -10,17 +10,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     }
   });
 });
-const form = document.querySelector(".newsletter");
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const input = form.querySelector("input");
-    if (input.value.trim()) {
-      form.reset();
-      alert("Thank you for subscribing.");
-    }
-  });
-}
 
 /* go to top*/
 const topButton = document.querySelector(".top-button-link");
@@ -31,7 +20,7 @@ window.addEventListener("scroll", () => {
     topButton.classList.remove("active");
   }
 });
-
+//navigate part
 const platformImage = document.getElementById("platformImage");
 const platformIcon = document.getElementById("platformIcon");
 
@@ -158,20 +147,27 @@ window.addEventListener("load", function () {
 });
 
 // faq section
-const faqItems = document.querySelectorAll(".faq-item");
+const faqItems = document.querySelectorAll(".home-page-faq-items-list .faq-all-items, .faq-items-list .faq-all-items");
 
-faqItems.forEach((item) => {
-  item.querySelector(".faq-question").addEventListener("click", () => {
-    const isActive = item.classList.contains("active");
+faqItems.forEach(function (item) {
+  const question = item.querySelector(".faq-question");
 
-    faqItems.forEach((faq) => {
-      faq.classList.remove("active");
+  question.addEventListener("click", function () {
+    const isOpen = item.classList.contains("is-open");
 
+    faqItems.forEach(function (faq) {
+      faq.classList.remove("is-open");
+      faq.querySelector(".faq-item").classList.remove("active");
+      faq.querySelector(".faq-answer").style.maxHeight = "0px";
       faq.querySelector(".faq-icon i").className = "bi bi-plus-lg";
     });
 
-    if (!isActive) {
-      item.classList.add("active");
+    if (!isOpen) {
+      item.classList.add("is-open");
+      item.querySelector(".faq-item").classList.add("active");
+
+      const answer = item.querySelector(".faq-answer");
+      answer.style.maxHeight = answer.scrollHeight + "px";
 
       item.querySelector(".faq-icon i").className = "bi bi-dash-lg";
     }
