@@ -148,7 +148,7 @@
         <div class="container position-relative home-banner-content">
           <div class="row align-items-center min-vh-75 py-4">
             <div class="col-lg-6 text-white banner-left" data-aos="fade-right">
-              <div class="banner-first-tag text-uppercase mb-3"><i class="fas fa-cloud-upload-alt"></i>Cloud-based <span>•</span> Secure <span>•</span> Scalable <span>•</span> Super Intelligence</div>
+              <div class="banner-first-tag text-uppercase mb-2"><i class="fas fa-cloud-upload-alt"></i>Cloud-based <span>•</span> Secure <span>•</span> Scalable <span>•</span> Super Intelligence</div>
               <h1 class="display-5 fw-bold lh-sm mb-1">
                 End-to-End <br />
                 <span class="multi-channel">Multi-Channel Communication</span>
@@ -211,7 +211,7 @@
 
             <div class="col-md-3 feature-item border-0">
               <div class="feature-icon si">
-                <i class="fa-solid fa-brain"></i>
+                <i class="fa-solid fa-robot"></i>
               </div>
               <div>
                 <h3>Super Intelligence (AI)</h3>
@@ -283,27 +283,8 @@
         </div>
       </section>
 
-      <!-- <section class="section-space si-section">
-        <img src="assets/images/navigator-facility.png" alt="About Background" class="navigate-bg" />
-        <div class="container">
-          <div class="text-center intro-copy" data-aos="fade-up" data-aos-duration="800">
-            <span class="section-tag">Super Intelligence</span>
-            <h2 class="section-title mt-3">
-              Beyond Answers. Intelligence That Drives<br />
-              <span class="primary-color">Your Projects Forward.</span>
-            </h2>
-            <p class="section-description mx-auto">
-              Unlock the power of Super Intelligence with unlimited conversations, seamless
-              <br class="break-sentence" />
-              data access and intelligent summaries, and powerful insights.
-            </p>
-          </div>
-        </div>
-
-      </section> -->
-
-      <section class="section-space si-section">
-        <img src="assets/images/si-home-bg-img.png" alt="Si Background" class="si-home-bg" />
+      <section class="section-space si-section si-network" aria-labelledby="si-heading">
+        <img src="assets/images/si-home-bg.png" alt="Si Background" class="si-home-bg" />
 
         <div class="container">
           <!-- Section Heading -->
@@ -322,58 +303,44 @@
             </p>
           </div>
 
-          <!-- SI Features -->
-          <div class="si-content">
-            <!-- Left Features -->
-            <div class="si-features si-left">
-              <div class="si-feature-card" data-aos="fade-right">
-                <div class="si-icon icon-blue">
-                  <i class="fa-regular fa-comments"></i>
-                </div>
-                <div class="si-feature-info">
-                  <h4>Unlimited SI Conversations</h4>
-                  <p>Explore unlimited conversations with intelligent assistance.</p>
-                </div>
-              </div>
+          <div class="si-layout" id="si-layout">
+            <svg class="si-connectors" id="si-connectors" aria-hidden="true"></svg>
 
-              <div class="si-feature-card" data-aos="fade-right" data-aos-delay="150">
-                <div class="si-icon icon-purple">
-                  <i class="fa-regular fa-file-lines"></i>
-                </div>
-                <div class="si-feature-info">
-                  <h4>Data Summarization</h4>
-                  <p>Simplify complex data into clear, actionable insights.</p>
-                </div>
+            <article class="si-feature si-f1" data-link="conversations" tabindex="0">
+              <div class="si-icon"><i class="fa-regular fa-comments" aria-hidden="true"></i></div>
+              <div>
+                <h3>Unlimited SI Conversations</h3>
+                <p>Explore unlimited conversations with intelligent assistance.</p>
               </div>
+            </article>
+            <article class="si-feature si-f2" data-link="summarization" tabindex="0">
+              <div class="si-icon"><i class="fa-regular fa-file-lines" aria-hidden="true"></i></div>
+              <div>
+                <h3>Data Summarization</h3>
+                <p>Simplify complex data into clear, actionable insights.</p>
+              </div>
+            </article>
+
+            <div class="si-center" id="si-center">
+              <!-- <div class="si-aura"></div> -->
+              <!-- <div class="si-orbit"></div> -->
+              <img src="assets/images/home-banner-img-ai.png" alt="Logic Domain Super Intelligence Assistant" class="si-main-image" />
             </div>
 
-            <!-- Center Illustration -->
-            <div class="si-visual" data-aos="zoom-in" data-aos-duration="1000">
-              <img src="assets/images/si-middle-img.png" alt="Logic Domain SI Assistant" class="si-main-image" />
-            </div>
-
-            <!-- Right Features -->
-            <div class="si-features si-right">
-              <div class="si-feature-card" data-aos="fade-left">
-                <div class="si-icon icon-green">
-                  <i class="fa-solid fa-clock-rotate-left"></i>
-                </div>
-                <div class="si-feature-info">
-                  <h4>Conversation History</h4>
-                  <p>Revisit past conversations and continue discussions seamlessly.</p>
-                </div>
+            <article class="si-feature si-f3" data-link="history" tabindex="0">
+              <div class="si-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></div>
+              <div>
+                <h3>Conversation History</h3>
+                <p>Revisit past conversations and continue discussions seamlessly.</p>
               </div>
-
-              <div class="si-feature-card" data-aos="fade-left" data-aos-delay="150">
-                <div class="si-icon icon-orange">
-                  <i class="fa-solid fa-database"></i>
-                </div>
-                <div class="si-feature-info">
-                  <h4>Intelligent Data Retrieval</h4>
-                  <p>Instantly access data across modules and submodules.</p>
-                </div>
+            </article>
+            <article class="si-feature si-f4" data-link="retrieval" tabindex="0">
+              <div class="si-icon"><i class="fa-solid fa-database" aria-hidden="true"></i></div>
+              <div>
+                <h3>Intelligent Data Retrieval</h3>
+                <p>Instantly access data across modules and submodules.</p>
               </div>
-            </div>
+            </article>
           </div>
 
           <!-- CTA Button -->
@@ -1034,6 +1001,86 @@
           experienceModal.show();
         }, 500);
       });
+    </script>
+
+    <script>
+      (() => {
+        const layout = document.getElementById("si-layout");
+        const svg = document.getElementById("si-connectors");
+        const center = document.getElementById("si-center");
+        if (!layout || !svg || !center) return;
+        const features = [...layout.querySelectorAll(".si-feature")];
+        const ns = "http://www.w3.org/2000/svg";
+        const groups = new Map();
+        const element = (tag, attrs = {}) => {
+          const el = document.createElementNS(ns, tag);
+          for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+          return el;
+        };
+        const defs = element("defs");
+        svg.appendChild(defs);
+        features.forEach((feature) => {
+          const id = feature.dataset.link;
+          const color = getComputedStyle(feature).getPropertyValue("--accent").trim();
+          const marker = element("marker", { id: "arrow-" + id, viewBox: "0 0 10 10", refX: "8", refY: "5", markerWidth: "6", markerHeight: "6", orient: "auto-start-reverse" });
+          marker.appendChild(element("path", { d: "M 1 1 L 9 5 L 1 9", fill: "none", stroke: color, "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }));
+          defs.appendChild(marker);
+          const group = element("g", { class: "si-link-group", "data-link": id, style: "--line-color:" + color });
+          const base = element("path", { class: "si-link", "marker-end": "url(#arrow-" + id + ")" });
+          const flow = element("path", { class: "si-link-flow" });
+          const particle = element("circle", { class: "si-moving-particle", r: "5", fill: color, style: "color:" + color });
+          const mover = element("animateMotion", { dur: 3.2 + features.indexOf(feature) * 0.38 + "s", repeatCount: "indefinite", begin: features.indexOf(feature) * -0.82 + "s", rotate: "auto" });
+          mover.setAttribute("path", "M 0 0");
+          particle.appendChild(mover);
+          group.append(base, flow, particle);
+          svg.appendChild(group);
+          groups.set(id, { group, base, flow, mover });
+          const activate = () => {
+            groups.forEach((g) => g.group.classList.remove("is-active"));
+            features.forEach((f) => f.classList.remove("is-active"));
+            group.classList.add("is-active");
+            feature.classList.add("is-active");
+            center.classList.add("is-active");
+          };
+          const deactivate = () => {
+            group.classList.remove("is-active");
+            feature.classList.remove("is-active");
+            center.classList.remove("is-active");
+          };
+          feature.addEventListener("mouseenter", activate);
+          feature.addEventListener("mouseleave", deactivate);
+          feature.addEventListener("focus", activate);
+          feature.addEventListener("blur", deactivate);
+        });
+        function draw() {
+          if (matchMedia("(max-width: 767.98px)").matches) return;
+          const box = layout.getBoundingClientRect();
+          svg.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
+          const core = center.getBoundingClientRect();
+          features.forEach((feature) => {
+            const r = feature.getBoundingClientRect(),
+              left = r.left < core.left;
+            const x1 = (left ? r.right : r.left) - box.left;
+            const y1 = r.top + r.height / 2 - box.top;
+            const x2 = (left ? core.left + 9 : core.right - 9) - box.left;
+            const y2 = core.top + core.height / 2 - box.top + (r.top < core.top + core.height / 2 ? -core.height * 0.2 : core.height * 0.2);
+            const delta = Math.max(35, Math.abs(x2 - x1) * 0.46);
+            const d = `M ${x1} ${y1} C ${x1 + (left ? delta : -delta)} ${y1}, ${x2 + (left ? -delta : delta)} ${y2}, ${x2} ${y2}`;
+            const g = groups.get(feature.dataset.link);
+            g.base.setAttribute("d", d);
+            g.flow.setAttribute("d", d);
+            g.mover.setAttribute("path", d);
+          });
+        }
+        if ("ResizeObserver" in window) {
+          const observer = new ResizeObserver(draw);
+          observer.observe(layout);
+          observer.observe(center);
+          features.forEach((f) => observer.observe(f));
+        }
+        addEventListener("resize", draw, { passive: true });
+        draw();
+      })();
     </script>
   </body>
 </html>
