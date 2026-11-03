@@ -186,3 +186,6 @@ contactForm.addEventListener("submit", function (e) {
     contactForm.reportValidity();
   }
 });
+
+/*Compass SI Core Capabilities*/
+
