@@ -628,11 +628,72 @@
           </div>
 
           <article aria-labelledby="si-search-title" class="ld-story" data-aos="fade-left" data-aos-duration="800">
-            <div class="ld-visual" data-reveal="">
-              <div class="ld-photo primary"><img alt="Logic Domain SI cross-module data search interface" loading="lazy" src="assets/images/si-cross-module.png" /></div>
-              <div class="ld-photo secondary"><img alt="" aria-hidden="true" loading="lazy" src="assets/images/new-cross-module.png" /></div>
-              <svg aria-hidden="true" class="ld-stroke" viewbox="0 0 80 80"><path d="M8 62 C24 18 46 17 70 33 M70 33 l-14 -1 m14 1 -9 -12"></path></svg>
-              <div aria-hidden="true" class="ld-medallion"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <div class="ld-visual ld-search-visual">
+              <!-- 1. Your existing image -->
+              <img src="assets/images/new-module.png" alt="Logic Domain SI Cross-Module Data Search" class="ld-single-image" loading="lazy" />
+
+              <!-- 2. ADD CONNECTOR LINES HERE -->
+              <div class="ld-connector-layer" aria-hidden="true">
+                <svg class="ld-connector-svg" viewBox="0 0 900 560" preserveAspectRatio="none">
+                  <!-- Connected Modules -->
+                  <path id="ld-path-modules" class="ld-connector-path" d="M300 150 C240 110, 170 92, 110 92" />
+
+                  <!-- Smart Search -->
+                  <path id="ld-path-search" class="ld-connector-path" d="M245 370 C185 390, 140 415, 95 430" />
+
+                  <!-- PDF -->
+                  <path id="ld-path-pdf" class="ld-connector-path" d="M615 170 C700 135, 760 108, 815 108" />
+
+                  <!-- Excel -->
+                  <path id="ld-path-excel" class="ld-connector-path" d="M650 365 C730 390, 790 420, 845 420" />
+
+                  <!-- Moving dots -->
+                  <circle class="ld-connector-dot" r="4">
+                    <animateMotion dur="5s" repeatCount="indefinite">
+                      <mpath href="#ld-path-modules" />
+                    </animateMotion>
+                  </circle>
+
+                  <circle class="ld-connector-dot" r="4">
+                    <animateMotion dur="5.8s" repeatCount="indefinite">
+                      <mpath href="#ld-path-search" />
+                    </animateMotion>
+                  </circle>
+
+                  <circle class="ld-connector-dot" r="4">
+                    <animateMotion dur="5.4s" repeatCount="indefinite">
+                      <mpath href="#ld-path-pdf" />
+                    </animateMotion>
+                  </circle>
+
+                  <circle class="ld-connector-dot" r="4">
+                    <animateMotion dur="6.1s" repeatCount="indefinite">
+                      <mpath href="#ld-path-excel" />
+                    </animateMotion>
+                  </circle>
+                </svg>
+              </div>
+
+              <!-- 3. Your existing floating icons -->
+              <div class="ld-floating-icon ld-float-top-left">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Connected Modules</span>
+              </div>
+
+              <div class="ld-floating-icon ld-float-bottom-left">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Smart Search</span>
+              </div>
+
+              <div class="ld-floating-icon ld-float-top-right">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>PDF</span>
+              </div>
+
+              <div class="ld-floating-icon ld-float-bottom-right">
+                <i class="fa-solid fa-file-excel"></i>
+                <span>Excel</span>
+              </div>
             </div>
             <div class="ld-text" data-reveal="">
               <div class="compass-eyebrow"><i aria-hidden="true" class="fa-solid fa-database"></i> Discover information</div>
@@ -648,13 +709,79 @@
               </div>
             </div>
           </article>
+
           <article aria-labelledby="si-history-title" class="ld-story reverse" data-aos="fade-right" data-aos-duration="800">
-            <div class="ld-visual" data-reveal="">
-              <div class="ld-photo primary"><img alt="Logic Domain SI conversation history interface" loading="lazy" src="assets/images/si-history.png" /></div>
-              <div class="ld-photo secondary"><img alt="" aria-hidden="true" loading="lazy" src="assets/images/new-conversational-history.png" /></div>
-              <svg aria-hidden="true" class="ld-stroke" viewbox="0 0 80 80"><path d="M8 62 C24 18 46 17 70 33 M70 33 l-14 -1 m14 1 -9 -12"></path></svg>
-              <div aria-hidden="true" class="ld-medallion"><i class="fa-solid fa-comments"></i></div>
+            <div class="ld-visual ld-search-visual">
+              <!-- Main image -->
+              <img src="assets/images/new-history.png" alt="Logic Domain SI Conversation History and Continuity" class="ld-single-image" loading="lazy" />
+
+              <!-- Connector lines -->
+              <div class="ld-connector-layer" aria-hidden="true">
+                <svg class="ld-connector-svg" viewBox="0 0 900 560" preserveAspectRatio="none">
+                  <!-- History -->
+                  <path id="ld-path-history" class="ld-connector-path" d="M310 165 C245 125, 175 110, 110 110" />
+
+                  <!-- Context Retained -->
+                  <path id="ld-path-context" class="ld-connector-path" d="M255 375 C195 398, 145 425, 105 430" />
+
+                  <!-- Follow-up -->
+                  <path id="ld-path-followup" class="ld-connector-path" d="M620 170 C700 145, 760 128, 820 120" />
+
+                  <!-- Reports -->
+                  <path id="ld-path-reports" class="ld-connector-path" d="M640 370 C720 395, 785 420, 845 430" />
+
+                  <!-- Moving dots -->
+                  <circle class="ld-connector-dot history-dot" r="4">
+                    <animateMotion dur="5s" repeatCount="indefinite">
+                      <mpath href="#ld-path-history"></mpath>
+                    </animateMotion>
+                  </circle>
+
+                  <circle class="ld-connector-dot history-dot" r="4">
+                    <animateMotion dur="5.8s" repeatCount="indefinite">
+                      <mpath href="#ld-path-context"></mpath>
+                    </animateMotion>
+                  </circle>
+
+                  <circle class="ld-connector-dot history-dot" r="4">
+                    <animateMotion dur="5.4s" repeatCount="indefinite">
+                      <mpath href="#ld-path-followup"></mpath>
+                    </animateMotion>
+                  </circle>
+
+                  <circle class="ld-connector-dot history-dot" r="4">
+                    <animateMotion dur="6.1s" repeatCount="indefinite">
+                      <mpath href="#ld-path-reports"></mpath>
+                    </animateMotion>
+                  </circle>
+                </svg>
+              </div>
+
+              <!-- Floating Conversation History -->
+              <div class="ld-floating-icon ld-float-top-left history">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>History</span>
+              </div>
+
+              <!-- Floating Context Retention -->
+              <div class="ld-floating-icon ld-float-bottom-left">
+                <i class="fa-solid fa-brain"></i>
+                <span>Context Retained</span>
+              </div>
+
+              <!-- Floating Follow-up Insights -->
+              <div class="ld-floating-icon ld-float-top-right">
+                <i class="fa-solid fa-comments"></i>
+                <span>Follow-up</span>
+              </div>
+
+              <!-- Floating Reports -->
+              <div class="ld-floating-icon ld-float-bottom-right">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Reports</span>
+              </div>
             </div>
+
             <div class="ld-text" data-reveal="">
               <div class="compass-eyebrow"><i aria-hidden="true" class="fa-solid fa-clock-rotate-left"></i> Build on insights</div>
               <h3 id="si-history-title">Conversation History & Continuity</h3>
