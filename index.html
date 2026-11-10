@@ -129,11 +129,12 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./contact">Contact Us</a>
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="./pricing">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact">Contact Us</a>
               </li>
             </ul>
             <a href="./contact" class="demo-btn">Request Demo </a>
@@ -161,9 +162,7 @@
                 100% SaaS & Cloud-based Program/Project Management Software
               </p>
               <p class="lead hero-copy mb-2">A secure cloud-based platform that automates business channels and workflows for owners across the full facilities lifecycle.</p>
-              <p class="lead hero-copy mb-4">
-                Our Super Intelligence assistant boosts productivity, simplifies complex tasks, streamlines workflows, and enables smarter decision-making.
-              </p>
+              <p class="lead hero-copy mb-4">Our Super Intelligence assistant boosts productivity, simplifies complex tasks, streamlines workflows, and enables smarter decision-making.</p>
               <div class="req-demo-social-icons">
                 <a href="./contact" class="btn btn-light req-demo-btn text-primary rounded-3 px-4 py-2 fw-semibold">Request Demo <i class="fas fa-arrow-right"></i></a>
 
@@ -356,7 +355,7 @@
         </div>
       </section>
 
-      <section class="lifecycle-section" data-aos="fade-right" data-aos-duration="1000">
+      <!-- <section class="lifecycle-section" data-aos="fade-right" data-aos-duration="1000">
         <div class="container enterprise">
           <div class="lifecycle-shell">
             <div class="row align-items-center g-4">
@@ -383,7 +382,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section id="platform" class="section-space platform-section">
         <div class="container">
@@ -459,8 +458,35 @@
         <div class="container position-relative why-section-content">
           <div class="row align-items-center g-4">
             <div class="col-lg-5 why-section-content">
-              <div class="why-image">
+              <!-- <div class="why-image">
                 <img src="assets/images/whyChooseUs.jpg" alt="why choose us img" />
+              </div> -->
+
+              <div class="why-image">
+                <div class="ld-network" aria-label="Interactive connected lifecycle illustration">
+                  <div class="ld-network-halo"></div>
+                  <div class="ld-topline"><span class="ld-live-dot"></span> ONE CONNECTED PLATFORM</div>
+                  <svg class="ld-flow" viewBox="0 0 600 570" preserveAspectRatio="none" aria-hidden="true">
+                    <path id="flowpath" d="M95 155 C185 55 415 55 505 155 C570 240 555 355 465 425 C365 505 210 500 120 415 C40 335 30 235 95 155 Z" />
+                    <circle r="5" class="ld-travel">
+                      <animateMotion dur="12s" repeatCount="indefinite" rotate="auto"><mpath href="#flowpath" /></animateMotion>
+                    </circle>
+                  </svg>
+                  <div class="ld-scene"><img src="assets/images/why-choose-us.png" alt="Contemporary public facility with connected digital information" /></div>
+                  <button type="button" class="ld-node ld-n1 active" data-index="0" aria-pressed="true"><i class="fa-solid fa-arrows-rotate"></i><span>Lifecycle</span></button
+                  ><button type="button" class="ld-node ld-n2" data-index="1" aria-pressed="false"><i class="fa-regular fa-folder-open"></i><span>Information</span></button
+                  ><button type="button" class="ld-node ld-n3" data-index="2" aria-pressed="false"><i class="fa-solid fa-code-branch"></i><span>Workflows</span></button
+                  ><button type="button" class="ld-node ld-n4" data-index="3" aria-pressed="false"><i class="fa-solid fa-brain"></i><span>Intelligence</span></button>
+                  <div class="ld-insight">
+                    <div class="ld-insight-head">
+                      <span class="ld-insight-icon"><i id="ld-icon" class="fa-solid fa-arrows-rotate"></i></span>
+                      <div><small>CONNECTED CAPABILITY</small><strong id="ld-title">Lifecycle Management</strong></div>
+                      <span class="ld-status">Connected</span>
+                    </div>
+                    <p id="ld-detail">Plan, deliver, and manage facilities through a connected lifecycle.</p>
+                    <div class="ld-stepper"><span class="on"></span><span></span><span></span><span></span></div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-lg-7 why-choose-us-content">
@@ -477,7 +503,7 @@
                   </div>
 
                   <div class="why-content">
-                    <h3>Complete Lifecycle Management</h3>
+                    <h3>Lifecycle Management</h3>
                     <p>Manage the complete facility lifecycle within one connected platform.</p>
                   </div>
                 </div>
@@ -705,24 +731,6 @@
                     We don’t believe in one-size-fits-all software. Instead of forcing our clients to adapt to rigid systems, Logic Domain delivers customized software solutions and tailored
                     implementation services designed around your unique requirements. From workflows and processes to reporting, integrations, and system capabilities, our solutions are configured to
                     fit the way your organization actually works—not the other way around. Our goal is simple: we do the heavy lifting, so you don’t have to.
-                  </p>
-                </div>
-              </div>
-
-              <div class="faq-all-items">
-                <div class="faq-item home-faq faq-each-item">
-                  <div class="faq-question home-faq-qn">
-                    <span>Can Logic Domain support enterprise organizations? </span>
-
-                    <span class="faq-icon">
-                      <i class="bi bi-plus-lg"></i>
-                    </span>
-                  </div>
-                </div>
-                <div class="faq-answer">
-                  <p>
-                    Yes. Our solutions are designed to be scalable and configurable, allowing organizations to support complex workflows, multiple stakeholders, projects, facilities, and information
-                    requirements as their operations grow.
                   </p>
                 </div>
               </div>
@@ -1104,6 +1112,60 @@
         }
         addEventListener("resize", draw, { passive: true });
         draw();
+      })();
+    </script>
+
+    <script>
+      (() => {
+        const root = document.querySelector(".ld-network");
+        if (!root) return;
+        const data = [
+          ["Lifecycle Management", "Plan, deliver, and manage facilities through a connected lifecycle.", "fa-arrows-rotate"],
+          ["Centralized Information", "Bring documents, communication, and project information together.", "fa-folder-open"],
+          ["Configurable Workflows", "Adapt approvals and processes to your organization’s requirements.", "fa-code-branch"],
+          ["AI-Powered Automation", "Use intelligent assistance to simplify tasks and access useful insights.", "fa-brain"],
+        ];
+        const buttons = [...root.querySelectorAll(".ld-node")];
+        const title = root.querySelector("#ld-title"),
+          detail = root.querySelector("#ld-detail"),
+          icon = root.querySelector("#ld-icon"),
+          steps = [...root.querySelectorAll(".ld-stepper span")];
+        let index = 0,
+          timer;
+        function show(i) {
+          index = i;
+          title.textContent = data[i][0];
+          detail.textContent = data[i][1];
+          icon.className = "fa-solid " + data[i][2];
+          buttons.forEach((b, n) => {
+            b.classList.toggle("active", n === i);
+            b.setAttribute("aria-pressed", String(n === i));
+          });
+          steps.forEach((s, n) => s.classList.toggle("on", n === i));
+        }
+        function stop() {
+          clearInterval(timer);
+          timer = null;
+        }
+        function start() {
+          stop();
+          if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => show((index + 1) % data.length), 4500);
+        }
+        buttons.forEach((b, i) =>
+          b.addEventListener("click", () => {
+            show(i);
+            start();
+          }),
+        );
+        root.addEventListener("mouseenter", stop);
+        root.addEventListener("mouseleave", start);
+        root.addEventListener("focusin", stop);
+        root.addEventListener("focusout", (e) => {
+          if (!root.contains(e.relatedTarget)) start();
+        });
+        document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+        show(0);
+        start();
       })();
     </script>
   </body>
