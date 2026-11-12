@@ -394,7 +394,7 @@
                 Bring planning, operations, data, and teams together in one connected platform designed to simplify complex workflows, improve visibility, and support smarter decisions.
               </p>
               <div class="platform-visual">
-                <img id="platformImage" src="assets/images/compass-platform.jpg" alt="Compass Platform Image" />
+                <img id="platformImage" src="assets/images/platform-compass.png" alt="Compass Platform Image" />
                 <div class="platform-icon">
                   <i id="platformIcon" class="far fa-compass"></i>
                 </div>
@@ -469,14 +469,14 @@
                   <svg class="ld-flow" viewBox="0 0 600 570" preserveAspectRatio="none" aria-hidden="true">
                     <path id="flowpath" d="M95 155 C185 55 415 55 505 155 C570 240 555 355 465 425 C365 505 210 500 120 415 C40 335 30 235 95 155 Z" />
                     <circle r="5" class="ld-travel">
-                      <animateMotion dur="12s" repeatCount="indefinite" rotate="auto"><mpath href="#flowpath" /></animateMotion>
+                      <animateMotion dur="16s" repeatCount="indefinite" rotate="auto"><mpath href="#flowpath" /></animateMotion>
                     </circle>
                   </svg>
                   <div class="ld-scene"><img src="assets/images/why-choose-us.png" alt="Contemporary public facility with connected digital information" /></div>
                   <button type="button" class="ld-node ld-n1 active" data-index="0" aria-pressed="true"><i class="fa-solid fa-arrows-rotate"></i><span>Lifecycle</span></button
                   ><button type="button" class="ld-node ld-n2" data-index="1" aria-pressed="false"><i class="fa-regular fa-folder-open"></i><span>Information</span></button
-                  ><button type="button" class="ld-node ld-n3" data-index="2" aria-pressed="false"><i class="fa-solid fa-code-branch"></i><span>Workflows</span></button
-                  ><button type="button" class="ld-node ld-n4" data-index="3" aria-pressed="false"><i class="fa-solid fa-brain"></i><span>Intelligence</span></button>
+                  ><button type="button" class="ld-node ld-n4" data-index="3" aria-pressed="false"><i class="fa-solid fa-code-branch"></i><span>Workflows</span></button
+                  ><button type="button" class="ld-node ld-n3" data-index="2" aria-pressed="false"><i class="fa-solid fa-robot"></i><span>SI</span></button>
                   <div class="ld-insight">
                     <div class="ld-insight-head">
                       <span class="ld-insight-icon"><i id="ld-icon" class="fa-solid fa-arrows-rotate"></i></span>
@@ -1123,7 +1123,7 @@
           ["Lifecycle Management", "Plan, deliver, and manage facilities through a connected lifecycle.", "fa-arrows-rotate"],
           ["Centralized Information", "Bring documents, communication, and project information together.", "fa-folder-open"],
           ["Configurable Workflows", "Adapt approvals and processes to your organization’s requirements.", "fa-code-branch"],
-          ["AI-Powered Automation", "Use intelligent assistance to simplify tasks and access useful insights.", "fa-brain"],
+          ["AI-Powered Automation", "Use intelligent assistance to simplify tasks and access useful insights.", "fa-robot"],
         ];
         const buttons = [...root.querySelectorAll(".ld-node")];
         const title = root.querySelector("#ld-title"),
@@ -1149,7 +1149,7 @@
         }
         function start() {
           stop();
-          if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => show((index + 1) % data.length), 4500);
+          if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => show((index + 1) % data.length), 4300);
         }
         buttons.forEach((b, i) =>
           b.addEventListener("click", () => {

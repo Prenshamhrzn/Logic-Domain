@@ -30,10 +30,10 @@ document.querySelectorAll('[data-bs-toggle="tab"]').forEach((tab) => {
 
     setTimeout(() => {
       if (e.target.dataset.bsTarget === "#compass") {
-        platformImage.src = "assets/images/compass-platform.jpg";
+        platformImage.src = "assets/images/platform-compass.png";
         platformIcon.className = "far fa-compass";
       } else {
-        platformImage.src = "assets/images/navigator-platform.jpg";
+        platformImage.src = "assets/images/platform-navigator.png";
         platformIcon.className = "fab fa-telegram";
       }
 
@@ -49,6 +49,7 @@ window.addEventListener("scroll", () => {
 });
 
 //core capabilities scroll
+
 const section = document.querySelector(".capabilities-section");
 const windowBox = document.querySelector(".capabilities-window");
 const track = document.querySelector(".capabilities-track");
@@ -65,6 +66,9 @@ function capabilityScroll() {
   const maxMove = Math.max(track.scrollHeight - windowBox.clientHeight, 0);
 
   track.style.transform = `translateY(-${progress * maxMove}px)`;
+
+  // Hide bottom fade when reaching the last capability
+  windowBox.classList.toggle("no-fade", progress >= 0.98);
 }
 
 window.addEventListener("scroll", capabilityScroll);
@@ -188,4 +192,3 @@ contactForm.addEventListener("submit", function (e) {
 });
 
 /*Compass SI Core Capabilities*/
-
