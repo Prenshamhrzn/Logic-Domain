@@ -527,8 +527,9 @@
         </div>
       </section>
 
-      <section class="section-space capabilities-section" id="capabilities">
+      <section class="capabilities-section section-space" id="capabilities">
         <div class="capabilities-sticky">
+          <!-- Section Heading -->
           <div class="container">
             <div class="text-center section-heading-centered capabilities-heading">
               <span class="section-tag">Core Capabilities</span>
@@ -541,76 +542,68 @@
               <p class="section-description mx-auto">Manage the financial, scheduling, operational, and reporting needs of your capital projects from one connected platform.</p>
             </div>
 
+            <!-- Capability Content -->
             <div class="capabilities-window">
-              <div class="capabilities-track">
-                <!-- Capability 1 -->
-                <div class="capability-row row align-items-start g-5">
-                  <div class="col-lg-6 core-capabilities-img">
-                    <img src="assets/images/budget-core.jpg" alt="Compass budget management" />
+                <div class="capabilities-track">
+                  <!-- Visual -->
+                  <div class="capability-visual cap-stage" id="cap-visual">
+                    <div class="capability-halo"></div>
+
+                    <div class="capability-image-frame">
+                      <img id="cap-image" src="assets/images/budget-core.jpg" alt="Budget Management" />
+
+                      <span class="capability-chip" id="cap-chip"> Financial Clarity </span>
+                    </div>
                   </div>
 
-                  <div class="col-lg-6 core-capabilities-title">
-                    <h3>Budget Management</h3>
+                  <!-- Content -->
+                  <div class="capability-content cap-stage" id="cap-content">
+                    <!-- <span class="capability-index" id="cap-index"></span> -->
 
-                    <p class="section-title-subdesc">
+                    <h3 id="cap-title">Budget Management</h3>
+
+                    <div class="capability-rule"></div>
+
+                    <p class="section-title-subdesc" id="cap-description">
                       Plan and control project budgets with clear visibility into approved funds, committed costs, actual expenses, and remaining balances. Monitor budget performance in real time,
                       compare planned and actual spending, identify variances early, and prevent unexpected cost overruns.
                     </p>
+
+                    <!-- Progress Navigation -->
+                    <div class="capability-progress" aria-label="Capability navigation">
+                      <button class="cap-dot active" data-index="0" aria-label="Budget Management" aria-current="step"></button>
+
+                      <button class="cap-dot" data-index="1" aria-label="Schedule Management"></button>
+
+                      <button class="cap-dot" data-index="2" aria-label="Project Management"></button>
+
+                      <button class="cap-dot" data-index="3" aria-label="Fiscal Accounting"></button>
+                    </div>
+
+                    <div class="capability-status" id="cap-status" aria-live="polite">01 of 04 — Scroll to explore</div>
+
+                    <!-- Mobile Navigation -->
+                    <div class="cap-mobile-nav">
+                      <button id="cap-prev" type="button">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Previous
+                      </button>
+
+                      <button id="cap-next" type="button">
+                        Next
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
-
-                <!-- Capability 2 -->
-                <div class="capability-row row align-items-start g-5">
-                  <div class="col-lg-6 core-capabilities-img">
-                    <img src="assets/images/schedule-management.jpg" alt="Compass schedule management " />
-                  </div>
-
-                  <div class="col-lg-6 core-capabilities-title">
-                    <h3>Schedule Management</h3>
-
-                    <p class="section-title-subdesc">
-                      Create and manage detailed project schedules with clear visibility into tasks, milestones, dependencies, and deadlines. Assign responsibilities, track progress, and adjust
-                      timelines as project conditions change. Use Gantt charts to identify delays, overlapping activities, and critical work early, helping teams stay coordinated and deliver each
-                      project phase on time.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Capability 3 -->
-                <div class="capability-row row align-items-start g-5">
-                  <div class="col-lg-6 core-capabilities-img">
-                    <img src="assets/images/project-management.jpg" alt="Compass Project management" />
-                  </div>
-
-                  <div class="col-lg-6 core-capabilities-title">
-                    <h3>Project Management</h3>
-
-                    <p class="section-title-subdesc">
-                      Centralize project information, responsibilities, activities, approvals, risks, and progress in one connected workspace. Assign ownership, coordinate teams, monitor project
-                      health, and keep important actions moving forward. Track issues, decisions, and status updates, and enter forecasts in real time so project managers can improve accountability,
-                      respond to risks early, and deliver projects with greater control.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Capability 4 -->
-                <div class="capability-row row align-items-start g-5">
-                  <div class="col-lg-6 core-capabilities-img">
-                    <img src="assets/images/fiscal-accounting.jpg" alt="Compass Fiscal accounting" />
-                  </div>
-
-                  <div class="col-lg-6 core-capabilities-title">
-                    <h3>Fiscal Accounting</h3>
-
-                    <p class="section-title-subdesc">
-                      Track fiscal-year budgets, funding sources, expenditures, encumbrances, and financial transactions in one accurate accounting view. Maintain clear records across multiple fiscal
-                      periods, monitor how funds are allocated and spent, reconcile project activity with financial data, and generate cashflows. Improve audit readiness, reporting accuracy, and
-                      compliance while giving finance teams better control over every capital project.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
+
+            <!-- Scroll Hint -->
+            <!-- <div class="capability-scroll-hint">
+              Scroll to explore
+              <i class="fa-solid fa-arrow-down"></i>
+            </div> -->
           </div>
         </div>
       </section>
@@ -1147,6 +1140,208 @@
         offset: 100,
         once: false,
         mirror: true,
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const section = document.querySelector(".capabilities-section");
+
+        if (!section) return;
+
+        const image = document.querySelector("#cap-image");
+        const chip = document.querySelector("#cap-chip");
+        const title = document.querySelector("#cap-title");
+        const description = document.querySelector("#cap-description");
+        // const index = document.querySelector("#cap-index");
+        const status = document.querySelector("#cap-status");
+
+        const visual = document.querySelector("#cap-visual");
+        const content = document.querySelector("#cap-content");
+
+        const dots = [...document.querySelectorAll(".cap-dot")];
+
+        const prev = document.querySelector("#cap-prev");
+        const next = document.querySelector("#cap-next");
+
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        const data = [
+          {
+            title: "Budget Management",
+            // chip: "Financial Clarity",
+            description:
+              "Plan and control project budgets with clear visibility into approved funds, committed costs, actual expenses, and remaining balances. Monitor budget performance in real time, compare planned and actual spending, identify variances early, and prevent unexpected cost overruns.",
+            image: "assets/images/budget-core.jpg",
+          },
+          {
+            title: "Schedule Management",
+            // chip: "Milestone Visibility",
+            description:
+              "Create and manage detailed project schedules with clear visibility into tasks, milestones, dependencies, and deadlines. Assign responsibilities, track progress, and adjust timelines as project conditions change. Use Gantt charts to identify delays, overlapping activities, and critical work early, helping teams stay coordinated and deliver each project phase on time.",
+            image: "assets/images/schedule-management.jpg",
+          },
+          {
+            title: "Project Management",
+            // chip: "Connected Workflows",
+            description:
+              "Centralize project information, responsibilities, activities, approvals, risks, and progress in one connected workspace. Assign ownership, coordinate teams, monitor project health, and keep important actions moving forward. Track issues, decisions, and status updates, and enter forecasts in real time so project managers can improve accountability, respond to risks early, and deliver projects with greater control.",
+            image: "assets/images/project-management.jpg",
+          },
+          {
+            title: "Fiscal Accounting",
+            // chip: "Accountable Spending",
+            description:
+              "Track fiscal-year budgets, funding sources, expenditures, encumbrances, and financial transactions in one accurate accounting view. Maintain clear records across multiple fiscal periods, monitor how funds are allocated and spent, reconcile project activity with financial data, and generate cashflows. Improve audit readiness, reporting accuracy, and compliance while giving finance teams better control over every capital project.",
+            image: "assets/images/fiscal-accounting.jpg",
+          },
+        ];
+
+        let active = -1;
+        let animationTimer;
+        let scheduled = false;
+
+        /* =====================================
+       UPDATE CAPABILITY
+    ===================================== */
+
+        function showCapability(i) {
+          i = Math.max(0, Math.min(data.length - 1, i));
+
+          if (i === active) return;
+
+          active = i;
+
+          const item = data[i];
+
+          clearTimeout(animationTimer);
+
+          function updateContent() {
+            title.textContent = item.title;
+
+            description.textContent = item.description;
+
+            image.src = item.image;
+
+            image.alt = item.title + " software screenshot";
+
+            chip.textContent = item.chip;
+
+            // index.textContent =
+            //     `CAPABILITY 0${i + 1} / 0${data.length}`;
+
+            status.textContent = `0${i + 1} of 0${data.length} — ${i === data.length - 1 ? "Continue scrolling" : "Scroll to explore"}`;
+
+            dots.forEach((dot, j) => {
+              dot.classList.toggle("active", i === j);
+
+              if (i === j) {
+                dot.setAttribute("aria-current", "step");
+              } else {
+                dot.removeAttribute("aria-current");
+              }
+            });
+
+            prev.disabled = i === 0;
+
+            next.disabled = i === data.length - 1;
+
+            visual.classList.remove("changing");
+
+            content.classList.remove("changing");
+          }
+
+          if (reducedMotion) {
+            updateContent();
+            return;
+          }
+
+          visual.classList.add("changing");
+
+          content.classList.add("changing");
+
+          animationTimer = setTimeout(updateContent, 180);
+        }
+
+        /* =====================================
+       SCROLL PROGRESS
+    ===================================== */
+
+        function syncCapabilities() {
+          if (window.innerWidth <= 767) return;
+
+          const maxScroll = section.offsetHeight - window.innerHeight;
+
+          if (maxScroll <= 0) return;
+
+          const sectionTop = section.getBoundingClientRect().top;
+
+          const progress = Math.max(0, Math.min(0.999999, -sectionTop / maxScroll));
+
+          const currentIndex = Math.min(data.length - 1, Math.floor(progress * data.length));
+
+          showCapability(currentIndex);
+        }
+
+        /* =====================================
+       OPTIMIZED SCROLL EVENT
+    ===================================== */
+
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (!scheduled) {
+              scheduled = true;
+
+              requestAnimationFrame(function () {
+                syncCapabilities();
+
+                scheduled = false;
+              });
+            }
+          },
+          { passive: true },
+        );
+
+        /* =====================================
+       RESIZE
+    ===================================== */
+
+        window.addEventListener("resize", function () {
+          syncCapabilities();
+        });
+
+        dots.forEach((dot) => {
+          dot.addEventListener("click", function () {
+            const i = Number(this.dataset.index);
+
+            if (window.innerWidth <= 767) {
+              showCapability(i);
+            } else {
+              const maxScroll = section.offsetHeight - window.innerHeight;
+
+              const target = section.getBoundingClientRect().top + window.scrollY + maxScroll * ((i + 0.5) / data.length);
+
+              window.scrollTo({
+                top: target,
+
+                behavior: reducedMotion ? "instant" : "smooth",
+              });
+            }
+          });
+        });
+
+        prev.addEventListener("click", function () {
+          showCapability(active - 1);
+        });
+
+        next.addEventListener("click", function () {
+          showCapability(active + 1);
+        });
+
+        showCapability(0);
+
+        syncCapabilities();
       });
     </script>
   </body>

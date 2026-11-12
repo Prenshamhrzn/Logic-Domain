@@ -68,7 +68,7 @@ function capabilityScroll() {
   track.style.transform = `translateY(-${progress * maxMove}px)`;
 
   // Hide bottom fade when reaching the last capability
-  windowBox.classList.toggle("no-fade", progress >= 0.98);
+  // windowBox.classList.toggle("no-fade", progress >= 0.98);
 }
 
 window.addEventListener("scroll", capabilityScroll);
