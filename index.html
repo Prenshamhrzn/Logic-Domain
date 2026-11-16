@@ -466,12 +466,18 @@
                 <div class="ld-network" aria-label="Interactive connected lifecycle illustration">
                   <div class="ld-network-halo"></div>
                   <div class="ld-topline"><span class="ld-live-dot"></span> ONE CONNECTED PLATFORM</div>
-                  <svg class="ld-flow" viewBox="0 0 600 570" preserveAspectRatio="none" aria-hidden="true">
+                  <!-- <svg class="ld-flow" viewBox="0 0 600 570" preserveAspectRatio="none" aria-hidden="true">
                     <path id="flowpath" d="M95 155 C185 55 415 55 505 155 C570 240 555 355 465 425 C365 505 210 500 120 415 C40 335 30 235 95 155 Z" />
                     <circle r="5" class="ld-travel">
                       <animateMotion dur="16s" repeatCount="indefinite" rotate="auto"><mpath href="#flowpath" /></animateMotion>
                     </circle>
+                  </svg> -->
+
+                  <svg class="ld-flow" id="ld-flow" viewBox="0 0 600 570" preserveAspectRatio="none" aria-hidden="true">
+                    <path id="flowpath" d="M95 155 C185 55 415 55 505 155 C570 240 555 355 465 425 C365 505 210 500 120 415 C40 335 30 235 95 155 Z" />
+                    <circle id="ld-travel" r="5" cx="80" cy="110" />
                   </svg>
+
                   <div class="ld-scene"><img src="assets/images/why-choose-us.png" alt="Contemporary public facility with connected digital information" /></div>
                   <button type="button" class="ld-node ld-n1 active" data-index="0" aria-pressed="true"><i class="fa-solid fa-arrows-rotate"></i><span>Lifecycle</span></button
                   ><button type="button" class="ld-node ld-n2" data-index="1" aria-pressed="false"><i class="fa-regular fa-folder-open"></i><span>Information</span></button
@@ -1118,54 +1124,131 @@
     <script>
       (() => {
         const root = document.querySelector(".ld-network");
-        if (!root) return;
+        const svg = root?.querySelector("#ld-flow");
+        const path = root?.querySelector("#flowpath");
+        const particle = root?.querySelector("#ld-travel");
+
+        if (!root || !svg || !path || !particle) return;
+
         const data = [
           ["Lifecycle Management", "Plan, deliver, and manage facilities through a connected lifecycle.", "fa-arrows-rotate"],
           ["Centralized Information", "Bring documents, communication, and project information together.", "fa-folder-open"],
-          ["Configurable Workflows", "Adapt approvals and processes to your organization’s requirements.", "fa-code-branch"],
+          ["Configurable Workflows", "Adapt approvals and processes to your organization's requirements.", "fa-code-branch"],
           ["AI-Powered Automation", "Use intelligent assistance to simplify tasks and access useful insights.", "fa-robot"],
         ];
+
         const buttons = [...root.querySelectorAll(".ld-node")];
-        const title = root.querySelector("#ld-title"),
-          detail = root.querySelector("#ld-detail"),
-          icon = root.querySelector("#ld-icon"),
-          steps = [...root.querySelectorAll(".ld-stepper span")];
-        let index = 0,
-          timer;
+        const title = root.querySelector("#ld-title");
+        const detail = root.querySelector("#ld-detail");
+        const icon = root.querySelector("#ld-icon");
+        const steps = [...root.querySelectorAll(".ld-stepper span")];
+
+        const duration = 16000;
+        const activationRadius = 28;
+
+        const length = path.getTotalLength();
+
+        let currentActive = -1;
+        let animationFrame;
+        let startTime = null;
+        let manuallySelected = false;
+
         function show(i) {
-          index = i;
+          if (currentActive === i) return;
+
+          currentActive = i;
+
           title.textContent = data[i][0];
           detail.textContent = data[i][1];
           icon.className = "fa-solid " + data[i][2];
-          buttons.forEach((b, n) => {
-            b.classList.toggle("active", n === i);
-            b.setAttribute("aria-pressed", String(n === i));
+
+          buttons.forEach((button, n) => {
+            button.classList.toggle("active", n === i);
+            button.setAttribute("aria-pressed", String(n === i));
           });
-          steps.forEach((s, n) => s.classList.toggle("on", n === i));
+
+          steps.forEach((step, n) => {
+            step.classList.toggle("on", n === i);
+          });
         }
-        function stop() {
-          clearInterval(timer);
-          timer = null;
+
+        function animate(timestamp) {
+          if (startTime === null) startTime = timestamp;
+
+          const elapsed = timestamp - startTime;
+          const progress = (elapsed % duration) / duration;
+
+          const point = path.getPointAtLength(progress * length);
+
+          particle.setAttribute("cx", point.x);
+          particle.setAttribute("cy", point.y);
+
+          const svgPoint = svg.createSVGPoint();
+          svgPoint.x = point.x;
+          svgPoint.y = point.y;
+
+          const matrix = svg.getScreenCTM();
+
+          if (matrix) {
+            const particleScreen = svgPoint.matrixTransform(matrix);
+
+            let nearestNode = -1;
+            let nearestDistance = Infinity;
+
+            buttons.forEach((button, index) => {
+              const rect = button.getBoundingClientRect();
+
+              const nodeX = rect.left + rect.width / 2;
+              const nodeY = rect.top + rect.height / 2;
+
+              const distance = Math.hypot(particleScreen.x - nodeX, particleScreen.y - nodeY);
+
+              if (distance < nearestDistance) {
+                nearestDistance = distance;
+                nearestNode = index;
+              }
+            });
+
+            if (!manuallySelected && nearestDistance <= activationRadius) {
+              show(nearestNode);
+            }
+          }
+
+          animationFrame = requestAnimationFrame(animate);
         }
-        function start() {
-          stop();
-          if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => show((index + 1) % data.length), 4300);
-        }
-        buttons.forEach((b, i) =>
-          b.addEventListener("click", () => {
+
+        // Manual feature selection
+        buttons.forEach((button, i) => {
+          button.addEventListener("click", () => {
+            manuallySelected = true;
             show(i);
-            start();
-          }),
-        );
-        root.addEventListener("mouseenter", stop);
-        root.addEventListener("mouseleave", start);
-        root.addEventListener("focusin", stop);
-        root.addEventListener("focusout", (e) => {
-          if (!root.contains(e.relatedTarget)) start();
+
+            // Resume automatic activation after a short pause
+            clearTimeout(manualTimer);
+
+            manualTimer = setTimeout(() => {
+              manuallySelected = false;
+            }, 3000);
+          });
         });
-        document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+
+        let manualTimer;
+
+        // Pause when the page is hidden
+        document.addEventListener("visibilitychange", () => {
+          if (document.hidden) {
+            cancelAnimationFrame(animationFrame);
+          } else {
+            startTime = null;
+            animationFrame = requestAnimationFrame(animate);
+          }
+        });
+
         show(0);
-        start();
+
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          animationFrame = requestAnimationFrame(animate);
+        }
       })();
     </script>
   </body>

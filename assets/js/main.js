@@ -50,9 +50,41 @@ window.addEventListener("scroll", () => {
 
 //core capabilities scroll
 
+// const section = document.querySelector(".capabilities-section");
+// const windowBox = document.querySelector(".capabilities-window");
+// const track = document.querySelector(".capabilities-track");
+
+// function capabilityScroll() {
+//   if (!section || !windowBox || !track) return;
+
+//   const sectionTop = section.offsetTop;
+//   const scrollDistance = section.offsetHeight - window.innerHeight;
+//   const currentScroll = window.scrollY - sectionTop;
+
+//   const progress = Math.min(Math.max(currentScroll / scrollDistance, 0), 1);
+
+//   const maxMove = Math.max(track.scrollHeight - windowBox.clientHeight, 0);
+
+//   track.style.transform = `translateY(-${progress * maxMove}px)`;
+
+//   Hide bottom fade when reaching the last capability
+//   windowBox.classList.toggle("no-fade", progress >= 0.98);
+// }
+
+// window.addEventListener("scroll", capabilityScroll);
+// window.addEventListener("resize", capabilityScroll);
+
+// capabilityScroll();
+
 const section = document.querySelector(".capabilities-section");
 const windowBox = document.querySelector(".capabilities-window");
 const track = document.querySelector(".capabilities-track");
+
+// NEW: Side progress elements
+const progressCurrent = document.querySelector(".cap-progress-current");
+const progressTotal = document.querySelector(".cap-progress-total");
+const progressFill = document.querySelector(".cap-progress-fill");
+const capabilityRows = document.querySelectorAll(".capability-row");
 
 function capabilityScroll() {
   if (!section || !windowBox || !track) return;
@@ -64,11 +96,42 @@ function capabilityScroll() {
   const progress = Math.min(Math.max(currentScroll / scrollDistance, 0), 1);
 
   const maxMove = Math.max(track.scrollHeight - windowBox.clientHeight, 0);
-
   track.style.transform = `translateY(-${progress * maxMove}px)`;
 
   // Hide bottom fade when reaching the last capability
-  // windowBox.classList.toggle("no-fade", progress >= 0.98);
+  windowBox.classList.toggle("no-fade", progress >= 0.98);
+
+  // =================================
+  // NEW: VERTICAL SIDE PROGRESS
+  // =================================
+
+  const total = capabilityRows.length;
+
+  if (total && progressCurrent && progressTotal && progressFill) {
+    // Determine active capability based on actual scroll position
+    const moved = progress * maxMove;
+    const viewportCenter = moved + windowBox.clientHeight / 2;
+
+    let activeIndex = 0;
+    let closestDistance = Infinity;
+
+    capabilityRows.forEach((row, index) => {
+      const rowCenter = row.offsetTop + row.offsetHeight / 2;
+      const distance = Math.abs(rowCenter - viewportCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        activeIndex = index;
+      }
+    });
+
+    // Update current / total number
+    progressCurrent.textContent = String(activeIndex + 1).padStart(2, "0");
+    progressTotal.textContent = String(total).padStart(2, "0");
+
+    // Update progress line
+    progressFill.style.height = `${((activeIndex + 1) / total) * 100}%`;
+  }
 }
 
 window.addEventListener("scroll", capabilityScroll);
