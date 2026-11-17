@@ -92,6 +92,7 @@ function capabilityScroll() {
   const sectionTop = section.offsetTop;
   const scrollDistance = section.offsetHeight - window.innerHeight;
   const currentScroll = window.scrollY - sectionTop;
+  
 
   const progress = Math.min(Math.max(currentScroll / scrollDistance, 0), 1);
 
